@@ -1,28 +1,27 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 
-import * as itineraryService from '../../services/itineraryService'
+import * as itineraryService from "../../services/itineraryService";
 
 // css
 
-
 const ItineraryDetails = (props) => {
-  const {itineraryId} = useParams()
-  const [itinerary, setItinerary] = useState(null)
+  const { itineraryId } = useParams();
+  const [itinerary, setItinerary] = useState(null);
 
   useEffect(() => {
     const fetchItinerary = async () => {
-      const data = await itineraryService.show(itineraryId)
-      setItinerary(data)
-    }
-    fetchItinerary()
-  }, [itineraryId])
+      const data = await itineraryService.show(itineraryId);
+      setItinerary(data);
+    };
+    fetchItinerary();
+  }, [itineraryId]);
 
-  console.log(('itinerary state:', itinerary));
+  console.log(("itinerary state:", itinerary));
 
-  if (!itinerary) return <h1>Loading itineraries...</h1>
+  if (!itinerary) return <h1>Loading itineraries...</h1>;
 
-  return ( 
+  return (
     <main className="details">
       Itinerary Details
       <ul>
@@ -34,15 +33,20 @@ const ItineraryDetails = (props) => {
         <li>{itinerary.city}</li>
         <li>{itinerary.country}</li>
       </ul>
-      <section>
-        Flights
-      </section>
-      <section>
-        Accomodations
-      </section>
+      {itinerary.owner._id === props.user.profile._id &&
+      <>
+        <Link to={`/itineraries/${itineraryId}/edit`} state={itinerary}>
+          <button>Edit</button>
+        </Link>
+        <button onClick={() => props.handleDeleteItinerary(itineraryId)}>
+          Delete
+        </button>
+      </>
+    }
+      <section>Flights</section>
+      <section>Accomodations</section>
     </main>
-
   );
-}
+};
 
-export default ItineraryDetails
+export default ItineraryDetails;

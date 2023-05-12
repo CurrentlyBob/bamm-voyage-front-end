@@ -1,5 +1,5 @@
 //css
-import styles from './Itineraries.module.css'
+// import styles from './Itineraries.module.css'
 import ItineraryCard from '../../components/ItineraryCard/ItineraryCard'
 
 const Itineraries = (props) => {

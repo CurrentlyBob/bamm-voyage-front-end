@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
+import EditItinerary from './pages/EditItinerary/EditItinerary'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,6 +22,7 @@ import * as itineraryService from './services/itineraryService'
 // styles
 import './App.css'
 import ItineraryCard from './components/ItineraryCard/ItineraryCard'
+
 
 
 function App() {
@@ -43,16 +45,11 @@ function App() {
     setItineraries([newItinerary, ...itineraries])
     navigate('/itineraries')
   }
-
-  
-  
-  
-  
-  
   
   const handleDeleteItinerary = async (itineraryId) => {
     const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
     setItineraries(itineraries.filter(itin => itin._id !== deletedItinerary._id))
+
     navigate('/itineraries')
   }
 
@@ -92,6 +89,14 @@ function App() {
               <NewItinerary handleAddItinerary={handleAddItinerary}/>
             </ProtectedRoute>
           }
+        />
+          <Route 
+          path="/itineraries/:itineraryId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditItinerary handleUpdateItinerary={handleUpdateItinerary} />
+            </ProtectedRoute>
+          } 
         />
         <Route
           path="/auth/signup"
