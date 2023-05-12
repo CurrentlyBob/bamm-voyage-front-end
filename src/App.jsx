@@ -36,6 +36,12 @@ function App() {
     setUser(authService.getUser())
   }
 
+  const handleAddItinerary = async (itineraryFormData) => {
+    const newItinerary = await itineraryService.create(itineraryFormData)
+    setItineraries([newItinerary, ...itineraries])
+    navigate('/itineraries')
+  }
+
   useEffect(() => {
     const fetchItineraries = async () => {
       const data = await itineraryService.index()
