@@ -7,14 +7,13 @@ import styles from './ItineraryCard.module.css'
 const ItineraryCard = (props) => {
   console.log(props)
   return (
-    <Link>
-      {props.itineraries.map(itinerary => (
-        <div className={styles.container} key={itinerary._id} >
+    <Link to={`/itineraries/${props.itinerary._id}`}> 
+      
+        <div className={styles.container} >
           {/* add image here - need to update backend */}
-          <h3>{ itinerary.title }</h3>
-          <h4>{ itinerary.startDate }</h4>
+          <h3>{ props.itinerary.title }</h3>
+          <h4>{ props.itinerary.startDate }</h4>
       </div>
-        ))}
     </Link>
   )
 }
