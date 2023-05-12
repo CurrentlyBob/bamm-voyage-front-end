@@ -6,9 +6,9 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
+import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -20,6 +20,7 @@ import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
+
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -64,18 +65,18 @@ function App() {
           }
         />
         <Route
-          path="/itineraries/new"
+          path="/itineraries/:itineraryId"
           element = {
             <ProtectedRoute user={user}>
-              <NewItinerary handleAddItinerary={handleAddItinerary}/>
+              <ItineraryDetails user={user}/>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/profiles"
-          element={
+          path="/itineraries/new"
+          element = {
             <ProtectedRoute user={user}>
-              <Profiles />
+              <NewItinerary handleAddItinerary={handleAddItinerary}/>
             </ProtectedRoute>
           }
         />
