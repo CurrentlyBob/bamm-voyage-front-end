@@ -46,9 +46,22 @@ async function update(itineraryFormData) {
   }
 }
 
+async function show(itineraryId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}`, {
+      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+    });
+    console.log(res);
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export { 
   index, 
   create, 
   update,
-  
+  show,
+
 };

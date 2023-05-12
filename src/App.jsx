@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
+import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -20,6 +21,7 @@ import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
+
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -60,6 +62,14 @@ function App() {
           element = {
             <ProtectedRoute user={user}>
               <Itineraries itineraries={itineraries}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/itineraries/:itineraryId"
+          element = {
+            <ProtectedRoute user={user}>
+              <ItineraryDetails user={user}/>
             </ProtectedRoute>
           }
         />
