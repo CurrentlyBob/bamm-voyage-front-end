@@ -61,6 +61,7 @@ async function show(itineraryId) {
 async function deleteItinerary(itineraryId) {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}`, {
+      method: "DELETE",
       headers: { "Authorization": `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
@@ -74,6 +75,6 @@ export {
   create, 
   update,
   show,
-  deleteItinerary as delete,
+  deleteItinerary,
 
 };
