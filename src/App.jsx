@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
+import EditItinerary from './pages/EditItinerary/EditItinerary'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -20,6 +21,7 @@ import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
+
 
 
 function App() {
@@ -40,6 +42,12 @@ function App() {
   const handleAddItinerary = async (itineraryFormData) => {
     const newItinerary = await itineraryService.create(itineraryFormData)
     setItineraries([newItinerary, ...itineraries])
+    navigate('/itineraries')
+  }
+
+  const handleUpdateItinerary = async (itineraryFormData) => {
+    const updatedItinerary = await itineraryService.update(itineraryFormData)
+    setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
     navigate('/itineraries')
   }
 
@@ -79,6 +87,14 @@ function App() {
               <NewItinerary handleAddItinerary={handleAddItinerary}/>
             </ProtectedRoute>
           }
+        />
+          <Route 
+          path="/itineraries/:itineraryId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditItinerary handleUpdateItinerary={handleUpdateItinerary} />
+            </ProtectedRoute>
+          } 
         />
         <Route
           path="/auth/signup"
