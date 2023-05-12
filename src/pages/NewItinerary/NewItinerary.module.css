@@ -1,14 +1,16 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 60px;
 }
-label{
+
+label {
   margin-top: 15px;
   text-align: right;
 }
-button{
+
+button {
   margin-top: 20px;
   background-color: #567189;
   color: white;
@@ -16,10 +18,12 @@ button{
   border-radius: 10px;
   border: none;
 }
-button:hover{
+
+button:hover {
   cursor: pointer;
   box-shadow: 2px 2px 10px #070707;
 }
-button:active{
+
+button:active {
   box-shadow: none;
 }
