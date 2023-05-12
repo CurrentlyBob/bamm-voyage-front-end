@@ -8,7 +8,6 @@ const NewItinerary = (props) => {
   const [formData, setFormData] = useState({
     title: '',
     budget: '',
-    cost: '',
     startDate: '',
     endDate: '',
     city: '',
@@ -25,7 +24,45 @@ const NewItinerary = (props) => {
   }
   
   return (
-    helloo
+    <main className={styles.container}>  
+      <form onSubmit={handleSubmit}>
+          <label htmlFor="title-input">Itinerary Name</label>
+          <input 
+            required
+            type="text" 
+            name="title"
+            id="title-input"
+            value={formData.title}
+            placeholder="Itinerary Name"
+            onChange={handleChange}
+          />
+          <label htmlFor="budget">Budget</label>
+          <input 
+            type="text" 
+            name="budget"
+            id="budget-input"
+            value={formData.budget}
+            placeholder="$$"
+            onChange={handleChange}
+          />
+          <label htmlFor="startDate">Start Date</label>
+          <input 
+            type="date" 
+            name="startDate"
+            id="startDate-input"
+            value={formData.startDate}
+            onChange={handleChange}
+          />
+          <label htmlFor="endDate">End Date</label>
+          <input 
+            type="date" 
+            name="endDate"
+            id="endDate-input"
+            value={formData.endDate}
+            onChange={handleChange}
+          />
+        </form>
+      </main>
     )
   }
 
