@@ -58,10 +58,22 @@ async function show(itineraryId) {
   }
 }
 
+async function deleteItinerary(itineraryId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}`, {
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}` }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   index, 
   create, 
   update,
   show,
+  deleteItinerary as delete,
 
 };

@@ -20,6 +20,7 @@ import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
+import ItineraryCard from './components/ItineraryCard/ItineraryCard'
 
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
   const handleAddItinerary = async (itineraryFormData) => {
     const newItinerary = await itineraryService.create(itineraryFormData)
     setItineraries([newItinerary, ...itineraries])
+    navigate('/itineraries')
+  }
+
+  const handleDeleteItinerary = async (itineraryId) => {
+    const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
+    setItineraries(itineraries.filter(itin => itin._id !== deletedItinerary._id))
     navigate('/itineraries')
   }
 
@@ -68,7 +75,7 @@ function App() {
           path="/itineraries/:itineraryId"
           element = {
             <ProtectedRoute user={user}>
-              <ItineraryDetails user={user}/>
+              <ItineraryDetails user={user} handleDeleteItinerary={handleDeleteItinerary}/>
             </ProtectedRoute>
           }
         />
