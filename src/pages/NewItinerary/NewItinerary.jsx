@@ -24,8 +24,8 @@ const NewItinerary = (props) => {
   }
   
   return (
-    <main className={styles.container}>  
-      <form onSubmit={handleSubmit}>
+    <main>  
+      <form onSubmit={handleSubmit} className={styles.container}>
           <label htmlFor="title-input">Itinerary Name</label>
           <input 
             required
@@ -68,4 +68,3 @@ const NewItinerary = (props) => {
   }
 
   export default NewItinerary
-  
