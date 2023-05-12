@@ -45,6 +45,11 @@ function App() {
     setItineraries([newItinerary, ...itineraries])
     navigate('/itineraries')
   }
+  const handleUpdateItinerary = async (itineraryFormData) => {
+    const updatedItinerary = await itineraryService.update(itineraryFormData)
+    setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
+    navigate('/itineraries')
+  }
   
   const handleDeleteItinerary = async (itineraryId) => {
     const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
