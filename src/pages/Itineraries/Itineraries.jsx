@@ -1,14 +1,11 @@
 //css
 import styles from './Itineraries.module.css'
+import ItineraryCard from '../../components/ItineraryCard/ItineraryCard'
 
 const Itineraries = (props) => {
   return (
-    <main className={styles.container}>
-      {props.itineraries.map(itinerary => (
-        <p key={itinerary._id}>
-          {itinerary.title}
-        </p>
-      ))}
+    <main>
+      <ItineraryCard itineraries={props.itineraries} />
     </main>
   )
 }
