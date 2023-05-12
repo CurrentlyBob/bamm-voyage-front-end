@@ -5,7 +5,9 @@ import ItineraryCard from '../../components/ItineraryCard/ItineraryCard'
 const Itineraries = (props) => {
   return (
     <main>
-      <ItineraryCard itineraries={props.itineraries} />
+      {props.itineraries.map(itinerary => (
+      <ItineraryCard key={itinerary._id} itinerary={itinerary} />
+      ))}
     </main>
   )
 }
