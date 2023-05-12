@@ -61,6 +61,7 @@ const NewItinerary = (props) => {
             value={formData.endDate}
             onChange={handleChange}
           />
+          <button type="submit">SUBMIT</button>
         </form>
       </main>
     )

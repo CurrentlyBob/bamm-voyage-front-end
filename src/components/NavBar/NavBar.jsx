@@ -11,7 +11,7 @@ const NavBar = ({ user, handleLogout }) => {
         <ul className={styles.linkContainer}>
           <div className={styles.links}>
             <li><NavLink to ="/itineraries">Itineraries</NavLink></li>
-            <li><NavLink to ="/new">Create Itinerary</NavLink></li>
+            <li><NavLink to ="/itineraries/new">Create Itinerary</NavLink></li>
           </div>
           <div className={styles.profile}>
             <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
