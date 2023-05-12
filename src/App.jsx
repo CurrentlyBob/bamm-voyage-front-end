@@ -6,7 +6,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
@@ -78,14 +77,6 @@ function App() {
           element = {
             <ProtectedRoute user={user}>
               <NewItinerary handleAddItinerary={handleAddItinerary}/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profiles"
-          element={
-            <ProtectedRoute user={user}>
-              <Profiles />
             </ProtectedRoute>
           }
         />
