@@ -13,7 +13,7 @@ import Itineraries from './pages/Itineraries/Itineraries'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-
+import NewItinerary from './pages/NewItinerary/NewItinerary'
 // services
 import * as authService from './services/authService'
 import * as itineraryService from './services/itineraryService'
@@ -60,6 +60,14 @@ function App() {
           element = {
             <ProtectedRoute user={user}>
               <Itineraries itineraries={itineraries}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/itineraries/new"
+          element = {
+            <ProtectedRoute user={user}>
+              <NewItinerary handleAddItinerary={handleAddItinerary}/>
             </ProtectedRoute>
           }
         />
