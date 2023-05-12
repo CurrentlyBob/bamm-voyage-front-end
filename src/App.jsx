@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -16,12 +16,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [itineraries, setItineraries] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -34,6 +36,14 @@ function App() {
     setUser(authService.getUser())
   }
 
+  useEffect(() => {
+    const fetchItineraries = async () => {
+      const data = await itineraryService.index()
+      setItineraries(data)
+    }
+    if (user) fetchItineraries()
+  }, [user])
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -43,7 +53,7 @@ function App() {
           path="/itineraries"
           element = {
             <ProtectedRoute user={user}>
-              <Itineraries />
+              <Itineraries itineraries={itineraries}/>
             </ProtectedRoute>
           }
         />

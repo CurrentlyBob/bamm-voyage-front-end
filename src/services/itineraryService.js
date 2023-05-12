@@ -7,6 +7,7 @@ async function index() {
     const res = await fetch(BASE_URL, {
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     });
+    console.log(res)
     return res.json();
   } catch (error) {
     console.log(error);
@@ -15,5 +16,5 @@ async function index() {
 
 export { 
   index,
-  
+
 };

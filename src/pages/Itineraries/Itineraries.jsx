@@ -4,7 +4,11 @@ import styles from './Itineraries.module.css'
 const Itineraries = (props) => {
   return (
     <main className={styles.container}>
-      Itineraries
+      {props.itineraries.map(itinerary => (
+        <p key={itinerary._id}>
+          {itinerary.title}
+        </p>
+      ))}
     </main>
   )
 }
