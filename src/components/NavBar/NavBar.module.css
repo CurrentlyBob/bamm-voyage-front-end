@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  background-color: #567189;
+}
+.linkContainer{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+.links{
+  display: flex;
+}
+.profile{
+  display: flex;
+  text-align: right;
+}
+a, a:visited{
+  text-decoration: none;
+  color: #f8f4ea;
+}
+li{
+  margin-left: 20px;
+}
