@@ -61,6 +61,24 @@ const NewItinerary = (props) => {
             value={formData.endDate}
             onChange={handleChange}
           />
+          <label htmlFor="city">City</label>
+          <input 
+            required
+            type="text" 
+            name="city"
+            id="city-input"
+            value={formData.city}
+            onChange={handleChange}
+          />
+          <label htmlFor="country">Country</label>
+          <input 
+            required
+            type="text" 
+            name="country"
+            id="country-input"
+            value={formData.country}
+            onChange={handleChange}
+          />
           <button type="submit">SUBMIT</button>
         </form>
       </main>
