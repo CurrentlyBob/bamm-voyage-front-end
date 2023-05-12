@@ -5,7 +5,7 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/itineraries`;
 async function index() {
   try {
     const res = await fetch(BASE_URL, {
-      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}` },
     });
     console.log(res);
     return res.json();
@@ -19,7 +19,7 @@ async function create(itineraryFormData) {
     const res = await fetch(BASE_URL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${tokenService.getToken()}`,
+        "Authorization": `Bearer ${tokenService.getToken()}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(itineraryFormData),
@@ -35,7 +35,7 @@ async function update(itineraryFormData) {
     const res = await fetch(`${BASE_URL}/${itineraryFormData._id}`, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer ${tokenService.getToken()}`,
+        "Authorization": `Bearer ${tokenService.getToken()}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(itineraryFormData),
@@ -49,7 +49,7 @@ async function update(itineraryFormData) {
 async function show(itineraryId) {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}`, {
-      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}` },
     });
     console.log(res);
     return res.json();
