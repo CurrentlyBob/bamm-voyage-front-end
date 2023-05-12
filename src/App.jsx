@@ -44,6 +44,12 @@ function App() {
     navigate('/itineraries')
   }
 
+  
+  
+  
+  
+  
+  
   const handleDeleteItinerary = async (itineraryId) => {
     const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
     setItineraries(itineraries.filter(itin => itin._id !== deletedItinerary._id))
