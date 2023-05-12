@@ -14,7 +14,25 @@ async function index() {
   }
 }
 
+async function create(itineraryFormData) {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(itineraryFormData) 
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 export { 
   index,
+  create,
 
 };
