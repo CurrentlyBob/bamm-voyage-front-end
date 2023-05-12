@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Itineraries from './pages/Itineraries/Itineraries'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -38,6 +39,14 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route
+          path="/itineraries"
+          element = {
+            <ProtectedRoute user={user}>
+              <Itineraries />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/profiles"
           element={
