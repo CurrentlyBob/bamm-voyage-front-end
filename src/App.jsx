@@ -12,10 +12,11 @@ import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 import EditItinerary from './pages/EditItinerary/EditItinerary'
 import NewItinerary from './pages/NewItinerary/NewItinerary'
 import NewAccommodation from './components/NewAccommodation/NewAccommodation'
-
+import EditFlight from './pages/EditFlight/EditFlight'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+
 
 // services
 import * as authService from './services/authService'
@@ -87,6 +88,14 @@ function App() {
           element = {
             <ProtectedRoute user={user}>
               <ItineraryDetails user={user} handleDeleteItinerary={handleDeleteItinerary}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/itineraries/:itineraryId/flights/:flightId"
+          element = {
+            <ProtectedRoute user={user}>
+              <EditFlight />
             </ProtectedRoute>
           }
         />

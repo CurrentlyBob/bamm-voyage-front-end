@@ -102,6 +102,22 @@ async function createAccommodation(itineraryId, accommodationFormData) {
   }
 }
 
+const updateFlight = async (itineraryId, flightId, flightFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/flights/${flightId}`, {
+      method: "PUT",
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(flightFormData),
+    });
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 export { 
   index, 
@@ -111,4 +127,5 @@ export {
   deleteItinerary,
   createFlight,
   createAccommodation,
+  updateFlight,
 };
