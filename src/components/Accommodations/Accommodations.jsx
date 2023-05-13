@@ -9,6 +9,8 @@ const Accommodations = (props) => {
         <AccommodationCard 
           key={accommodation._id}
           accommodation={accommodation}
+          user={props.user}
+          itineraryId={props.itineraryId}
         />
       ))}
     </>

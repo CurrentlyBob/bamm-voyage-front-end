@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import * as itineraryService from "../../services/itineraryService";
 import { useState } from "react";
 import styles from './EditFlight.module.css'
+
 const EditFlight = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
