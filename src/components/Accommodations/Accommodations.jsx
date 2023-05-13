@@ -11,6 +11,7 @@ const Accommodations = (props) => {
           accommodation={accommodation}
           user={props.user}
           itineraryId={props.itineraryId}
+          handleDeleteComment={props.handleDeleteComment}
         />
       ))}
     </>

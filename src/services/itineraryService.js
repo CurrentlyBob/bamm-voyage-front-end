@@ -134,6 +134,18 @@ async function updateAccommodations (itineraryId, accommodationId, accommodation
   }
 }
 
+async function deleteAccomodations (itineraryId, accommodationId,) {
+  try {
+    const res = await fetch (`${BASE_URL}/${itineraryId}/accomodations/${accommodationId}`, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 export { 
@@ -146,4 +158,5 @@ export {
   createAccommodation,
   updateFlight,
   updateAccommodations,
+  deleteAccomodations,
 };
