@@ -11,12 +11,11 @@ import Itineraries from './pages/Itineraries/Itineraries'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 import EditItinerary from './pages/EditItinerary/EditItinerary'
 import NewItinerary from './pages/NewItinerary/NewItinerary'
-import NewAccommodation from './pages/NewAccommodation/NewAccommodation'
+import NewAccommodation from './components/NewAccommodation/NewAccommodation'
 
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import ItineraryCard from './components/ItineraryCard/ItineraryCard'
 
 // services
 import * as authService from './services/authService'
@@ -31,6 +30,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [itineraries, setItineraries] = useState([])
+  // const [itinerary, setItinerary] = useState(null)
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -103,14 +103,6 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditItinerary handleUpdateItinerary={handleUpdateItinerary} />
-            </ProtectedRoute>
-          } 
-        />
-          <Route 
-          path="/itineraries/:itineraryId/accommodations" 
-          element={
-            <ProtectedRoute user={user}>
-              <NewAccommodation/>
             </ProtectedRoute>
           } 
         />

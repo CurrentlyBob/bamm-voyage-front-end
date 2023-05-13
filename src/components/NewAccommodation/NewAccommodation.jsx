@@ -1,8 +1,13 @@
 // npm imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
 
 // css
 import styles from './NewAccommodation.module.css'
+import { useLocation } from 'react-router-dom'
+// import { useEffect } from 'react'
+import * as itineraryService from '../../services/itineraryService'
+
 
 const NewAccommodation = (props) => {
   const [formData, setFormData]= useState({
@@ -19,15 +24,23 @@ const NewAccommodation = (props) => {
     setFormData({...formData, [evt.target.name]: evt.target.value })
   }
 
-  // const handleSubmit = (evt) => {
-  //   evt.preventDefault()
-    
-  // }
-
-  console.log(formData)
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+    props.handleAddAccommodation(formData)
+    setFormData({
+      type: 'Hotel',
+      name: '',
+      checkInDate: '',
+      checkOutDate: '',
+      address: '',
+      website: '',
+      cost: '',
+    })
+  }
 
   return ( 
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={handleSubmit}>
+      <h2>Accommodation</h2>
       <label htmlFor="type-input">Type</label>
         <select 
           name="type" 
