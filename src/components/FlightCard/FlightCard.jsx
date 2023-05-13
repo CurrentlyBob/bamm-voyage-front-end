@@ -1,17 +1,29 @@
 import { Link } from "react-router-dom";
+import styles from './FlightCard.module.css'
+
 
 const FlightCard = ({ flight, itineraryId }) => {
   return (
     <>
-      <h2>
-        {flight.airline}: {flight.recordLocator} ${flight.cost}
-      </h2>
+      <div className={styles.flightContainer}>
+        <div className={styles.flightTitle}>
+          <h2>
+            {flight.airline.charAt(0).toUpperCase()+ flight.airline.slice(1)}
+          </h2>
+          <h2>
+            {flight.recordLocator}
+          </h2>
+        </div>
+        <h2 className={styles.flightCost}>
+          ${flight.cost}
+        </h2>
+      </div>
       <table>
         <thead>
           <tr>
             <th>Departure</th>
             <th>Departure Airport</th>
-            <th>Arrival</th>
+            <th>Arrival Date</th>
             <th>Arrival Airport</th>
             <th></th>
           </tr>
@@ -24,7 +36,7 @@ const FlightCard = ({ flight, itineraryId }) => {
             <td>{flight.arrivalAirport}</td>
             <td>
               <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
-              <button>
+              <button className={styles.editButton}>
                 Edit
               </button>
                 </Link>

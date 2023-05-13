@@ -1,0 +1,35 @@
+.flightContainer{
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #567189;
+  margin-bottom: 0;
+  /* background-color: red; */
+}
+.flightTitle{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  /* background-color: purple; */
+}
+.flightCost{
+  display: flex;
+  width: 60%;
+  justify-content:right;
+}
+h2{
+  margin-bottom: 0;
+}
+table{
+  margin-top: 20px;
+  table-layout: auto;
+  border-collapse:collapse;
+  text-align: left;
+}
+th, td{
+  border: 1px solid rgb(189, 189, 189);
+  padding: 15px 5px;
+}
+
+.editButton{
+  margin-top: 0;
+}
