@@ -9,7 +9,6 @@
   display: flex;
   width: 40%;
   justify-content: space-between;
-  /* background-color: purple; */
 }
 .flightCost{
   display: flex;
@@ -24,10 +23,11 @@ table{
   table-layout: auto;
   border-collapse:collapse;
   text-align: left;
+  width: 100%;
 }
 th, td{
   border: 1px solid rgb(189, 189, 189);
-  padding: 15px 5px;
+  padding: 15px 10px;
 }
 
 .editButton{
