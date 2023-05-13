@@ -10,7 +10,7 @@ const ItineraryCard = (props) => {
     <Link to={`/itineraries/${props.itinerary._id}`}> 
       
         <div className={styles.container} >
-          {/* add image here - need to update backend */}
+          
           <h3>{ props.itinerary.title }</h3>
           <h4>{ props.itinerary.startDate }</h4>
       </div>
