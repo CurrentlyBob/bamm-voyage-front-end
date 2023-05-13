@@ -102,7 +102,7 @@ async function createAccommodation(itineraryId, accommodationFormData) {
   }
 }
 
-const updateFlight = async (itineraryId, flightId, flightFormData) => {
+async function updateFlight (itineraryId, flightId, flightFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/flights/${flightId}`, {
       method: "PUT",
@@ -118,7 +118,7 @@ const updateFlight = async (itineraryId, flightId, flightFormData) => {
   }
 }
 
-const updateAccommodations = async (itineraryId, accommodationId, accommodationFormData) => {
+async function updateAccommodations (itineraryId, accommodationId, accommodationFormData)  {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
       method: "PUT",
@@ -133,6 +133,7 @@ const updateAccommodations = async (itineraryId, accommodationId, accommodationF
     console.log(error)
   }
 }
+
 
 
 export { 
