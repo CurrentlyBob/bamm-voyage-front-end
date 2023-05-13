@@ -60,7 +60,7 @@ const ItineraryDetails = (props) => {
       <section className={styles.flightSection}>
         <h2>Flights</h2>
         <NewFlight handleAddFlight={handleAddFlight}/>
-        <Flights flights={itinerary.flights} />
+        <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} />
       </section>
       <section className={styles.accommodationSection}>
         <h2>Accommodations</h2>

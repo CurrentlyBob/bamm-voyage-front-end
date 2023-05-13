@@ -9,6 +9,8 @@ const Flights = (props) => {
         <FlightCard 
           key={flight._id}
           flight={flight}
+          user={props.user}
+          itineraryId={props.itineraryId}
         />
       ))}
     </>
