@@ -68,7 +68,7 @@ const ItineraryDetails = (props) => {
           <button>Add Accommodation</button>
         </Link>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
-        <Accommodations itinerary={itinerary}/>
+        <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId}/>
       </section>
     </main>
   );
