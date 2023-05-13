@@ -1,10 +1,16 @@
+// npm modules
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// service
 import * as itineraryService from "../../services/itineraryService";
 
 // css
 import styles from './ItineraryDetails.module.css'
+
+// components
+import NewFlight from "../../components/NewFlight/NewFlight";
+import Flights from "../../components/Flights/Flights";
 
 
 const ItineraryDetails = (props) => {
@@ -46,8 +52,14 @@ const ItineraryDetails = (props) => {
         </button>
       </div>
     }
-      <section>Flights</section>
-      <section>Accomodations</section>
+      <section className={styles.flightSection}>
+        <h2>Flights</h2>
+        <NewFlight handleAddFlight={handleAddFlight}/>
+        <Flights flights={itinerary.flights} />
+      </section>
+      <section className={styles.accommodationSection}>
+        Accomodations
+      </section>
     </main>
   );
 };

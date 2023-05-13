@@ -19,13 +19,15 @@ const NewFlight = (props) => {
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
-  
+
   const handleSubmit = (evt) => {
     evt.preventDefault()
+    props.handleAddFlight(formData)
     setFormData({
       airline: '',
       roundtrip: 'true',
       departureAirport: '',
+      departureDate: '',
       arrivalAirport: '',
       arrivalDate: '',
       recordLocator: '',
