@@ -118,6 +118,22 @@ const updateFlight = async (itineraryId, flightId, flightFormData) => {
   }
 }
 
+const updateAccommodations = async (itineraryId, accommodationId, accommodationFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
+      method: "PUT",
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(accommodationFormData),
+    });
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 export { 
   index, 
@@ -128,4 +144,5 @@ export {
   createFlight,
   createAccommodation,
   updateFlight,
+  updateAccommodations,
 };
