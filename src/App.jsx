@@ -10,18 +10,20 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Itineraries from './pages/Itineraries/Itineraries'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 import EditItinerary from './pages/EditItinerary/EditItinerary'
+import NewItinerary from './pages/NewItinerary/NewItinerary'
 
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import NewItinerary from './pages/NewItinerary/NewItinerary'
+import ItineraryCard from './components/ItineraryCard/ItineraryCard'
+
 // services
 import * as authService from './services/authService'
 import * as itineraryService from './services/itineraryService'
 
 // styles
 import './App.css'
-import ItineraryCard from './components/ItineraryCard/ItineraryCard'
+
 
 
 
