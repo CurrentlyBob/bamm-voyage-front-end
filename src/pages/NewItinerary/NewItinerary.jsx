@@ -7,6 +7,7 @@ import styles from './NewItinerary.module.css'
 const NewItinerary = (props) => {
   const [formData, setFormData] = useState({
     title: '',
+    imageUrl: '',
     budget: '',
     startDate: '',
     endDate: '',
@@ -34,6 +35,15 @@ const NewItinerary = (props) => {
             id="title-input"
             value={formData.title}
             placeholder="Itinerary Name"
+            onChange={handleChange}
+          />
+          <label htmlFor="imgUrl-input">Image Address URL</label>
+          <input 
+            type="text" 
+            name="imgUrl"
+            id="imgUrl-input"
+            value={formData.imgUrl}
+            placeholder="Image Address URL"
             onChange={handleChange}
           />
           <label htmlFor="budget">Budget</label>
