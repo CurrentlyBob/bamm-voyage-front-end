@@ -1,4 +1,6 @@
-const AccommodationCard = ({accommodation}) => {
+import { Link } from "react-router-dom";
+
+const AccommodationCard = ({accommodation, itineraryId}) => {
   return ( 
     <>
       <h2>{accommodation.name}: ${accommodation.cost}</h2>
@@ -19,6 +21,13 @@ const AccommodationCard = ({accommodation}) => {
             <td>{accommodation.checkOutDate}</td>
             <td>{accommodation.address}</td>
             <td>{accommodation.website}</td>
+            <td>
+              <Link to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`} state={accommodation}>
+              <button>
+                Edit
+              </button>
+                </Link>
+            </td>
           </tr>
         </tbody>
       </table>

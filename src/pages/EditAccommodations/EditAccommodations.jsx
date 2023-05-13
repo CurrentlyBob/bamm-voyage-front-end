@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom"
-import styles from './EditAccommodation.module.css'
+import styles from './EditAccommodations.module.css'
 
 // Services
 import * as itineraryService from '../../services/itineraryService'
@@ -17,7 +17,7 @@ const EditAccommodation = () => {
 
     const handleSubmit = async (evt) => {
         evt.preventDefault()
-        await itineraryService.updateAccommodation(itineraryId, accommodationId, formData)
+        await itineraryService.updateAccommodations(itineraryId, accommodationId, formData)
         navigate(`/itineraries/${itineraryId}`)
     }
     
