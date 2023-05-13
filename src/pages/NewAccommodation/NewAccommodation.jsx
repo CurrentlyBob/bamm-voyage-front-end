@@ -14,6 +14,18 @@ const NewAccommodation = (props) => {
     website: '',
     cost: '',
   })
+
+  const handleChange = (evt) => {
+    setFormData({...formData, [evt.target.name]: evt.target.value })
+  }
+
+  // const handleSubmit = (evt) => {
+  //   evt.preventDefault()
+    
+  // }
+
+  console.log(formData)
+
   return ( 
     <form className={styles.container}>
       <label htmlFor="type-input">Type</label>
@@ -21,20 +33,21 @@ const NewAccommodation = (props) => {
           name="type" 
           id="type-input"
           value={formData.type}
-          // onChange={handleChange}
+          onChange={handleChange}
         >
           <option value="Hotel">Hotel</option>
           <option value="Cruise">Cruise</option>
           <option value="Airbnb">Airbnb</option>
           <option value="Other">Other</option>
         </select>
-      <label htmlFor="Name">Name</label>
+      <label htmlFor="name">Name</label>
       <input 
         type="text" 
-        name="Name"
+        name="name"
         id="name-input"
         value={formData.name}
-        // onChange={handleChange}
+        autoComplete='off'
+        onChange={handleChange}
       />
       <label htmlFor="checkInDate">CheckIn Date</label>
       <input 
@@ -43,7 +56,7 @@ const NewAccommodation = (props) => {
         name="checkInDate"
         id="checkInDate-input"
         value={formData.checkInDate}
-        // onChange={handleChange}
+        onChange={handleChange}
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
       <input 
@@ -51,7 +64,7 @@ const NewAccommodation = (props) => {
         name="checkOutDate"
         id="checkOutDate-input"
         value={formData.checkOutDate}
-        // onChange={handleChange}
+        onChange={handleChange}
       />
       <label htmlFor="address">Address</label>
       <input 
@@ -59,7 +72,8 @@ const NewAccommodation = (props) => {
         name="address"
         id="address-input"
         value={formData.address}
-        // onChange={handleChange}
+        autoComplete='off'
+        onChange={handleChange}
       />
       <label htmlFor="website">Website</label>
       <input 
@@ -67,7 +81,8 @@ const NewAccommodation = (props) => {
         name="website"
         id="website-input"
         value={formData.website}
-        // onChange={handleChange}
+        autoComplete='off'
+        onChange={handleChange}
       />
       <label htmlFor="cost">Cost</label>
       <input 
@@ -75,7 +90,8 @@ const NewAccommodation = (props) => {
         name="cost"
         id="cost-input"
         value={formData.cost}
-        // onChange={handleChange}
+        autoComplete='off'
+        onChange={handleChange}
       />
       <button type="submit">SUBMIT</button>
     </form>
