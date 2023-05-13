@@ -6,6 +6,7 @@ import * as itineraryService from "../../services/itineraryService";
 // css
 import styles from './ItineraryDetails.module.css'
 
+
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
   const [itinerary, setItinerary] = useState(null);
@@ -17,6 +18,11 @@ const ItineraryDetails = (props) => {
     };
     fetchItinerary();
   }, [itineraryId]);
+
+  const handleAddFlight = async (flightFormData) => {
+    const newFlight = await itineraryService.createFlight(itineraryId, flightFormData)
+    setItinerary({ ...itinerary, flights: [...itinerary.flights, newFlight] })
+  }
 
   console.log(("itinerary state:", itinerary));
 
