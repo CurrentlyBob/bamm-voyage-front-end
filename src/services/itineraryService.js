@@ -70,11 +70,28 @@ async function deleteItinerary(itineraryId) {
   }
 }
 
+async function createFlight(itineraryId, flightFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/flights`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(flightFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export { 
   index, 
   create, 
   update,
   show,
   deleteItinerary,
+  createFlight,
 
 };
