@@ -86,6 +86,7 @@ async function createFlight(itineraryId, flightFormData) {
   }
 }
 
+
 export { 
   index, 
   create, 
@@ -93,5 +94,4 @@ export {
   show,
   deleteItinerary,
   createFlight,
-
 };
