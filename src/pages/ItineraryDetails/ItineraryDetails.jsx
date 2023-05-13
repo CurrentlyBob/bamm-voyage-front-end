@@ -11,7 +11,8 @@ import styles from './ItineraryDetails.module.css'
 // components
 import NewFlight from "../../components/NewFlight/NewFlight";
 import Flights from "../../components/Flights/Flights";
-
+import Accommodations from "../../components/Accommodations/Accommodations";
+import NewAccommodation from "../../components/NewAccommodation/NewAccommodation";
 
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
@@ -21,13 +22,17 @@ const ItineraryDetails = (props) => {
     const fetchItinerary = async () => {
       const data = await itineraryService.show(itineraryId);
       setItinerary(data);
-    };
+    }; 
     fetchItinerary();
   }, [itineraryId]);
 
   const handleAddFlight = async (flightFormData) => {
     const newFlight = await itineraryService.createFlight(itineraryId, flightFormData)
     setItinerary({ ...itinerary, flights: [...itinerary.flights, newFlight] })
+  }
+  const handleAddAccommodation = async (accommodationFormData) => {
+    const newAccommodation = await itineraryService.createAccommodation(itineraryId, accommodationFormData)
+    setItinerary({ ...itinerary, accommodations: [...itinerary.accommodations, newAccommodation] })
   }
 
   console.log(("itinerary state:", itinerary));
@@ -62,6 +67,8 @@ const ItineraryDetails = (props) => {
         <Link to={`/itineraries/${itineraryId}/accommodations`} state={itinerary}>
           <button>Add Accommodation</button>
         </Link>
+        <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
+        <Accommodations itinerary={itinerary}/>
       </section>
     </main>
   );
