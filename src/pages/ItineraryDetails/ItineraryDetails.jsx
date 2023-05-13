@@ -58,7 +58,10 @@ const ItineraryDetails = (props) => {
         <Flights flights={itinerary.flights} />
       </section>
       <section className={styles.accommodationSection}>
-        Accomodations
+        <h2>Accommodations</h2>
+        <Link to={`/itineraries/${itineraryId}/accommodations`} state={itinerary}>
+          <button>Add Accommodation</button>
+        </Link>
       </section>
     </main>
   );
