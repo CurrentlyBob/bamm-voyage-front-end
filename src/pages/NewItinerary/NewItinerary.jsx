@@ -37,12 +37,12 @@ const NewItinerary = (props) => {
             placeholder="Itinerary Name"
             onChange={handleChange}
           />
-          <label htmlFor="imageUrl-input">Image Address URL</label>
+          <label htmlFor="imgUrl-input">Image Address URL</label>
           <input 
             type="text" 
-            name="imageUrl"
-            id="imageUrl-input"
-            value={formData.imageUrl}
+            name="imgUrl"
+            id="imgUrl-input"
+            value={formData.imgUrl}
             placeholder="Image Address URL"
             onChange={handleChange}
           />
