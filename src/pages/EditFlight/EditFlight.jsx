@@ -55,7 +55,7 @@ const EditFlight = () => {
         type="date"
         name="departureDate"
         id="departureDate-input"
-        value={formData.departureDate}
+        value={formData.departureDate ? formData.departureDate.slice(0, 10) : ''}
         onChange={handleChange}
       />
       <label htmlFor="arrivalAirport">Arrival Airport</label>
@@ -71,7 +71,7 @@ const EditFlight = () => {
         type="date"
         name="arrivalDate"
         id="arrivalDate-input"
-        value={formData.arrivalDate}
+        value={formData.arrivalDate ? formData.arrivalDate.slice(0, 10) : ''}
         onChange={handleChange}
       />
       <label htmlFor="recordLocator">Record Locator</label>

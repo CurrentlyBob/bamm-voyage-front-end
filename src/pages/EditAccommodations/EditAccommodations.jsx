@@ -51,7 +51,7 @@ const EditAccommodation = () => {
         type="date" 
         name="checkInDate"
         id="checkInDate-input"
-        value={formData.checkInDate}
+        value={formData.checkInDate ? formData.checkInDate.slice(0, 10) : ''}
         onChange={handleChange}
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
@@ -59,7 +59,7 @@ const EditAccommodation = () => {
         type="date" 
         name="checkOutDate"
         id="checkOutDate-input"
-        value={formData.checkOutDate}
+        value={formData.checkOutDate ? formData.checkOutDate.slice(0, 10) : ''}
         onChange={handleChange}
       />
       <label htmlFor="address">Address</label>
