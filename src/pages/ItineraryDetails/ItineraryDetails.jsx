@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import moment from "moment"
+import Switch from '@mui/material/Switch'
 
 // service
 import * as itineraryService from "../../services/itineraryService";
@@ -86,7 +87,6 @@ const ItineraryDetails = (props) => {
     }
       <section className={styles.flightSection}>
         <h2 className={styles.flightTitle}>Flights</h2>
-        <NewFlight handleAddFlight={handleAddFlight}/>
         <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
       </section>
       <section className={styles.accommodationSection}>
@@ -94,9 +94,12 @@ const ItineraryDetails = (props) => {
         <Link to={`/itineraries/${itineraryId}/accommodations`} state={itinerary}>
           <button>Add Accommodation</button>
         </Link>
-        <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
         <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
       </section>
+      <div className={styles.formData}>
+        <NewFlight handleAddFlight={handleAddFlight}/>
+        <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
+      </div>
     </main>
   );
 };
