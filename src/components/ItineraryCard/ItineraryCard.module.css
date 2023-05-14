@@ -4,12 +4,12 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  margin-top: 60px;
 }
 .body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
   color: white;
   max-width: 300px;
 }
@@ -27,5 +27,14 @@
   padding: 35px;
   text-align: center;
   margin: 15%;
-
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.overlayText:hover{
+  opacity: 1;
 }
