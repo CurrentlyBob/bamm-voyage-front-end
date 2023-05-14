@@ -4,6 +4,7 @@ import styles from './EditAccommodations.module.css'
 
 // Services
 import * as itineraryService from '../../services/itineraryService'
+import { subtractOneDay } from "../../DateConversion/DateConversion";
 
 const EditAccommodation = () => {
     const navigate = useNavigate()
@@ -51,7 +52,7 @@ const EditAccommodation = () => {
         type="date" 
         name="checkInDate"
         id="checkInDate-input"
-        value={formData.checkInDate ? formData.checkInDate.slice(0, 10) : ''}
+        value={formData.checkInDate ? subtractOneDay(formData.checkInDate) : ''}
         onChange={handleChange}
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
@@ -59,7 +60,7 @@ const EditAccommodation = () => {
         type="date" 
         name="checkOutDate"
         id="checkOutDate-input"
-        value={formData.checkOutDate ? formData.checkOutDate.slice(0, 10) : ''}
+        value={formData.checkOutDate ? subtractOneDay(formData.checkOutDate) : ''}
         onChange={handleChange}
       />
       <label htmlFor="address">Address</label>
