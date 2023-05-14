@@ -18,14 +18,14 @@
 h2{
   margin-bottom: 0;
 }
-table{
+.table{
   margin-top: 20px;
   table-layout: auto;
   border-collapse:collapse;
   text-align: left;
   width: 100%;
 }
-th, td{
+.th, .td{
   border: 1px solid rgb(189, 189, 189);
   padding: 15px 10px;
 }
