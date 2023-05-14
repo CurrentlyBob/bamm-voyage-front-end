@@ -8,19 +8,22 @@ import styles from './ItineraryCard.module.css'
 const ItineraryCard = (props) => {
   console.log(props)
   return (
-    <Link to={`/itineraries/${props.itinerary._id}`}> 
-      
-        <div className={styles.container} >
-          {props.itinerary.imgUrl 
-          ? 
-            <img src={props.itinerary.imgUrl} alt="travel pic" />
-          :
-            <img src='public/assets/images/travel-pic.png' alt="travel pic" />
-          }
-          <h3>{ props.itinerary.title }</h3>
-          <h4>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
-      </div>
-    </Link>
+    <div className={styles.container}>
+      <Link to={`/itineraries/${props.itinerary._id}`}> 
+          <div className={styles.body} >
+            {props.itinerary.imgUrl 
+            ? 
+              // <div style={{backgroundImage: `url('${props.itinerary.imgUrl}')`}}></div>
+              <img src={props.itinerary.imgUrl} alt="travel pic" className={styles.pic}/>
+              :
+              // <p style={{backgroundImage: `url('public/assets/images/travel-pic.png')`}}></p>
+              <img src='public/assets/images/travel-pic.png' alt="travel pic" className={styles.pic}/>
+            }
+            <h3>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
+            <h4>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
+        </div>
+      </Link>
+    </div>
   )
 }
 
