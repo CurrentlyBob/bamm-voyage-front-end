@@ -51,4 +51,25 @@
   flex-direction: row;
   gap: 10px;
 }
+.flightSection{
+  width: 95%;
+}
 
+.flightTitle{
+  background-color: #7b8fa1;
+  color: rgb(255, 255, 255);
+  border: 3px solid #567189;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+.accommodationSection{
+  width: 95%;
+  margin-top: 20px;
+}
+.accommodationtTitle{
+  background-color: #7b8fa1;
+  color: rgb(255, 255, 255);
+  border: 3px solid #567189;
+  padding: 5px 20px;
+  font-size: 20px;
+}
