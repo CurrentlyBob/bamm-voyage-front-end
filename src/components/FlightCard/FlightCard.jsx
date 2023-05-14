@@ -18,29 +18,29 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
           ${flight.cost}
         </h2>
       </div>
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
-            <th>Departure</th>
-            <th>Departure Airport</th>
-            <th>Arrival Date</th>
-            <th>Arrival Airport</th>
-            <th></th>
+            <th className={styles.th}>Departure</th>
+            <th className={styles.th}>Departure Airport</th>
+            <th className={styles.th}>Arrival Date</th>
+            <th className={styles.th}>Arrival Airport</th>
+            <th className={styles.th}></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{flight.departureDate}</td>
-            <td>{flight.departureAirport}</td>
-            <td>{flight.arrivalDate}</td>
-            <td>{flight.arrivalAirport}</td>
-            <td>
+            <td className={styles.td}>{flight.departureDate}</td>
+            <td className={styles.td}>{flight.departureAirport}</td>
+            <td className={styles.td}>{flight.arrivalDate}</td>
+            <td className={styles.td}>{flight.arrivalAirport}</td>
+            <td className={styles.td}>
               <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
               <button className={styles.editButton}>
                 Edit
               </button>
                 </Link>
-                <button onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
+                <button className={styles.editButton} onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
                   Delete
                 </button>
             </td>

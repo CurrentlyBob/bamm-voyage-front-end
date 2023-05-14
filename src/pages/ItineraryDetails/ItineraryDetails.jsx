@@ -52,12 +52,27 @@ const ItineraryDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      <h1>{itinerary.title}</h1>
-      <div className={styles.header}>
-        <h3>Destination: {itinerary.city}, {itinerary.country}</h3>
-        <h3>Dates: {itinerary.startDate} - {itinerary.endDate}</h3>
-        <h3>Budget: ${itinerary.budget} Actual Cost: ${itinerary.cost}</h3>
+      <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
+      <div className={styles.cost}>
+        <h3>Budget: ${itinerary.budget}</h3>
+        <h3>Actual Cost: ${itinerary.cost}</h3>
       </div>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th className={styles.th}>DESTINATION</th>
+            <th className={styles.th}>START DATE</th>
+            <th className={styles.th}>END DATE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className={styles.td}>{itinerary.city}, {itinerary.country}</td>
+            <td className={styles.td}>{itinerary.startDate}</td>
+            <td className={styles.td}>{itinerary.endDate}</td>
+          </tr>
+        </tbody>
+      </table>
       {itinerary.owner._id === props.user.profile._id &&
       <div className={styles.buttons}>
         <Link to={`/itineraries/${itineraryId}/edit`} state={itinerary}>
