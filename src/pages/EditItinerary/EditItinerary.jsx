@@ -45,7 +45,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="startDate"
               id="startDate-input"
-              value={formData.startDate}
+              value={formData.startDate ? formData.startDate.slice(0, 10) : ''}
               onChange={handleChange}
             />
             <label htmlFor="endDate">End Date</label>
@@ -53,7 +53,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="endDate"
               id="endDate-input"
-              value={formData.endDate}
+              value={formData.endDate ? formData.endDate.slice(0, 10) : ''}
               onChange={handleChange}
             />
             <label htmlFor="city">City</label>
