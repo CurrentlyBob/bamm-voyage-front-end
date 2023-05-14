@@ -13,8 +13,7 @@ body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color: #567189;
-  background-color: #f8f4ea;
-
+  background-color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
