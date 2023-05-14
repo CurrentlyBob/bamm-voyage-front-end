@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import moment from "moment"
 import styles from './FlightCard.module.css'
 
 
@@ -30,9 +31,9 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
         </thead>
         <tbody>
           <tr>
-            <td className={styles.td}>{flight.departureDate}</td>
+            <td className={styles.td}> {moment(flight.departureDate).format('ddd MMMM Do, YYYY')}</td>
             <td className={styles.td}>{flight.departureAirport}</td>
-            <td className={styles.td}>{flight.arrivalDate}</td>
+            <td className={styles.td}>{moment(flight.arrivalDate).format('ddd MMMM Do, YYYY')}</td>
             <td className={styles.td}>{flight.arrivalAirport}</td>
             <td className={styles.td}>
               <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
