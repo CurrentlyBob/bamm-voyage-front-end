@@ -1,4 +1,4 @@
-import AccommodationCard from "../AccommodationCard/AccomodationCard";
+import AccommodationCard from "../AccommodationCard/AccommodationCard";
 
 const Accommodations = (props) => {
   if (!props.itinerary.accommodations) return <h4>Add Accommodations</h4>
