@@ -9,7 +9,7 @@ const ItineraryCard = (props) => {
   console.log(props)
   return (
     <div className={styles.container}>
-      <Link to={`/itineraries/${props.itinerary._id}`}> 
+      <Link to={`/itineraries/${props.itinerary._id}`} className={styles.link}> 
           <div className={styles.body} >
             {props.itinerary.imgUrl 
             ? 
