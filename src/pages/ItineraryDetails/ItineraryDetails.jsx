@@ -1,6 +1,7 @@
 // npm modules
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import moment from "moment"
 
 // service
 import * as itineraryService from "../../services/itineraryService";
@@ -68,8 +69,8 @@ const ItineraryDetails = (props) => {
         <tbody>
           <tr>
             <td className={styles.td}>{itinerary.city}, {itinerary.country}</td>
-            <td className={styles.td}>{itinerary.startDate}</td>
-            <td className={styles.td}>{itinerary.endDate}</td>
+            <td className={styles.td}>{moment(itinerary.startDate).format('ddd MMMM Do, YYYY')}</td>
+            <td className={styles.td}>{moment(itinerary.endDate).format('ddd MMMM Do YYYY')}</td>
           </tr>
         </tbody>
       </table>
