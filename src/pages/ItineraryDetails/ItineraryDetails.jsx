@@ -35,6 +35,11 @@ const ItineraryDetails = (props) => {
     setItinerary({ ...itinerary, accommodations: [...itinerary.accommodations, newAccommodation] })
   }
 
+  const handleDeleteAccommodation = async (itineraryId, accommodationId) => {
+    await itineraryService.deleteAccommodations(itineraryId, accommodationId)
+    setItinerary({...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId)})
+  }
+
   console.log(("itinerary state:", itinerary));
 
   if (!itinerary) return <h1>Loading itineraries...</h1>;
@@ -68,7 +73,7 @@ const ItineraryDetails = (props) => {
           <button>Add Accommodation</button>
         </Link>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
-        <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId}/>
+        <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
       </section>
     </main>
   );

@@ -63,6 +63,8 @@ function App() {
     navigate('/itineraries')
   }
 
+  
+
   useEffect(() => {
     const fetchItineraries = async () => {
       const data = await itineraryService.index()
