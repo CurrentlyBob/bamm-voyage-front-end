@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 
-const AccommodationCard = ({accommodation, itineraryId}) => {
-  return ( 
+const AccommodationCard = ({
+  accommodation,
+  itineraryId,
+  handleDeleteAccommodation,
+}) => {
+  return (
     <>
-      <h2>{accommodation.name}: ${accommodation.cost}</h2>
+      <h2>
+        {accommodation.name}: ${accommodation.cost}
+      </h2>
       <table>
         <thead>
           <tr>
@@ -22,17 +28,27 @@ const AccommodationCard = ({accommodation, itineraryId}) => {
             <td>{accommodation.address}</td>
             <td>{accommodation.website}</td>
             <td>
-              <Link to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`} state={accommodation}>
-              <button>
-                Edit
-              </button>
+              <>
+                <Link
+                  to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`}
+                  state={accommodation}
+                >
+                  <button>Edit</button>
                 </Link>
+                <button
+                  onClick={() =>
+                    handleDeleteAccommodation(itineraryId, accommodation._id)
+                  }
+                >
+                  Delete
+                </button>
+              </>
             </td>
           </tr>
         </tbody>
       </table>
     </>
-  )
-}
- 
+  );
+};
+
 export default AccommodationCard;

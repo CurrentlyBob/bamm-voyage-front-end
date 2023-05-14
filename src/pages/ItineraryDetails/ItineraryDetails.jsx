@@ -36,7 +36,7 @@ const ItineraryDetails = (props) => {
   }
 
   const handleDeleteAccommodation = async (itineraryId, accommodationId) => {
-    await itineraryService.deleteAccomodations(itineraryId, accommodationId)
+    await itineraryService.deleteAccommodations(itineraryId, accommodationId)
     setItinerary({...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId)})
   }
 

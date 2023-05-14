@@ -134,7 +134,7 @@ async function updateAccommodations (itineraryId, accommodationId, accommodation
   }
 }
 
-async function deleteAccomodations (itineraryId, accommodationId,) {
+async function deleteAccommodations (itineraryId, accommodationId,) {
   try {
     const res = await fetch (`${BASE_URL}/${itineraryId}/accomodations/${accommodationId}`, {
       method: "DELETE",
@@ -158,5 +158,5 @@ export {
   createAccommodation,
   updateFlight,
   updateAccommodations,
-  deleteAccomodations,
+  deleteAccommodations,
 };
