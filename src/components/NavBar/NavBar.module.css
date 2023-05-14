@@ -1,13 +1,20 @@
+
 .container{
   display: flex;
   flex-direction: row;
   background-color: #567189;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .linkContainer{
   display: flex;
   list-style: none;
   width: 100%;
   justify-content: space-between;
+  padding: 16px 16px 16px 0px;
 }
 .links{
   display: flex;
@@ -21,5 +28,9 @@ a, a:visited{
   color: #f8f4ea;
 }
 li{
-  margin-left: 20px;
+  margin-left: 10px;
+}
+.logo{
+  width: 50px;
+  margin-left: 10px;
 }
