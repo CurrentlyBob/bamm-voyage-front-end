@@ -64,11 +64,10 @@ const NewFlight = (props) => {
               />
               <label htmlFor="roundtrip">Roundtrip?</label>
               <input 
-                type="boolean" 
+                type="checkbox" 
                 name="roundtrip"
                 id="roundtrip-input"
                 value={formData.roundtrip}
-                placeholder="true"
                 onChange={handleChange}
               />
               <label htmlFor="departureAirport">Departure Airport</label>
