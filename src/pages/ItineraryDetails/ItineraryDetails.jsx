@@ -84,12 +84,12 @@ const ItineraryDetails = (props) => {
       </div>
     }
       <section className={styles.flightSection}>
-        <h2>Flights</h2>
+        <h2 className={styles.flightTitle}>Flights</h2>
         <NewFlight handleAddFlight={handleAddFlight}/>
         <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
       </section>
       <section className={styles.accommodationSection}>
-        <h2>Accommodations</h2>
+        <h2 className={styles.accommodationtTitle}>Accommodations</h2>
         <Link to={`/itineraries/${itineraryId}/accommodations`} state={itinerary}>
           <button>Add Accommodation</button>
         </Link>
