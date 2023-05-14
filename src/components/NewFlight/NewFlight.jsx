@@ -37,6 +37,7 @@ const NewFlight = (props) => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
+      <h2>Flight</h2>
       <label htmlFor="airline-input">Airline</label>
           <input 
             required
