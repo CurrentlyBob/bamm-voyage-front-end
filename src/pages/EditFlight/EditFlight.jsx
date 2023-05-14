@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import * as itineraryService from "../../services/itineraryService";
 import { useState } from "react";
 import styles from './EditFlight.module.css'
+import { subtractOneDay } from "../../DateUtility/DateUtility";
 
 const EditFlight = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const EditFlight = () => {
         type="date"
         name="departureDate"
         id="departureDate-input"
-        value={formData.departureDate ? formData.departureDate.slice(0, 10) : ''}
+        value={formData.departureDate ? subtractOneDay(formData.departureDate) : ''}
         onChange={handleChange}
       />
       <label htmlFor="arrivalAirport">Arrival Airport</label>
@@ -71,7 +72,7 @@ const EditFlight = () => {
         type="date"
         name="arrivalDate"
         id="arrivalDate-input"
-        value={formData.arrivalDate ? formData.arrivalDate.slice(0, 10) : ''}
+        value={formData.arrivalDate ? subtractOneDay(formData.arrivalDate) : ''}
         onChange={handleChange}
       />
       <label htmlFor="recordLocator">Record Locator</label>

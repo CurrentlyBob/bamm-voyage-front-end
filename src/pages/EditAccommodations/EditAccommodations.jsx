@@ -4,7 +4,7 @@ import styles from './EditAccommodations.module.css'
 
 // Services
 import * as itineraryService from '../../services/itineraryService'
-import { subtractOneDay } from "../../DateConversion/DateConversion";
+import { subtractOneDay } from "../../DateUtility/DateUtility";
 
 const EditAccommodation = () => {
     const navigate = useNavigate()
