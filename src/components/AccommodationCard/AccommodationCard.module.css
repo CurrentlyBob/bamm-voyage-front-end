@@ -1,22 +1,13 @@
-.flightContainer{
+.title{
   display: flex;
-  justify-content: space-evenly;
-  border-bottom: 1px solid #567189;
-  margin-bottom: 0;
-  /* background-color: red; */
-}
-.flightTitle{
-  display: flex;
-  width: 40%;
   justify-content: space-between;
+  border-bottom: 1px solid #567189;
+  padding: 0 20px;
 }
-.flightCost{
+.subtitle{
   display: flex;
-  width: 60%;
-  justify-content:right;
-}
-h2{
-  margin-bottom: 0;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 .table{
   margin-top: 20px;
@@ -29,7 +20,6 @@ h2{
   border: 1px solid rgb(189, 189, 189);
   padding: 15px 10px;
 }
-
 .button{
   margin-top: 0;
 }

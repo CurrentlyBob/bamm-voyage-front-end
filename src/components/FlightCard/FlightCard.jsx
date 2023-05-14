@@ -37,11 +37,11 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
             <td className={styles.td}>{flight.arrivalAirport}</td>
             <td className={styles.td}>
               <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
-              <button className={styles.editButton}>
+              <button className={styles.button}>
                 Edit
               </button>
                 </Link>
-                <button className={styles.editButton} onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
+                <button className={styles.button} onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
                   Delete
                 </button>
             </td>
