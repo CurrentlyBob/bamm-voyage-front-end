@@ -30,6 +30,12 @@ const ItineraryDetails = (props) => {
     const newFlight = await itineraryService.createFlight(itineraryId, flightFormData)
     setItinerary({ ...itinerary, flights: [...itinerary.flights, newFlight] })
   }
+
+  const handleDeleteFlight = async (itineraryId, flightId) => {
+    await itineraryService.deleteFlight(itineraryId, flightId)
+    setItinerary({...itinerary, flights: itinerary.flights.filter((f) => f._id !== flightId)})
+  }
+
   const handleAddAccommodation = async (accommodationFormData) => {
     const newAccommodation = await itineraryService.createAccommodation(itineraryId, accommodationFormData)
     setItinerary({ ...itinerary, accommodations: [...itinerary.accommodations, newAccommodation] })
@@ -65,7 +71,7 @@ const ItineraryDetails = (props) => {
       <section className={styles.flightSection}>
         <h2>Flights</h2>
         <NewFlight handleAddFlight={handleAddFlight}/>
-        <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} />
+        <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
       </section>
       <section className={styles.accommodationSection}>
         <h2>Accommodations</h2>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from './FlightCard.module.css'
 
 
-const FlightCard = ({ flight, itineraryId }) => {
+const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
   return (
     <>
       <div className={styles.flightContainer}>
@@ -40,6 +40,9 @@ const FlightCard = ({ flight, itineraryId }) => {
                 Edit
               </button>
                 </Link>
+                <button onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
+                  Delete
+                </button>
             </td>
           </tr>
         </tbody>

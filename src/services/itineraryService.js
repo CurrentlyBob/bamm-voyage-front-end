@@ -118,6 +118,8 @@ async function updateFlight (itineraryId, flightId, flightFormData) {
   }
 }
 
+
+
 async function updateAccommodations (itineraryId, accommodationId, accommodationFormData)  {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
@@ -134,7 +136,7 @@ async function updateAccommodations (itineraryId, accommodationId, accommodation
   }
 }
 
-async function deleteAccommodations (itineraryId, accommodationId,) {
+async function deleteAccommodations (itineraryId, accommodationId) {
   try {
     const res = await fetch (`${BASE_URL}/${itineraryId}/accomodations/${accommodationId}`, {
       method: "DELETE",
@@ -147,6 +149,18 @@ async function deleteAccommodations (itineraryId, accommodationId,) {
   }
 }
 
+async function deleteFlight(itineraryId, flightId) {
+  try{
+    const res = await fetch (`${BASE_URL}/${itineraryId}/flights/${flightId}`, {
+    method: "Delete",
+    headers: {
+      "Authorization": `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error){
+    console.log(error)
+  }
+}
 
 export { 
   index, 
@@ -159,4 +173,5 @@ export {
   updateFlight,
   updateAccommodations,
   deleteAccommodations,
+  deleteFlight,
 };

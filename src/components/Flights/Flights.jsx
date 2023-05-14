@@ -11,6 +11,7 @@ const Flights = (props) => {
           flight={flight}
           user={props.user}
           itineraryId={props.itineraryId}
+          handleDeleteFlight={props.handleDeleteFlight}
         />
       ))}
     </>
