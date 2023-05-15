@@ -25,7 +25,7 @@ const ItineraryCard = (props) => {
               </>
               :
               <>
-                <img src='public/assets/images/travel-pic.png' alt="travel pic" className={styles.pic}/>
+                <img src='public/assets/images/defaultpic.jpg' alt="travel pic" className={styles.pic}/>
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
                   <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMM YYYY") }</h4>
