@@ -178,9 +178,17 @@ async function createActivity (itineraryId, activityFormData) {
   }
 }
 
-async function updateActivity {
+async function updateActivity (itineraryId, activityId, activityFormData) {
   try {
-    
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities/${activityId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(activityFormData)
+    })
+    return res.json()
   } catch (error) {
     console.log(error)
   }
