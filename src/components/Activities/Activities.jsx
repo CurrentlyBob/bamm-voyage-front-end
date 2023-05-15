@@ -11,7 +11,7 @@ const Activities = (props) => {
           activity={activity}
           user={props.user}
           itineraryId={props.itineraryId}
-          handleDeleteAccommodation={props.handleDeleteActivity}
+          handleDeleteActivity={props.handleDeleteActivity}
         />
       ))}
     </>

@@ -4,6 +4,7 @@ import moment from "moment";
 import styles from "./ActivityCard.module.css";
 
 const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
+  console.log(activity)
   return (
     <>
       <div className={styles.title}>
@@ -31,7 +32,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
             <td className={styles.td}>
               <>
                 <Link
-                  to={`/itineraries/${itineraryId}activities/${activityId}}`}
+                  to={`/itineraries/${itineraryId}/activities/${activityId}}`}
                   state={activity}
                 >
                   <button className={styles.button}>Edit</button>

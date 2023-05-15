@@ -74,6 +74,19 @@
   font-size: 20px;
 }
 
+.activitytTitle{
+  background-color: #7b8fa1;
+  color: rgb(255, 255, 255);
+  border: 3px solid #567189;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+.activitySection{
+  width: 95%;
+  margin-top: 20px;
+}
+
 .formData {
   display: flex;
   flex-direction: row;
