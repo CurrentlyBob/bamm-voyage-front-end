@@ -14,6 +14,7 @@ import NewFlight from "../../components/NewFlight/NewFlight";
 import Flights from "../../components/Flights/Flights";
 import Accommodations from "../../components/Accommodations/Accommodations";
 import NewAccommodation from "../../components/NewAccommodation/NewAccommodation";
+import TotalCost from "../../components/TotalCost/TotalCost";
 
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
@@ -58,7 +59,9 @@ const ItineraryDetails = (props) => {
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget}</h3>
         {/* <h3 className={(itinerary.cost>itinerary.budget) ? "over" : "under"}>Actual Cost: ${itinerary.cost}</h3> */}
-        <h3>Actual Cost: ${itinerary.cost}</h3>
+        <h3>Actual Cost: $
+          <TotalCost itinerary={itinerary}/>
+        </h3>
       </div>
       <table className={styles.table}>
         <thead>
