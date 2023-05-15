@@ -1,0 +1,30 @@
+.title{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #567189;
+    padding: 0 20px;
+  }
+  .subtitle{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .table{
+    margin-top: 20px;
+    table-layout: auto;
+    border-collapse:collapse;
+    text-align: left;
+    width: 100%;
+  }
+  .th, .td{
+    border: 1px solid rgb(189, 189, 189);
+    padding: 15px 10px;
+  }
+  .button{
+    margin-top: 0;
+  }
+  
+  .accomodationUrl, .accomodationUrl:visited  {
+    color: #567189;
+    text-decoration: none;
+  }
