@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom"
 
 //css
 import styles from './EditItinerary.module.css'
-import { subtractOneDay } from "../../DateUtility/DateUtility"
+
 
 const EditItinerary = (props) => {
   const { state } = useLocation()
@@ -46,7 +46,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="startDate"
               id="startDate-input"
-              value={formData.startDate ? subtractOneDay(formData.startDate) : ''}
+              value={formData.startDate ? formData.startDate : ''}
               onChange={handleChange}
             />
             <label htmlFor="endDate">End Date</label>
@@ -54,7 +54,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="endDate"
               id="endDate-input"
-              value={formData.endDate ? subtractOneDay(formData.endDate) : ''}
+              value={formData.endDate ? formData.endDate : ''}
               onChange={handleChange}
             />
             <label htmlFor="city">City</label>
