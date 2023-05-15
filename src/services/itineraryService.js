@@ -138,7 +138,7 @@ async function updateAccommodations (itineraryId, accommodationId, accommodation
 
 async function deleteAccommodations (itineraryId, accommodationId) {
   try {
-    const res = await fetch (`${BASE_URL}/${itineraryId}/accomodations/${accommodationId}`, {
+    const res = await fetch (`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${tokenService.getToken()}`}
