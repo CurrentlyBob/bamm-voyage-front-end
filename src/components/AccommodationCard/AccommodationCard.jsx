@@ -13,7 +13,7 @@ const AccommodationCard = ({
       <div className={styles.title}>
         <h2>{accommodation.type}</h2>
         <h2>{accommodation.name}</h2>
-        <h2>{accommodation.cost}</h2>
+        <h2>${accommodation.cost}</h2>
       </div>
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
