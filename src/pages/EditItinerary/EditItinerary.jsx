@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
+import moment from "moment"
 
 //css
 import styles from './EditItinerary.module.css'
@@ -55,7 +56,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="startDate"
               id="startDate-input"
-              value={formData.startDate ? formData.startDate : ''}
+              value={moment.utc(formData.startDate).format('yyyy-MM-DD')}
               onChange={handleChange}
             />
             <label htmlFor="endDate">End Date</label>
@@ -63,7 +64,7 @@ const EditItinerary = (props) => {
               type="date" 
               name="endDate"
               id="endDate-input"
-              value={formData.endDate ? formData.endDate : ''}
+              value={moment.utc(formData.endDate).format('yyyy-MM-DD')}
               onChange={handleChange}
             />
             <label htmlFor="city">City</label>
