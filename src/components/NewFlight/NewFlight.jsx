@@ -1,6 +1,9 @@
 // npm imports
 import { useState } from 'react'
 import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+
 
 // css
 import styles from './NewFlight.module.css'
@@ -46,9 +49,6 @@ const NewFlight = (props) => {
 
   return (
     <>
-      <Switch 
-      onChange={toggle}
-      />
       { showForm 
       ? 
         <form className={styles.container} onSubmit={handleSubmit}>
@@ -123,8 +123,17 @@ const NewFlight = (props) => {
               <button type="submit">SUBMIT</button>
         </form>
       :
-        <h4>Add Flight</h4>
+        <></>
       }
+      <FormGroup className={styles.toggleContainer}>
+        <FormControlLabel 
+        control={ <Switch 
+          onChange={toggle}
+          className={styles.toggle}
+        />} 
+        label={`${showForm? '' : 'Add Flight'}`}
+        labelPlacement="top" />
+      </FormGroup>
     </>
   )
 }
