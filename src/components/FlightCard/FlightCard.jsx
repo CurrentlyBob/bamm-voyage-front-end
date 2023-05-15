@@ -35,7 +35,6 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
             <th className={styles.th}>Departure Airport</th>
             <th className={styles.th}>Arrival Date</th>
             <th className={styles.th}>Arrival Airport</th>
-            <th className={styles.th}></th>
           </tr>
         </thead>
         <tbody>
@@ -44,16 +43,6 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
             <td className={styles.td}>{flight.departureAirport}</td>
             <td className={styles.td}>{moment(flight.arrivalDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
             <td className={styles.td}>{flight.arrivalAirport}</td>
-            <td className={styles.td}>
-              <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
-              <button className={styles.button}>
-                Edit
-              </button>
-                </Link>
-                <button className={styles.button} onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
-                  Delete
-                </button>
-            </td>
           </tr>
         </tbody>
       </table>
