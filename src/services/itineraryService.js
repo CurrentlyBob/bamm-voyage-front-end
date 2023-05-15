@@ -118,8 +118,6 @@ async function updateFlight (itineraryId, flightId, flightFormData) {
   }
 }
 
-
-
 async function updateAccommodations (itineraryId, accommodationId, accommodationFormData)  {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
@@ -162,6 +160,56 @@ async function deleteFlight(itineraryId, flightId) {
   }
 }
 
+async function createActivity (itineraryId, activityFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(activityFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function updateActivity (itineraryId, activityId, activityFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities/${activityId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(activityFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+async function deleteActivity (itineraryId, activityId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities/${activityId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+
 export { 
   index, 
   create, 
@@ -174,4 +222,7 @@ export {
   updateAccommodations,
   deleteAccommodations,
   deleteFlight,
+  createActivity,
+  updateActivity,
+  deleteActivity,
 };
