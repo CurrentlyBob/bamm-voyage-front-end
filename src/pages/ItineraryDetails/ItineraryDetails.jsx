@@ -17,6 +17,7 @@ import NewAccommodation from "../../components/NewAccommodation/NewAccommodation
 import TotalCost from "../../components/TotalCost/TotalCost";
 import NewActivity from "../../components/NewActivity/NewActivity";
 import Activities from "../../components/Activities/Activities";
+import ItineraryKebabMenu from "../../components/KebabMenus/ItineraryKebabMenu";
 
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
@@ -66,6 +67,15 @@ const ItineraryDetails = (props) => {
   return (
     <main className={styles.container}>
       <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
+      <div>
+        {itinerary.owner._id === props.user.profile._id &&
+            <ItineraryKebabMenu
+              itinerary={itinerary}
+              itineraryId={itineraryId}
+              handleDeleteItinerary={props.handleDeleteItinerary}
+            />
+        }
+      </div>
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget}</h3>
         <TotalCost itinerary={itinerary}/>
@@ -86,16 +96,6 @@ const ItineraryDetails = (props) => {
           </tr>
         </tbody>
       </table>
-      {itinerary.owner._id === props.user.profile._id &&
-      <div className={styles.buttons}>
-        <Link to={`/itineraries/${itineraryId}/edit`} state={itinerary}>
-          <button>Edit</button>
-        </Link>
-        <button onClick={() => props.handleDeleteItinerary(itineraryId)}>
-          Delete
-        </button>
-      </div>
-    }
       <section className={styles.flightSection}>
         <h2 className={styles.flightTitle}>Flights</h2>
         <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
