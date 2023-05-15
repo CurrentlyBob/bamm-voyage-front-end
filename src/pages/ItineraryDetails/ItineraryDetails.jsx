@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import moment from "moment"
-import Switch from '@mui/material/Switch'
 
 // service
 import * as itineraryService from "../../services/itineraryService";
@@ -52,11 +51,13 @@ const ItineraryDetails = (props) => {
 
   if (!itinerary) return <h1>Loading itineraries...</h1>;
 
+
   return (
     <main className={styles.container}>
       <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget}</h3>
+        {/* <h3 className={(itinerary.cost>itinerary.budget) ? "over" : "under"}>Actual Cost: ${itinerary.cost}</h3> */}
         <h3>Actual Cost: ${itinerary.cost}</h3>
       </div>
       <table className={styles.table}>
@@ -91,9 +92,6 @@ const ItineraryDetails = (props) => {
       </section>
       <section className={styles.accommodationSection}>
         <h2 className={styles.accommodationtTitle}>Accommodations</h2>
-        <Link to={`/itineraries/${itineraryId}/accommodations`} state={itinerary}>
-          <button>Add Accommodation</button>
-        </Link>
         <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
       </section>
       <div className={styles.formData}>
