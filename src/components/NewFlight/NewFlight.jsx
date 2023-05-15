@@ -51,7 +51,7 @@ const NewFlight = (props) => {
     <>
       { showForm 
       ? 
-        <form className={styles.container} onSubmit={handleSubmit}>
+        <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
           <h2>Flight</h2>
           <label htmlFor="airline-input">Airline</label>
               <input 
