@@ -2,7 +2,10 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import * as itineraryService from "../../services/itineraryService";
 import { useState } from "react";
+import moment from "moment";
+
 import styles from './EditFlight.module.css'
+
 
 
 const EditFlight = () => {
@@ -58,7 +61,7 @@ const EditFlight = () => {
         type="datetime-local"
         name="departureDate"
         id="departureDate-input"
-        value={formData.departureDate ? formData.departureDate : ''}
+        value={moment(formData.departureDate).format('yyyy-MM-DD hh:mm')}
         onChange={handleChange}
       />
       <label htmlFor="arrivalAirport">Arrival Airport</label>
@@ -75,7 +78,7 @@ const EditFlight = () => {
         type="datetime-local"
         name="arrivalDate"
         id="arrivalDate-input"
-        value={formData.arrivalDate ? formData.arrivalDate : ''}
+        value={moment(formData.arrivalDate).format('yyyy-MM-DD hh:mm')}
         onChange={handleChange}
       />
       <label htmlFor="recordLocator">Record Locator</label>
