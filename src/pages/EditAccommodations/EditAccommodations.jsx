@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom"
+import moment from "moment";
+
 import styles from './EditAccommodations.module.css'
 
 // Services
@@ -52,7 +54,7 @@ const EditAccommodation = () => {
         type="datetime-local" 
         name="checkInDate"
         id="checkInDate-input"
-        value={formData.checkInDate ? formData.checkInDate : ''}
+        value={moment(formData.checkInDate).format('yyyy-MM-DD hh:mm')}
         onChange={handleChange}
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
@@ -60,7 +62,7 @@ const EditAccommodation = () => {
         type="datetime-local" 
         name="checkOutDate"
         id="checkOutDate-input"
-        value={formData.checkOutDate ? formData.checkOutDate : ''}
+        value={moment(formData.checkOutDate).format('yyyy-MM-DD hh:mm')}
         onChange={handleChange}
       />
       <label htmlFor="address">Address</label>
