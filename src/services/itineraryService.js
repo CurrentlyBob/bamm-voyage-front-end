@@ -162,9 +162,17 @@ async function deleteFlight(itineraryId, flightId) {
   }
 }
 
-async function createActivity {
+async function createActivity (itineraryId, activityFormData) {
   try {
-    
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(activityFormData)
+    })
+    return res.json()
   } catch (error) {
     console.log(error)
   }
