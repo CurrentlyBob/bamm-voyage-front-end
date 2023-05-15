@@ -50,14 +50,15 @@ const NewFlight = (props) => {
   return (
     <>
     <div>
-    <FormGroup className={styles.toggleContainer}>
+    <FormGroup className={styles.toggleFormContainer}>
       <FormControlLabel 
       control={ <Switch 
         onChange={toggle}
         className={styles.toggle}
       />} 
       label={`${showForm? '' : 'Add Flight'}`}
-      labelPlacement="top" />
+      labelPlacement="top"
+      className={styles.toggleContainer} />
     </FormGroup>
     { showForm 
     ? 
@@ -73,6 +74,7 @@ const NewFlight = (props) => {
               value={formData.airline}
               placeholder="Airline Name"
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="roundtrip">Roundtrip?</label>
             <input 
@@ -81,6 +83,7 @@ const NewFlight = (props) => {
               id="roundtrip-input"
               checked={formData.roundtrip}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="departureAirport">Departure Airport</label>
             <input 
@@ -91,6 +94,7 @@ const NewFlight = (props) => {
               autoComplete='off'
               value={formData.departureAirport}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="departureDate">Departure Date</label>
             <input 
@@ -99,6 +103,7 @@ const NewFlight = (props) => {
               id="departureDate-input"
               value={formData.departureDate}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="arrivalAirport">Arrival Airport</label>
             <input 
@@ -108,6 +113,7 @@ const NewFlight = (props) => {
               autoComplete='off'
               value={formData.arrivalAirport}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="arrivalDate">Arrival Date</label>
             <input 
@@ -116,6 +122,7 @@ const NewFlight = (props) => {
               id="arrivalDate-input"
               value={formData.arrivalDate}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="recordLocator">Record Locator</label>
             <input 
@@ -125,6 +132,7 @@ const NewFlight = (props) => {
               autoComplete='off'
               value={formData.recordLocator}
               onChange={handleChange}
+              className={styles.input}
             />
             <label htmlFor="cost">Cost</label>
             <input 
@@ -134,6 +142,7 @@ const NewFlight = (props) => {
               autoComplete='off'
               value={formData.cost}
               onChange={handleChange}
+              className={styles.input}
             />
             <button type="submit">SUBMIT</button>
       </form>

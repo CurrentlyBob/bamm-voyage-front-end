@@ -1,12 +1,19 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
 }
 .hidden {
   display: none;
 }
 
-.toggleContainer {
-  width: 200px;
+.toggleFormContainer {
+  display: flex;
+  justify-content: center;
+}
+.toggleContainer{
+  width: 300px;
+}
+.input{
+  margin: 0;
 }

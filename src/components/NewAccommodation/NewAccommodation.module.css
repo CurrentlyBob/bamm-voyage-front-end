@@ -8,6 +8,18 @@
   display: none;
 }
 
-.toggleContainer {
-  width: 200px;
+.toggleFormContainer {
+  display: flex;
+  justify-content: center;
+}
+.toggleContainer{
+  width: 300px;
+}
+.input{
+  margin: 0;
+}
+.select{
+  width: 300px;
+  padding: 7px;
+  font-size: 14px;
 }
