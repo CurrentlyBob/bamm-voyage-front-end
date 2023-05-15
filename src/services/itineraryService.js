@@ -162,6 +162,34 @@ async function deleteFlight(itineraryId, flightId) {
   }
 }
 
+async function createActivity {
+  try {
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function updateActivity {
+  try {
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+async function deleteActivity {
+  try {
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+
 export { 
   index, 
   create, 
@@ -174,4 +202,7 @@ export {
   updateAccommodations,
   deleteAccommodations,
   deleteFlight,
+  createActivity,
+  updateActivity,
+  deleteActivity,
 };
