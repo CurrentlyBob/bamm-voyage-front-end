@@ -17,7 +17,9 @@ const AccommodationCard = ({
       </div>
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
-        <p>{accommodation.website}</p>
+        <p id="url">
+          <a className={styles.accomodationUrl} href={accommodation.website} target='_blank'>{accommodation.website}</a>
+        </p>
       </div>
       <table className={styles.table}>
         <thead>

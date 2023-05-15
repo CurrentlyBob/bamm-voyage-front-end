@@ -23,3 +23,8 @@
 .button{
   margin-top: 0;
 }
+
+.accomodationUrl, .accomodationUrl:visited  {
+  color: #567189;
+  text-decoration: none;
+}
