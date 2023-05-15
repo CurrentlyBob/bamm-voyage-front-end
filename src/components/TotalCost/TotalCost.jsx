@@ -24,7 +24,7 @@ const TotalCost = ({itinerary}) => {
 
   return (
     <>
-        <h3 className={totalItinerary > itinerary.budget && styles.red}>
+        <h3 className={totalItinerary > itinerary.budget ? styles.red : styles.normal}>
           Actual Cost: ${totalItinerary}
         </h3>
     </>

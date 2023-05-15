@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import moment from 'moment'
 
+import KebabMenu from "../KebabMenu/KebabMenu";
 import styles from './AccommodationCard.module.css'
 
 const AccommodationCard = ({
@@ -18,7 +19,7 @@ const AccommodationCard = ({
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
         <p id="url">
-          <a className={styles.accomodationUrl} href={accommodation.website} target='_blank'>{accommodation.website}</a>
+          <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">{accommodation.website}</a>
         </p>
       </div>
       <table className={styles.table}>
