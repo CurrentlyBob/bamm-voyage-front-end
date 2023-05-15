@@ -1,7 +1,8 @@
 // npm imports
 import { useEffect, useState } from 'react'
 import Switch from '@mui/material/Switch'
-
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 // css
 import styles from './NewAccommodation.module.css'
@@ -47,9 +48,6 @@ const NewAccommodation = (props) => {
 
   return ( 
     <>
-      <Switch 
-        onChange={toggle}
-      />
       { showForm 
         ? 
         <form className={styles.container} onSubmit={handleSubmit}>
@@ -122,8 +120,17 @@ const NewAccommodation = (props) => {
           <button type="submit">SUBMIT</button>
         </form>
       :
-        <h4>Add Accommodation</h4>
+        <></>
       }
+      <FormGroup>
+        <FormControlLabel 
+        control={ <Switch 
+          onChange={toggle}
+          className={styles.toggle}
+        />} 
+        label={`${showForm? '' : 'Add Accommodation'}`}
+        labelPlacement="top" />
+      </FormGroup>
     </>
   )
 }
