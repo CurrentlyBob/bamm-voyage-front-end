@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import moment from "moment"
 import styles from './FlightCard.module.css'
 
+import FlightKebabMenu from "../KebabMenus/FlightKebabMenu";
+
 
 const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
   return (
@@ -18,6 +20,13 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
         <h2 className={styles.flightCost}>
           ${flight.cost}
         </h2>
+        <div>
+          <FlightKebabMenu 
+            flight={flight}
+            itineraryId={itineraryId}
+            handleDeleteFlight={handleDeleteFlight}
+          />
+        </div>
       </div>
       <table className={styles.table}>
         <thead>

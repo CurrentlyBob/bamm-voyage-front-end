@@ -8,7 +8,7 @@ import MoreVert from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-const KebabMenu = ({
+const AccommodationKebabMenu = ({
   accommodation,
   itineraryId,
   handleDeleteAccommodation,
@@ -61,4 +61,4 @@ const KebabMenu = ({
   )
 }
 
-export default KebabMenu
+export default AccommodationKebabMenu
