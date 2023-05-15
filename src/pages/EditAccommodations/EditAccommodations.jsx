@@ -4,7 +4,7 @@ import styles from './EditAccommodations.module.css'
 
 // Services
 import * as itineraryService from '../../services/itineraryService'
-import { subtractOneDay } from "../../DateUtility/DateUtility";
+
 
 const EditAccommodation = () => {
     const navigate = useNavigate()
@@ -52,7 +52,7 @@ const EditAccommodation = () => {
         type="datetime-local" 
         name="checkInDate"
         id="checkInDate-input"
-        value={formData.checkInDate ? subtractOneDay(formData.checkInDate) : ''}
+        value={formData.checkInDate ? formData.checkInDate : ''}
         onChange={handleChange}
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
@@ -60,7 +60,7 @@ const EditAccommodation = () => {
         type="datetime-local" 
         name="checkOutDate"
         id="checkOutDate-input"
-        value={formData.checkOutDate ? subtractOneDay(formData.checkOutDate) : ''}
+        value={formData.checkOutDate ? formData.checkOutDate : ''}
         onChange={handleChange}
       />
       <label htmlFor="address">Address</label>
