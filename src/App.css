@@ -31,4 +31,7 @@ nav > ul {
   
 }
 
-
+#root{
+  display: flex;
+  justify-content: center;
+}
