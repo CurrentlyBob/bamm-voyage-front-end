@@ -48,6 +48,11 @@ const ItineraryDetails = (props) => {
     setItinerary({...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId)})
   }
 
+  const handleAddActivity = async (activityFormData) => {
+    const newActivity = await itineraryService.createActivity(itineraryId, activityFormData)
+    setItinerary({ ...itinerary, activities: [...itinerary.activities, newActivity] })
+  }
+
 
   if (!itinerary) return <h1 className={styles.loading}>Loading itineraries...</h1>;
 
