@@ -19,6 +19,7 @@ const ItineraryCard = (props) => {
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
                   <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
+                  <h4>{moment(props.itinerary.startDate).fromNow()}</h4>
                 </div>
               </>
               :
@@ -28,6 +29,7 @@ const ItineraryCard = (props) => {
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
                   <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
+                  <h4>{moment(props.itinerary.startDate).fromNow()}</h4>
                 </div>
               </>
             }
