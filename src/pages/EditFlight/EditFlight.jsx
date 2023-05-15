@@ -61,7 +61,7 @@ const EditFlight = () => {
         type="datetime-local"
         name="departureDate"
         id="departureDate-input"
-        value={moment(formData.departureDate).format('yyyy-MM-DD hh:mm')}
+        value={moment(formData.departureDate).format('yyyy-MM-DD HH:mm')}
         onChange={handleChange}
       />
       <label htmlFor="arrivalAirport">Arrival Airport</label>
@@ -78,7 +78,7 @@ const EditFlight = () => {
         type="datetime-local"
         name="arrivalDate"
         id="arrivalDate-input"
-        value={moment(formData.arrivalDate).format('yyyy-MM-DD hh:mm')}
+        value={moment(formData.arrivalDate).format('yyyy-MM-DD HH:mm')}
         onChange={handleChange}
       />
       <label htmlFor="recordLocator">Record Locator</label>
