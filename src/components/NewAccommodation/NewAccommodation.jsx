@@ -47,12 +47,13 @@ const NewAccommodation = (props) => {
 
   return (
     <>
-      <div className={styles.toggleContainer}>
-        <FormGroup>
+      <div>
+        <FormGroup className={styles.toggleFormContainer}>
           <FormControlLabel
             control={<Switch onChange={toggle} className={styles.toggle} />}
             label={`${showForm ? "" : "Add Accommodation"}`}
             labelPlacement="top"
+            className={styles.toggleContainer}
           />
         </FormGroup>
       {showForm ? (
@@ -67,6 +68,7 @@ const NewAccommodation = (props) => {
             id="type-input"
             value={formData.type}
             onChange={handleChange}
+            className={styles.select}
             >
             <option value="Hotel">Hotel</option>
             <option value="Cruise">Cruise</option>
@@ -81,6 +83,7 @@ const NewAccommodation = (props) => {
             value={formData.name}
             autoComplete="off"
             onChange={handleChange}
+            className={styles.input}
             />
           <label htmlFor="checkInDate">CheckIn Date</label>
           <input
@@ -90,6 +93,7 @@ const NewAccommodation = (props) => {
             id="checkInDate-input"
             value={formData.checkInDate}
             onChange={handleChange}
+            className={styles.input}
             />
           <label htmlFor="checkOutDate">CheckOut Date</label>
           <input
@@ -98,6 +102,7 @@ const NewAccommodation = (props) => {
             id="checkOutDate-input"
             value={formData.checkOutDate}
             onChange={handleChange}
+            className={styles.input}
             />
           <label htmlFor="address">Address</label>
           <input
@@ -107,6 +112,7 @@ const NewAccommodation = (props) => {
             value={formData.address}
             autoComplete="off"
             onChange={handleChange}
+            className={styles.input}
             />
           <label htmlFor="website">Website</label>
           <input
@@ -116,6 +122,7 @@ const NewAccommodation = (props) => {
             value={formData.website}
             autoComplete="off"
             onChange={handleChange}
+            className={styles.input}
             />
           <label htmlFor="cost">Cost</label>
           <input
@@ -125,6 +132,7 @@ const NewAccommodation = (props) => {
             value={formData.cost}
             autoComplete="off"
             onChange={handleChange}
+            className={styles.input}
             />
           <button type="submit">SUBMIT</button>
         </form>
