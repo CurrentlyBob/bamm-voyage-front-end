@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import moment from "moment"
 import styles from './FlightCard.module.css'
 
