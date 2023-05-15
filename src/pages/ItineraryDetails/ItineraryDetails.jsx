@@ -15,6 +15,7 @@ import Flights from "../../components/Flights/Flights";
 import Accommodations from "../../components/Accommodations/Accommodations";
 import NewAccommodation from "../../components/NewAccommodation/NewAccommodation";
 import TotalCost from "../../components/TotalCost/TotalCost";
+import NewActivity from "../../components/NewActivity/NewActivity";
 
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
@@ -100,6 +101,7 @@ const ItineraryDetails = (props) => {
       <div className={styles.formData}>
         <NewFlight handleAddFlight={handleAddFlight}/>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
+        <NewActivity handleAddActivity={handleAddActivity} />
       </div>
     </main>
   );

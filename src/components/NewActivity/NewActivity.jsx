@@ -5,7 +5,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 // css
-import styles from "./NewAccommodation.module.css";
+import styles from "./NewActivity.module.css";
 
 const NewActivity = (props) => {
   const [showForm, setShowForm] = useState(false);
