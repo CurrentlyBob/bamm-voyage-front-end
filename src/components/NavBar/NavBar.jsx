@@ -7,7 +7,7 @@ import styles from "./NavBar.module.css"
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <nav className={styles.container}>
+    <nav className={styles.navContainer}>
       <Link to='/'>
       <img className={styles.logo} src="../../../public/assets/images/logo-transparent-back.png" alt="logo"/>
       </Link>

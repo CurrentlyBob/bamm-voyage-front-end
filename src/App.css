@@ -21,13 +21,14 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a,
+/* a,
 a:visited {
   color: #f8f4ea;
-}
+} */
 
 nav > ul {
   margin: 0;
+  
 }
 
 

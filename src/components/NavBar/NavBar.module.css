@@ -1,5 +1,5 @@
 
-.container{
+.navContainer{
   display: flex;
   flex-direction: row;
   background-color: #567189;
@@ -24,7 +24,7 @@
   display: flex;
   text-align: right;
 }
-a, a:visited{
+.navContainer > a, a:visited{
   text-decoration: none;
   color: #f8f4ea;
 }
