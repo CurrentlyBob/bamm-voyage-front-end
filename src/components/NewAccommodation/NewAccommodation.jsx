@@ -47,10 +47,18 @@ const NewAccommodation = (props) => {
 
   return (
     <>
+      <div className={styles.toggleContainer}>
+        <FormGroup>
+          <FormControlLabel
+            control={<Switch onChange={toggle} className={styles.toggle} />}
+            label={`${showForm ? "" : "Add Accommodation"}`}
+            labelPlacement="top"
+          />
+        </FormGroup>
       {showForm ? (
         <form
-          className={`${styles.container} ${!showForm && styles.hidden}`}
-          onSubmit={handleSubmit}
+        className={`${styles.container} ${!showForm && styles.hidden}`}
+        onSubmit={handleSubmit}
         >
           <h2>Accommodation</h2>
           <label htmlFor="type-input">Type</label>
@@ -59,7 +67,7 @@ const NewAccommodation = (props) => {
             id="type-input"
             value={formData.type}
             onChange={handleChange}
-          >
+            >
             <option value="Hotel">Hotel</option>
             <option value="Cruise">Cruise</option>
             <option value="Airbnb">Airbnb</option>
@@ -73,7 +81,7 @@ const NewAccommodation = (props) => {
             value={formData.name}
             autoComplete="off"
             onChange={handleChange}
-          />
+            />
           <label htmlFor="checkInDate">CheckIn Date</label>
           <input
             required
@@ -82,7 +90,7 @@ const NewAccommodation = (props) => {
             id="checkInDate-input"
             value={formData.checkInDate}
             onChange={handleChange}
-          />
+            />
           <label htmlFor="checkOutDate">CheckOut Date</label>
           <input
             type="datetime-local"
@@ -90,7 +98,7 @@ const NewAccommodation = (props) => {
             id="checkOutDate-input"
             value={formData.checkOutDate}
             onChange={handleChange}
-          />
+            />
           <label htmlFor="address">Address</label>
           <input
             type="text"
@@ -99,7 +107,7 @@ const NewAccommodation = (props) => {
             value={formData.address}
             autoComplete="off"
             onChange={handleChange}
-          />
+            />
           <label htmlFor="website">Website</label>
           <input
             type="text"
@@ -108,7 +116,7 @@ const NewAccommodation = (props) => {
             value={formData.website}
             autoComplete="off"
             onChange={handleChange}
-          />
+            />
           <label htmlFor="cost">Cost</label>
           <input
             type="text"
@@ -117,21 +125,13 @@ const NewAccommodation = (props) => {
             value={formData.cost}
             autoComplete="off"
             onChange={handleChange}
-          />
+            />
           <button type="submit">SUBMIT</button>
         </form>
       ) : (
         <></>
-      )}
-      <div className={styles.toggleContainer}>
-        <FormGroup>
-          <FormControlLabel
-            control={<Switch onChange={toggle} className={styles.toggle} />}
-            label={`${showForm ? "" : "Add Accommodation"}`}
-            labelPlacement="top"
-          />
-        </FormGroup>
-      </div>
+        )}
+        </div>
     </>
   );
 };
