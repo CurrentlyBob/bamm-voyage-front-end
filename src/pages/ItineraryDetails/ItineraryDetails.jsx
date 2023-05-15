@@ -56,10 +56,7 @@ const ItineraryDetails = (props) => {
       <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget}</h3>
-        {/* <h3 className={(itinerary.cost>itinerary.budget) ? "over" : "under"}>Actual Cost: ${itinerary.cost}</h3> */}
-        <h3>Actual Cost: $
-          <TotalCost itinerary={itinerary}/>
-        </h3>
+        <TotalCost itinerary={itinerary}/>
       </div>
       <table className={styles.table}>
         <thead>
