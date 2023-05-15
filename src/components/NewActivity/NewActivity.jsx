@@ -16,7 +16,7 @@ const NewActivity = (props) => {
 
   const [formData, setFormData] = useState({
     category: "Activity",
-    activityName: "",
+    name: "",
     activityDate: "",
     activityWebsite: "",
     notes: "",
@@ -29,7 +29,7 @@ const NewActivity = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    props.handleAddAccommodation(formData);
+    props.handleAddActivity(formData);
     setFormData({
       category: "Activity",
       name: "",

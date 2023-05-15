@@ -16,6 +16,7 @@ import Accommodations from "../../components/Accommodations/Accommodations";
 import NewAccommodation from "../../components/NewAccommodation/NewAccommodation";
 import TotalCost from "../../components/TotalCost/TotalCost";
 import NewActivity from "../../components/NewActivity/NewActivity";
+import Activities from "../../components/Activities/Activities";
 
 const ItineraryDetails = (props) => {
   const { itineraryId } = useParams();
@@ -52,6 +53,11 @@ const ItineraryDetails = (props) => {
   const handleAddActivity = async (activityFormData) => {
     const newActivity = await itineraryService.createActivity(itineraryId, activityFormData)
     setItinerary({ ...itinerary, activities: [...itinerary.activities, newActivity] })
+  }
+
+  const handleDeleteActivity = async (itineraryId, activityId) => {
+    await itineraryService.deleteActivity(itineraryId, activityId)
+    setItinerary({...itinerary, activities: itinerary.activities.filter((a) => a._id !== activityId)})
   }
 
 
@@ -97,6 +103,10 @@ const ItineraryDetails = (props) => {
       <section className={styles.accommodationSection}>
         <h2 className={styles.accommodationtTitle}>Accommodations</h2>
         <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
+      </section>
+      <section className={styles.activitySection}>
+        <h2 className={styles.activityTitle}>Activities</h2>
+        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
       </section>
       <div className={styles.formData}>
         <NewFlight handleAddFlight={handleAddFlight}/>
