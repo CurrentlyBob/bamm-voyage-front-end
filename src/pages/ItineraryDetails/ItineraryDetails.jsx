@@ -69,8 +69,8 @@ const ItineraryDetails = (props) => {
         <tbody>
           <tr>
             <td className={styles.td}>{itinerary.city}, {itinerary.country}</td>
-            <td className={styles.td}>{moment(itinerary.startDate).format('ddd MMMM Do, YYYY')}</td>
-            <td className={styles.td}>{moment(itinerary.endDate).format('ddd MMMM Do YYYY')}</td>
+            <td className={styles.td}>{moment.utc(itinerary.startDate).format('ddd MMMM Do, YYYY')}</td>
+            <td className={styles.td}>{moment.utc(itinerary.endDate).format('ddd MMMM Do YYYY')}</td>
           </tr>
         </tbody>
       </table>
