@@ -28,30 +28,12 @@ const AccommodationCard = ({
           <tr>
             <th className={styles.th}>CheckIn Date</th>
             <th className={styles.th}>CheckOut Date</th>
-            <th className={styles.th}></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td className={styles.td}>{moment(accommodation.checkInDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
             <td className={styles.td}>{moment(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
-            <td className={styles.td}>
-              <>
-                <Link
-                  to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`}
-                  state={accommodation}
-                >
-                  <button className={styles.button}>Edit</button>
-                </Link>
-                <button className={styles.button}
-                  onClick={() =>
-                    handleDeleteAccommodation(itineraryId, accommodation._id)
-                  }
-                >
-                  Delete
-                </button>
-              </>
-            </td>
           </tr>
         </tbody>
       </table>
