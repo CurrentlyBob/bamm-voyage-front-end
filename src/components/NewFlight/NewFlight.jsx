@@ -16,7 +16,7 @@ const NewFlight = (props) => {
 
   const [formData, setFormData] = useState({
     airline: '',
-    roundtrip: 'true',
+    roundtrip: true,
     departureAirport: '',
     arrivalAirport: '',
     arrivalDate: '',
@@ -25,7 +25,8 @@ const NewFlight = (props) => {
   })
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value
+    setFormData({ ...formData, [evt.target.name]: value })
   }
 
   const handleSubmit = (evt) => {
@@ -33,7 +34,7 @@ const NewFlight = (props) => {
     props.handleAddFlight(formData)
     setFormData({
       airline: '',
-      roundtrip: 'true',
+      roundtrip: true,
       departureAirport: '',
       departureDate: '',
       arrivalAirport: '',
@@ -64,11 +65,10 @@ const NewFlight = (props) => {
               />
               <label htmlFor="roundtrip">Roundtrip?</label>
               <input 
-                type="boolean" 
+                type="checkbox" 
                 name="roundtrip"
                 id="roundtrip-input"
-                value={formData.roundtrip}
-                placeholder="true"
+                checked={formData.roundtrip}
                 onChange={handleChange}
               />
               <label htmlFor="departureAirport">Departure Airport</label>

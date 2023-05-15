@@ -12,7 +12,8 @@ const EditFlight = () => {
   const [formData, setFormData] = useState(state);
 
   const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    setFormData({ ...formData, [target.name]: value });
   };
 
   const handleSubmit = async (evt) => {
@@ -35,11 +36,10 @@ const EditFlight = () => {
       />
       <label htmlFor="roundtrip">Roundtrip?</label>
       <input
-        type="boolean"
+        type="checkbox"
         name="roundtrip"
         id="roundtrip-input"
-        value={formData.roundtrip}
-        placeholder="true"
+        checked={formData.roundtrip}
         onChange={handleChange}
       />
       <label htmlFor="departureAirport">Departure Airport</label>
