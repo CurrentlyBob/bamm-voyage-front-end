@@ -197,7 +197,13 @@ async function updateActivity (itineraryId, activityId, activityFormData) {
 
 async function deleteActivity {
   try {
-    
+    const res = await fetch(`${BASE_URL}/${itineraryId}/activities/${activityId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
   } catch (error) {
     console.log(error)
   }
