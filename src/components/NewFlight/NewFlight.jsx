@@ -49,97 +49,99 @@ const NewFlight = (props) => {
 
   return (
     <>
-      { showForm 
-      ? 
-        <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
-          <h2>Flight</h2>
-          <label htmlFor="airline-input">Airline</label>
-              <input 
-                required
-                type="text" 
-                name="airline"
-                id="airline-input"
-                autoComplete='off'
-                value={formData.airline}
-                placeholder="Airline Name"
-                onChange={handleChange}
-              />
-              <label htmlFor="roundtrip">Roundtrip?</label>
-              <input 
-                type="checkbox" 
-                name="roundtrip"
-                id="roundtrip-input"
-                checked={formData.roundtrip}
-                onChange={handleChange}
-              />
-              <label htmlFor="departureAirport">Departure Airport</label>
-              <input 
-                required
-                type="text" 
-                name="departureAirport"
-                id="departureAirport-input"
-                autoComplete='off'
-                value={formData.departureAirport}
-                onChange={handleChange}
-              />
-              <label htmlFor="departureDate">Departure Date</label>
-              <input 
-                type="datetime-local" 
-                name="departureDate"
-                id="departureDate-input"
-                value={formData.departureDate}
-                onChange={handleChange}
-              />
-              <label htmlFor="arrivalAirport">Arrival Airport</label>
-              <input 
-                type="text" 
-                name="arrivalAirport"
-                id="arrivalAirport-input"
-                autoComplete='off'
-                value={formData.arrivalAirport}
-                onChange={handleChange}
-              />
-              <label htmlFor="arrivalDate">Arrival Date</label>
-              <input 
-                type="datetime-local" 
-                name="arrivalDate"
-                id="arrivalDate-input"
-                value={formData.arrivalDate}
-                onChange={handleChange}
-              />
-              <label htmlFor="recordLocator">Record Locator</label>
-              <input 
-                type="text" 
-                name="recordLocator"
-                id="recordLocator-input"
-                autoComplete='off'
-                value={formData.recordLocator}
-                onChange={handleChange}
-              />
-              <label htmlFor="cost">Cost</label>
-              <input 
-                type="text" 
-                name="cost"
-                id="cost-input"
-                autoComplete='off'
-                value={formData.cost}
-                onChange={handleChange}
-              />
-              <button type="submit">SUBMIT</button>
-        </form>
-      :
-        <></>
-      }
-      <FormGroup className={styles.toggleContainer}>
-        <FormControlLabel 
-        control={ <Switch 
-          onChange={toggle}
-          className={styles.toggle}
-        />} 
-        label={`${showForm? '' : 'Add Flight'}`}
-        labelPlacement="top" />
-      </FormGroup>
-    </>
+    <div>
+    <FormGroup className={styles.toggleContainer}>
+      <FormControlLabel 
+      control={ <Switch 
+        onChange={toggle}
+        className={styles.toggle}
+      />} 
+      label={`${showForm? '' : 'Add Flight'}`}
+      labelPlacement="top" />
+    </FormGroup>
+    { showForm 
+    ? 
+      <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
+        <h2>Flight</h2>
+        <label htmlFor="airline-input">Airline</label>
+            <input 
+              required
+              type="text" 
+              name="airline"
+              id="airline-input"
+              autoComplete='off'
+              value={formData.airline}
+              placeholder="Airline Name"
+              onChange={handleChange}
+            />
+            <label htmlFor="roundtrip">Roundtrip?</label>
+            <input 
+              type="checkbox" 
+              name="roundtrip"
+              id="roundtrip-input"
+              checked={formData.roundtrip}
+              onChange={handleChange}
+            />
+            <label htmlFor="departureAirport">Departure Airport</label>
+            <input 
+              required
+              type="text" 
+              name="departureAirport"
+              id="departureAirport-input"
+              autoComplete='off'
+              value={formData.departureAirport}
+              onChange={handleChange}
+            />
+            <label htmlFor="departureDate">Departure Date</label>
+            <input 
+              type="datetime-local" 
+              name="departureDate"
+              id="departureDate-input"
+              value={formData.departureDate}
+              onChange={handleChange}
+            />
+            <label htmlFor="arrivalAirport">Arrival Airport</label>
+            <input 
+              type="text" 
+              name="arrivalAirport"
+              id="arrivalAirport-input"
+              autoComplete='off'
+              value={formData.arrivalAirport}
+              onChange={handleChange}
+            />
+            <label htmlFor="arrivalDate">Arrival Date</label>
+            <input 
+              type="datetime-local" 
+              name="arrivalDate"
+              id="arrivalDate-input"
+              value={formData.arrivalDate}
+              onChange={handleChange}
+            />
+            <label htmlFor="recordLocator">Record Locator</label>
+            <input 
+              type="text" 
+              name="recordLocator"
+              id="recordLocator-input"
+              autoComplete='off'
+              value={formData.recordLocator}
+              onChange={handleChange}
+            />
+            <label htmlFor="cost">Cost</label>
+            <input 
+              type="text" 
+              name="cost"
+              id="cost-input"
+              autoComplete='off'
+              value={formData.cost}
+              onChange={handleChange}
+            />
+            <button type="submit">SUBMIT</button>
+      </form>
+    :
+      <></>
+    }
+    </div>
+  </>
   )
 }
 
