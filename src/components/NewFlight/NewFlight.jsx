@@ -59,6 +59,7 @@ const NewFlight = (props) => {
                 type="text" 
                 name="airline"
                 id="airline-input"
+                autoComplete='off'
                 value={formData.airline}
                 placeholder="Airline Name"
                 onChange={handleChange}
@@ -77,12 +78,13 @@ const NewFlight = (props) => {
                 type="text" 
                 name="departureAirport"
                 id="departureAirport-input"
+                autoComplete='off'
                 value={formData.departureAirport}
                 onChange={handleChange}
               />
               <label htmlFor="departureDate">Departure Date</label>
               <input 
-                type="date" 
+                type="datetime-local" 
                 name="departureDate"
                 id="departureDate-input"
                 value={formData.departureDate}
@@ -93,12 +95,13 @@ const NewFlight = (props) => {
                 type="text" 
                 name="arrivalAirport"
                 id="arrivalAirport-input"
+                autoComplete='off'
                 value={formData.arrivalAirport}
                 onChange={handleChange}
               />
               <label htmlFor="arrivalDate">Arrival Date</label>
               <input 
-                type="date" 
+                type="datetime-local" 
                 name="arrivalDate"
                 id="arrivalDate-input"
                 value={formData.arrivalDate}
@@ -109,6 +112,7 @@ const NewFlight = (props) => {
                 type="text" 
                 name="recordLocator"
                 id="recordLocator-input"
+                autoComplete='off'
                 value={formData.recordLocator}
                 onChange={handleChange}
               />
@@ -117,6 +121,7 @@ const NewFlight = (props) => {
                 type="text" 
                 name="cost"
                 id="cost-input"
+                autoComplete='off'
                 value={formData.cost}
                 onChange={handleChange}
               />

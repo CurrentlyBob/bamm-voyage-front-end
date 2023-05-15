@@ -76,7 +76,7 @@ const NewAccommodation = (props) => {
           <label htmlFor="checkInDate">CheckIn Date</label>
           <input 
             required
-            type="date" 
+            type="datetime-local" 
             name="checkInDate"
             id="checkInDate-input"
             value={formData.checkInDate}
@@ -84,7 +84,7 @@ const NewAccommodation = (props) => {
           />
           <label htmlFor="checkOutDate">CheckOut Date</label>
           <input 
-            type="date" 
+            type="datetime-local" 
             name="checkOutDate"
             id="checkOutDate-input"
             value={formData.checkOutDate}

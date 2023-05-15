@@ -49,7 +49,7 @@ const EditAccommodation = () => {
       <label htmlFor="checkInDate">CheckIn Date</label>
       <input 
         required
-        type="date" 
+        type="datetime-local" 
         name="checkInDate"
         id="checkInDate-input"
         value={formData.checkInDate ? subtractOneDay(formData.checkInDate) : ''}
@@ -57,7 +57,7 @@ const EditAccommodation = () => {
       />
       <label htmlFor="checkOutDate">CheckOut Date</label>
       <input 
-        type="date" 
+        type="datetime-local" 
         name="checkOutDate"
         id="checkOutDate-input"
         value={formData.checkOutDate ? subtractOneDay(formData.checkOutDate) : ''}
