@@ -118,8 +118,6 @@ async function updateFlight (itineraryId, flightId, flightFormData) {
   }
 }
 
-
-
 async function updateAccommodations (itineraryId, accommodationId, accommodationFormData)  {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/accommodations/${accommodationId}`, {
@@ -195,7 +193,7 @@ async function updateActivity (itineraryId, activityId, activityFormData) {
 }
 
 
-async function deleteActivity {
+async function deleteActivity (itineraryId, activityId) {
   try {
     const res = await fetch(`${BASE_URL}/${itineraryId}/activities/${activityId}`, {
       method: 'DELETE',
