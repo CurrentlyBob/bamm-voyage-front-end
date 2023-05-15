@@ -31,8 +31,8 @@ const AccommodationCard = ({
         </thead>
         <tbody>
           <tr>
-            <td className={styles.td}>{moment(accommodation.checkInDate).format('ddd MMMM Do, YYYY')}</td>
-            <td className={styles.td}>{moment(accommodation.checkOutDate).format('ddd MMMM Do, YYYY')}</td>
+            <td className={styles.td}>{moment(accommodation.checkInDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+            <td className={styles.td}>{moment(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
             <td className={styles.td}>
               <>
                 <Link
