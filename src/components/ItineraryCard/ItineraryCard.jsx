@@ -14,22 +14,24 @@ const ItineraryCard = (props) => {
             {props.itinerary.imgUrl 
             ? 
               <>
-                {/* <div style={{backgroundImage: `url('${props.itinerary.imgUrl}')`}}></div> */}
                 <img src={props.itinerary.imgUrl} alt="travel pic" className={styles.pic}/>
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
-                  <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
-                  <h4>{moment(props.itinerary.startDate).fromNow()}</h4>
+                  <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMM YYYY") }</h4>
+                </div>
+                <div className={styles.overlayCountdown}>
+                  <h4 className={styles.title}>{moment(props.itinerary.startDate).fromNow()}</h4>
                 </div>
               </>
               :
               <>
-                {/* <p style={{backgroundImage: `url('public/assets/images/travel-pic.png')`}}></p> */}
                 <img src='public/assets/images/travel-pic.png' alt="travel pic" className={styles.pic}/>
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
-                  <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMMM Do, YYYY") }</h4>
-                  <h4>{moment(props.itinerary.startDate).fromNow()}</h4>
+                  <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMM YYYY") }</h4>
+                </div>
+                <div className={styles.overlayCountdown}>
+                  <h4 className={styles.title}>{moment(props.itinerary.startDate).fromNow()}</h4>
                 </div>
               </>
             }
