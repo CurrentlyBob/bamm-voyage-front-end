@@ -1,3 +1,5 @@
+import styles from './TotalCost.module.css'
+
 const TotalCost = ({itinerary}) => {
   
   const flightsArr = itinerary.flights.map(flight => (
@@ -18,9 +20,13 @@ const TotalCost = ({itinerary}) => {
       accumulator + curr.cost, 0
   )
 
+  let totalItinerary = totalFlightCost + totalAccommodationCost
+
   return (
     <>
-        {totalFlightCost + totalAccommodationCost}
+        <h3 className={totalItinerary > itinerary.budget && styles.red}>
+          Actual Cost: ${totalItinerary}
+        </h3>
     </>
   )
 }
