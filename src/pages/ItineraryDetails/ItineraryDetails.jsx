@@ -48,10 +48,8 @@ const ItineraryDetails = (props) => {
     setItinerary({...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId)})
   }
 
-  console.log(("itinerary state:", itinerary));
 
-  if (!itinerary) return <h1>Loading itineraries...</h1>;
-
+  if (!itinerary) return <h1 className={styles.loading}>Loading itineraries...</h1>;
 
   return (
     <main className={styles.container}>
