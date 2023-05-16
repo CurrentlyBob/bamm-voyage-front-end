@@ -64,10 +64,10 @@ const NavBar = ({ user, handleLogout }) => {
               placement="bottom-end"
             >
               <MenuItem onClick={handleClose}>
-                <NavLink to="/auth/change-password">Change Password</NavLink>
+                <NavLink to="/auth/change-password" className={styles.loggedIn}>Change Password</NavLink>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <NavLink to="" onClick={handleLogout}>
+                <NavLink to="" onClick={handleLogout} className={styles.loggedIn}>
                   Log Out
                 </NavLink>
               </MenuItem>

@@ -1,4 +1,3 @@
-
 .navContainer{
   display: flex;
   flex-direction: row;
@@ -38,4 +37,8 @@ li{
 
 .menuIcon{
   color: #E3D6B2;
+}
+.loggedIn, .loggedIn:visited{
+  text-decoration: none;
+  color: #567189;
 }
