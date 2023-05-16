@@ -23,16 +23,16 @@ const NavBar = ({ user, handleLogout }) => {
   };
 
   return (
-    <nav className={styles.navContainer}>
-      <Link to="/">
-        <img
-          className={styles.logo}
-          src="../../../public/assets/images/logo-transparent-back.png"
-          alt="logo"
-        />
-      </Link>
+    <>
       {user ? (
-        <>
+        <nav className={styles.navContainer}>
+          <Link to="/">
+            <img
+              className={styles.logo}
+              src="../../../public/assets/images/logo-transparent-back.png"
+              alt="logo"
+            />
+          </Link>
           <ul className={styles.linkContainer}>
             <div className={styles.links}>
               <li className={styles.li}>
@@ -64,27 +64,26 @@ const NavBar = ({ user, handleLogout }) => {
               placement="bottom-end"
             >
               <MenuItem onClick={handleClose}>
-                <NavLink to="/auth/change-password" className={styles.loggedIn}>Change Password</NavLink>
+                <NavLink to="/auth/change-password" className={styles.loggedIn}>
+                  Change Password
+                </NavLink>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <NavLink to="" onClick={handleLogout} className={styles.loggedIn}>
+                <NavLink
+                  to=""
+                  onClick={handleLogout}
+                  className={styles.loggedIn}
+                >
                   Log Out
                 </NavLink>
               </MenuItem>
             </Menu>
           </div>
-        </>
+        </nav>
       ) : (
-        <ul className={styles.linkContainer}>
-          <li>
-            <NavLink to="/auth/login">Log In</NavLink>
-          </li>
-          <li>
-            <NavLink to="/auth/signup">Sign Up</NavLink>
-          </li>
-        </ul>
+        ""
       )}
-    </nav>
+    </>
   );
 };
 
