@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import moment from "moment"
 
 // service
@@ -115,9 +115,9 @@ const ItineraryDetails = (props) => {
         <Activities itinerary={itinerary}/>
       </section> */}
       <div className={styles.formData}>
-        <NewFlight handleAddFlight={handleAddFlight}/>
-        <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
-        <NewActivity handleAddActivity={handleAddActivity} />
+        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate}/>
+        <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate}/>
+        <NewActivity handleAddActivity={handleAddActivity} itineraryStart={itinerary.startDate}/>
       </div>
     </main>
   );

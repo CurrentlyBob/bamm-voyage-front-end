@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Switch from '@mui/material/Switch'
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-
+import moment from "moment";
 
 // css
 import styles from './NewFlight.module.css'
@@ -15,14 +15,16 @@ const NewFlight = (props) => {
   const toggle = async () => {
     showForm ? setShowForm(false) : setShowForm(true)
   }
-
+  
+  const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
 
   const [formData, setFormData] = useState({
     airline: '',
     roundtrip: true,
     departureAirport: '',
+    departureDate: defaultDate,
     arrivalAirport: '',
-    arrivalDate: '',
+    arrivalDate: defaultDate,
     recordLocator: '',
     cost: '',
   })
@@ -39,9 +41,9 @@ const NewFlight = (props) => {
       airline: '',
       roundtrip: true,
       departureAirport: '',
-      departureDate: '',
+      departureDate: defaultDate,
       arrivalAirport: '',
-      arrivalDate: '',
+      arrivalDate: defaultDate,
       recordLocator: '',
       cost: '',
     })

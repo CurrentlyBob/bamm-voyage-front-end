@@ -3,6 +3,7 @@ import { useState } from "react";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import moment from "moment";
 
 
 // css
@@ -16,11 +17,13 @@ const NewAccommodation = (props) => {
     showForm ? setShowForm(false) : setShowForm(true);
   };
 
+  const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
+
   const [formData, setFormData] = useState({
     type: "Hotel",
     name: "",
-    checkInDate: "",
-    checkOutDate: "",
+    checkInDate: defaultDate,
+    checkOutDate: defaultDate,
     address: "",
     website: "",
     cost: "",
@@ -36,8 +39,8 @@ const NewAccommodation = (props) => {
     setFormData({
       type: "Hotel",
       name: "",
-      checkInDate: "",
-      checkOutDate: "",
+      checkInDate: defaultDate,
+      checkOutDate: defaultDate,
       address: "",
       website: "",
       cost: "",
