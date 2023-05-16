@@ -110,7 +110,7 @@ const ItineraryDetails = (props) => {
       </section>
       <div className={styles.formData}>
         <NewFlight handleAddFlight={handleAddFlight}/>
-        <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>
+        <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate}/>
         <NewActivity handleAddActivity={handleAddActivity} />
       </div>
     </main>
