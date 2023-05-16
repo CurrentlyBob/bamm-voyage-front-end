@@ -23,12 +23,16 @@ const Landing = ({ user }) => {
               est soluta harum corporis libero!
             </h3>
             <div className={styles.loggedOutButtonContainer}>
-              <button className={styles.landingButton}>
-                <NavLink to="/auth/login">Log In</NavLink>
-              </button>
-              <button className={styles.landingButton}>
-                <NavLink to="/auth/signup">Sign Up</NavLink>
-              </button>
+                <NavLink to="/auth/login">
+                <button className={styles.landingButton}>
+                  Log In
+                </button>
+              </NavLink>
+              <NavLink to="/auth/signup">
+                <button className={styles.landingButton}>
+                  Sign Up
+                </button>
+              </NavLink>
             </div>
           </div>
         </main>
