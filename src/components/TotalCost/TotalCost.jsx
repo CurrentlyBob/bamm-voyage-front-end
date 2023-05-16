@@ -20,7 +20,16 @@ const TotalCost = ({itinerary}) => {
       accumulator + curr.cost, 0
   )
 
-  let totalItinerary = totalFlightCost + totalAccommodationCost
+  const activitiesArr = itinerary.activities.map(activity => (
+    activity
+  ))
+
+  const totalActivityCost = activitiesArr.reduce(
+    (accumulator, curr) => 
+      accumulator + curr.cost, 0
+  )
+
+  let totalItinerary = (totalFlightCost + totalAccommodationCost + totalActivityCost).toLocaleString('en-US')
 
   return (
     <>

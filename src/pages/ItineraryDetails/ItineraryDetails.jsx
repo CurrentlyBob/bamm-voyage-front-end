@@ -79,7 +79,7 @@ const ItineraryDetails = (props) => {
         }
       </div>
       <div className={styles.cost}>
-        <h3>Budget: ${itinerary.budget}</h3>
+        <h3>Budget: ${itinerary.budget.toLocaleString('en-US')}</h3>
         <TotalCost itinerary={itinerary}/>
       </div>
       <table className={styles.table}>
