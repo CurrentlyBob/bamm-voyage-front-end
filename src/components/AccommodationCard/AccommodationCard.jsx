@@ -11,8 +11,8 @@ const AccommodationCard = ({
   return (
     <>
       <div className={styles.title}>
-        <h2>{accommodation.type}</h2>
         <h2>{accommodation.name}</h2>
+        <h2>{accommodation.type}</h2>
         <h2>${accommodation.cost}</h2>
         <div>
           <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
