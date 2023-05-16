@@ -26,73 +26,103 @@ const NewItinerary = (props) => {
   
   return (
     <main>  
-      <form onSubmit={handleSubmit} className={styles.container}>
-          <label htmlFor="title-input">Itinerary Name</label>
+      <form onSubmit={handleSubmit} className={styles.containerNew}>
+        {/* <label htmlFor="title-input">Itinerary Name</label> */}
+        <fieldset>
+          <legend>Itinerary Name</legend>
           <input 
             required
             type="text" 
             name="title"
-            id="title-input"
+            // id="title-input"
             value={formData.title}
-            placeholder="Itinerary Name"
             onChange={handleChange}
+            className={styles.input}
+            autoComplete='off'
           />
-          <label htmlFor="imgUrl-input">Image Address URL</label>
+        </fieldset>
+        {/* <label htmlFor="imgUrl-input">Image Address URL</label> */}
+        <fieldset>
+          <legend>Image Address URL</legend>
           <input 
             type="text" 
             name="imgUrl"
-            id="imgUrl-input"
+            // id="imgUrl-input"
             value={formData.imgUrl}
-            placeholder="Image Address URL"
             onChange={handleChange}
+            className={styles.input}
+            autoComplete='off'
           />
-          <label htmlFor="budget">Budget</label>
+        </fieldset>
+        {/* <label htmlFor="budget">Budget</label> */}
+        <fieldset>
+          <legend>Budget</legend>
           <input 
             type="text" 
             name="budget"
-            id="budget-input"
+            // id="budget-input"
             value={formData.budget}
-            placeholder="$$"
             onChange={handleChange}
+            className={styles.input}
+            autoComplete='off'
           />
-          <label htmlFor="startDate">Start Date</label>
+        </fieldset>
+        {/* <label htmlFor="startDate">Start Date</label> */}
+        <fieldset>
+          <legend>Start Date</legend>
           <input 
             type="date" 
             name="startDate"
-            id="startDate-input"
+            // id="startDate-input"
             value={formData.startDate}
             onChange={handleChange}
+            className={styles.input}
           />
-          <label htmlFor="endDate">End Date</label>
+        </fieldset>
+        {/* <label htmlFor="endDate">End Date</label> */}
+        <fieldset>
+          <legend>End Date</legend>
           <input 
             type="date" 
             name="endDate"
-            id="endDate-input"
+            // id="endDate-input"
             value={formData.endDate}
             onChange={handleChange}
+            className={styles.input}
           />
-          <label htmlFor="city">City</label>
+        </fieldset>
+        {/* <label htmlFor="city">City</label> */}
+        <fieldset>
+          <legend>City</legend>
           <input 
             required
             type="text" 
             name="city"
-            id="city-input"
+            // id="city-input"
             value={formData.city}
             onChange={handleChange}
+            className={styles.input}
+            autoComplete='off'
           />
-          <label htmlFor="country">Country</label>
+        </fieldset>
+        {/* <label htmlFor="country">Country</label> */}
+        <fieldset>
+          <legend>Country</legend>
           <input 
             required
             type="text" 
             name="country"
-            id="country-input"
+            // id="country-input"
             value={formData.country}
             onChange={handleChange}
+            className={styles.input}
+            autoComplete='off'
           />
-          <button type="submit">SUBMIT</button>
-        </form>
-      </main>
-    )
-  }
+        </fieldset>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </main>
+  )
+}
 
-  export default NewItinerary
+export default NewItinerary
