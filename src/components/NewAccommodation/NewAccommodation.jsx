@@ -19,7 +19,6 @@ const NewAccommodation = (props) => {
   };
 
   const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
-  console.log(defaultDate)
 
   const [formData, setFormData] = useState({
     type: "Hotel",

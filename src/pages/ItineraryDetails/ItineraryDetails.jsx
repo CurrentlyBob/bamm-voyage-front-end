@@ -109,7 +109,7 @@ const ItineraryDetails = (props) => {
         <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
       </section>
       <div className={styles.formData}>
-        <NewFlight handleAddFlight={handleAddFlight}/>
+        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate}/>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate}/>
         <NewActivity handleAddActivity={handleAddActivity} />
       </div>
