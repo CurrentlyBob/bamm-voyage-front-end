@@ -6,7 +6,7 @@ import moment from "moment";
 import * as itineraryService from '../../services/itineraryService'
 
 const EditActivity = () => {
-  const navigate = useNavigate
+  const navigate = useNavigate()
   const {state} = useLocation()
   const { itineraryId, activityId } = useParams()
   const [formData, setFormData] = useState(state)
@@ -21,7 +21,6 @@ const handleSubmit = async (evt) => {
 }
 
 return (
-  <>
         <form className={`${styles.container}`} onSubmit={handleSubmit}>
           <h2>Edit Activity</h2>
           <label htmlFor="type-input">Category</label>
@@ -53,7 +52,7 @@ return (
             type="datetime-local"
             name="activityDate"
             id="activityDate-input"
-            value={moment(formData.activityDate).format('yyyy-MM-DD HH:mm')}
+            value={moment(formData.Date).format('yyyy-MM-DD HH:mm')}
             onChange={handleChange}
             className={styles.input}
           />
@@ -89,7 +88,6 @@ return (
           />
           <button type="submit">SUBMIT</button>
         </form>
-  </>
 );
 };
 
