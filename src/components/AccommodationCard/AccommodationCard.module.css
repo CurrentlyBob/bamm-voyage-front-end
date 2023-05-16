@@ -38,3 +38,7 @@
 .button{
   margin-top: 0;
 }
+.accomodationUrl{
+  text-decoration: none;
+  color: #567189;
+}
