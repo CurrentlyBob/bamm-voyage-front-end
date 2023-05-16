@@ -1,14 +1,13 @@
 // npm imports
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
+
 // css
 import styles from "./NewAccommodation.module.css";
-import { useLocation } from "react-router-dom";
-// import { useEffect } from 'react'
-import * as itineraryService from "../../services/itineraryService";
+
 
 const NewAccommodation = (props) => {
   const [showForm, setShowForm] = useState(false);

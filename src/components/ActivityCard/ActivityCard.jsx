@@ -32,7 +32,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
             <td className={styles.td}>
               <>
                 <Link
-                  to={`/itineraries/${itineraryId}/activities/${activityId}}`}
+                  to={`/itineraries/${itineraryId}/activities/${activity._Id}}`}
                   state={activity}
                 >
                   <button className={styles.button}>Edit</button>
