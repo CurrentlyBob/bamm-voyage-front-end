@@ -99,6 +99,7 @@
   width:  100%;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-bottom: 70px;
 }
 .over{
   color: red;

@@ -17,4 +17,20 @@
 }
 .input{
   margin: 0;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
+}
+
+fieldset {
+  margin: 8px 5px;
+  padding: 0;
+}
+
+legend {
+  margin-left: 10px;
+}
+
+button {
+  margin-bottom: 10px;
 }

@@ -18,9 +18,13 @@
 }
 .input{
   margin: 0;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
 }
 .select{
   width: 300px;
-  padding: 7px;
-  font-size: 14px;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
 }
