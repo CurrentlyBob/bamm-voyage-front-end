@@ -54,6 +54,8 @@ const ItineraryDetails = (props) => {
   const handleAddActivity = async (activityFormData) => {
     const newActivity = await itineraryService.createActivity(itineraryId, activityFormData)
     setItinerary({ ...itinerary, activities: [...itinerary.activities, newActivity] })
+    console.log("NewActivity", newActivity)
+    console.log("Itinerary", itinerary)
   }
 
   const handleDeleteActivity = async (itineraryId, activityId) => {
@@ -108,6 +110,10 @@ const ItineraryDetails = (props) => {
         <h2 className={styles.activityTitle}>Activities</h2>
         <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
       </section>
+      {/* <section className={styles.activitySection}>
+        <h2 className={styles.activityTitle}>Activities</h2>
+        <Activities itinerary={itinerary}/>
+      </section> */}
       <div className={styles.formData}>
         <NewFlight handleAddFlight={handleAddFlight}/>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation}/>

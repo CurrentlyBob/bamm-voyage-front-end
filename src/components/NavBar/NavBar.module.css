@@ -26,7 +26,7 @@
 }
 .li > a, .li> a:visited{
   text-decoration: none;
-  color: #fad6a5;
+  color: #E3D6B2;
 }
 li{
   margin-left: 10px;
@@ -37,5 +37,5 @@ li{
 }
 
 .menuIcon{
-  color: #fad6a5;
+  color: #E3D6B2;
 }
