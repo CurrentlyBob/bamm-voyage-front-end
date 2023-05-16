@@ -4,29 +4,28 @@ import styles from './FlightCard.module.css'
 import FlightKebabMenu from "../KebabMenus/FlightKebabMenu";
 
 
-const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
-  return (
+const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) => {
+ return (
     <>
       <div className={styles.flightContainer}>
         <div className={styles.flightTitle}>
-          <h2>
-            {flight.airline.charAt(0).toUpperCase()+ flight.airline.slice(1)}:
-          </h2>
-          <h2>
-            {flight.recordLocator}
-          </h2>
-        </div>
-        <h2 className={styles.flightCost}>
-          ${flight.cost.toLocaleString('en-US')}
-        </h2>
-        <div>
-          <FlightKebabMenu 
-            flight={flight}
-            itineraryId={itineraryId}
-            handleDeleteFlight={handleDeleteFlight}
-          />
+          {isFirstFlight && (
+            <>
+              <h2>{flight.airline.charAt(0).toUpperCase()+ flight.airline.slice(1)}:</h2>
+              <h2>{flight.recordLocator}</h2>
+              <h2 className={styles.flightCost}>${flight.cost.toLocaleString('en-US')}</h2>
+              <div>
+                <FlightKebabMenu 
+                  flight={flight}
+                  itineraryId={itineraryId}
+                  handleDeleteFlight={handleDeleteFlight}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
+      
       <table className={styles.table}>
         <thead>
           <tr>
@@ -46,7 +45,10 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
         </tbody>
       </table>
     </>
+    
   );
+  
 };
+
 
 export default FlightCard;
