@@ -61,6 +61,8 @@
   border: 3px solid #567189;
   padding: 5px 20px;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .accommodationSection{
   width: 95%;
@@ -72,6 +74,8 @@
   border: 3px solid #567189;
   padding: 5px 20px;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .activityTitle{
@@ -80,6 +84,8 @@
   border: 3px solid #567189;
   padding: 5px 20px;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .activitySection{
@@ -92,6 +98,7 @@
   flex-direction: row;
   width:  100%;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .over{
   color: red;

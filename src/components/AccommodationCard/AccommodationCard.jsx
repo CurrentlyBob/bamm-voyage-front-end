@@ -10,13 +10,15 @@ const AccommodationCard = ({
 }) => {
   return (
     <>
-      <div className={styles.title}>
-        <h2>{accommodation.type}</h2>
-        <h2>{accommodation.name}</h2>
-        <h2>${accommodation.cost}</h2>
-        <div>
-          <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
+      <div className={styles.accommodationContainer}>
+        <div className={styles.title}>
+          <h2>{accommodation.name}</h2>
+          <h2>{accommodation.type}</h2>
         </div>
+          <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
+          <div>
+            <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
+          </div>
       </div>
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
