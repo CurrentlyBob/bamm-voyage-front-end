@@ -8,8 +8,17 @@ const Landing = ({ user }) => {
     <>
       {user ? (
         <main className={styles.loggedInBackground}>
-          <div className={styles.container}>
-            <h1>hello, {user ? user.name : "friend"}</h1>
+          {/* <div className={styles.bamm}>
+            <h1>BAMM Voyage</h1>
+            <img src="../../../public/assets/images/logo-transparent-back.png" alt="logo" className=""/>
+          </div> */}
+          <div className={styles.aboutUs}>
+            <h1 className={styles.heading}>About Us</h1>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque voluptatem, quas cupiditate suscipit tempora rerum, eius minima, accusantium reprehenderit eos laborum aspernatur excepturi officiis. Possimus perferendis velit reiciendis sunt.</h3>
+          </div>
+          <div className={styles.bammPics}>
+            <h1 className={styles.heading}>About Us</h1>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque voluptatem, quas cupiditate suscipit tempora rerum, eius minima, accusantium reprehenderit eos laborum aspernatur excepturi officiis. Possimus perferendis velit reiciendis sunt.</h3>
           </div>
         </main>
       ) : (

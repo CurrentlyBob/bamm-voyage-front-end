@@ -7,14 +7,43 @@
   ;
 }
 
-/* .loggedInBackground {
-
-} */
-
+.loggedInBackground {
+  background-image: url('../../../public/assets/images/loggedInBackgroundPic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 102%;
+  margin-left: -10px;
+  margin-bottom: -10px;
+  height: 120vh;
+  overflow: hidden;
+}
+.bamm{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.aboutUs{
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 500px;
+  width: 50%;
+}
+.bammPics{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50%;
+  padding: 0 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 50%;
+}
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.heading{
+  margin-bottom: 0;
 }
 
 .loggedOutContainer {
