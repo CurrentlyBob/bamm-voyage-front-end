@@ -31,3 +31,6 @@
   border: none;
   padding: 5px;
 }
+.select:focus{
+  outline: none;  
+}
