@@ -7,9 +7,7 @@ import moment from "moment";
 
 // css
 import styles from "./NewAccommodation.module.css";
-import { useLocation } from "react-router-dom";
-// import { useEffect } from 'react'
-import * as itineraryService from "../../services/itineraryService";
+
 
 const NewAccommodation = (props) => {
   const [showForm, setShowForm] = useState(false);
