@@ -64,78 +64,99 @@ const NewAccommodation = (props) => {
         onSubmit={handleSubmit}
         >
           <h2>Accommodation</h2>
-          <label htmlFor="type-input">Type</label>
-          <select
-            name="type"
-            id="type-input"
-            value={formData.type}
-            onChange={handleChange}
-            className={styles.select}
-            >
-            <option value="Hotel">Hotel</option>
-            <option value="Cruise">Cruise</option>
-            <option value="Airbnb">Airbnb</option>
-            <option value="Other">Other</option>
-          </select>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name-input"
-            value={formData.name}
-            autoComplete="off"
-            onChange={handleChange}
-            className={styles.input}
+          {/* <label htmlFor="type-input">Type</label> */}
+          <fieldset>
+            <legend>Type</legend>
+            <select
+              name="type"
+              id="type-input"
+              value={formData.type}
+              onChange={handleChange}
+              className={styles.select}
+              >
+              <option value="Hotel">Hotel</option>
+              <option value="Cruise">Cruise</option>
+              <option value="Airbnb">Airbnb</option>
+              <option value="Other">Other</option>
+            </select>
+          </fieldset>
+          {/* <label htmlFor="name">Name</label> */}
+          <fieldset>
+            <legend>Name</legend>
+            <input
+              type="text"
+              name="name"
+              id="name-input"
+              value={formData.name}
+              autoComplete="off"
+              onChange={handleChange}
+              className={styles.input}
             />
-          <label htmlFor="checkInDate">CheckIn Date</label>
-          <input
-            required
-            type="datetime-local"
-            name="checkInDate"
-            id="checkInDate-input"
-            value={formData.checkInDate}
-            onChange={handleChange}
-            className={styles.input}
+          </fieldset>
+          {/* <label htmlFor="checkInDate">CheckIn Date</label> */}
+          <fieldset>
+            <legend>CheckIn Date</legend>
+            <input
+              required
+              type="datetime-local"
+              name="checkInDate"
+              id="checkInDate-input"
+              value={formData.checkInDate}
+              onChange={handleChange}
+              className={styles.input}
+              />
+            </fieldset>
+          {/* <label htmlFor="checkOutDate">CheckOut Date</label> */}
+          <fieldset>
+            <legend>CheckOut Date</legend>
+            <input
+              type="datetime-local"
+              name="checkOutDate"
+              id="checkOutDate-input"
+              value={formData.checkOutDate}
+              onChange={handleChange}
+              className={styles.input}
+              />
+            </fieldset>
+          {/* <label htmlFor="address">Address</label> */}
+          <fieldset>
+            <legend>Address</legend>
+            <input
+              type="text"
+              name="address"
+              id="address-input"
+              value={formData.address}
+              autoComplete="off"
+              onChange={handleChange}
+              className={styles.input}
+              />
+            </fieldset>
+          {/* <label htmlFor="website">Website</label> */}
+          <fieldset>
+            <legend>Website</legend>
+            <input
+              type="text"
+              name="website"
+              id="website-input"
+              value={formData.website}
+              autoComplete="off"
+              onChange={handleChange}
+              className={styles.input}
+              />
+            </fieldset>
+          {/* <label htmlFor="cost">Cost</label> */}
+          <fieldset>
+            <legend>Cost</legend>
+            <input
+              type="text"
+              name="cost"
+              id="cost-input"
+              value={formData.cost}
+              autoComplete="off"
+              onChange={handleChange}
+              className={styles.input}
             />
-          <label htmlFor="checkOutDate">CheckOut Date</label>
-          <input
-            type="datetime-local"
-            name="checkOutDate"
-            id="checkOutDate-input"
-            value={formData.checkOutDate}
-            onChange={handleChange}
-            className={styles.input}
-            />
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            name="address"
-            id="address-input"
-            value={formData.address}
-            autoComplete="off"
-            onChange={handleChange}
-            className={styles.input}
-            />
-          <label htmlFor="website">Website</label>
-          <input
-            type="text"
-            name="website"
-            id="website-input"
-            value={formData.website}
-            autoComplete="off"
-            onChange={handleChange}
-            className={styles.input}
-            />
-          <label htmlFor="cost">Cost</label>
-          <input
-            type="text"
-            name="cost"
-            id="cost-input"
-            value={formData.cost}
-            autoComplete="off"
-            onChange={handleChange}
-            className={styles.input}
-            />
+          </fieldset>
           <button type="submit">SUBMIT</button>
         </form>
       ) : (
