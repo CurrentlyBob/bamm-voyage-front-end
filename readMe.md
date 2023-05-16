@@ -1,7 +1,9 @@
 # BAMM Voyage
 
 ## Overview
-Welcome to the BAAM Voyage! This project is a MERN stack-based travel application designed to simplify travel planning and provide a comprehensive toolset for organizing your trips. We, as passionate travelers ourselves, understand the complexities and challenges that can arise during travel planning. Therefore, we developed this app to streamline the process and make it more enjoyable.
+Welcome to the BAMM Voyage Front-End repository! This repository contains the front-end code for the BAMM Voyage application.
+
+At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and understand the challenges that come with planning trips. We have experienced firsthand how travel planning can become complicated and messy without the right tools. Therefore, we decided to create this app to help solve that issue and provide users with a streamlined and efficient way to plan their journeys.
 
 # Links 🔗
 
