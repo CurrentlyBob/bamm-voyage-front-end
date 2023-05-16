@@ -20,7 +20,7 @@ h2{
 }
 .table{
   margin-top: 20px;
-  table-layout: auto;
+  table-layout: fixed;
   border-collapse:collapse;
   text-align: left;
   width: 100%;
