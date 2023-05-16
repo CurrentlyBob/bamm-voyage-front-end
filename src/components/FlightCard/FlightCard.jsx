@@ -17,7 +17,7 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
           </h2>
         </div>
         <h2 className={styles.flightCost}>
-          ${flight.cost}
+          ${flight.cost.toLocaleString('en-US')}
         </h2>
         <div>
           <FlightKebabMenu 

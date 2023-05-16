@@ -29,12 +29,12 @@ const TotalCost = ({itinerary}) => {
       accumulator + curr.cost, 0
   )
 
-  let totalItinerary = (totalFlightCost + totalAccommodationCost + totalActivityCost).toLocaleString('en-US')
+  let totalItinerary = (totalFlightCost + totalAccommodationCost + totalActivityCost)
 
   return (
     <>
         <h3 className={totalItinerary > itinerary.budget ? styles.red : styles.normal}>
-          Actual Cost: ${totalItinerary}
+          Actual Cost: ${totalItinerary.toLocaleString('en-US')}
         </h3>
     </>
   )
