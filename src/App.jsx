@@ -13,6 +13,7 @@ import EditItinerary from './pages/EditItinerary/EditItinerary'
 import NewItinerary from './pages/NewItinerary/NewItinerary'
 import EditFlight from './pages/EditFlight/EditFlight'
 import EditAccommodation from './pages/EditAccommodations/EditAccommodations'
+import EditActivity from './pages/EditActivity/EditActivity'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -63,6 +64,11 @@ function App() {
     navigate('/itineraries')
   }
 
+  const handleUpdateActivity = async (itineraryFormData) => {
+    const updatedItinerary = await itineraryService.update(itineraryFormData)
+    setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
+    navigate('/itineraries')
+  }
   
 
   useEffect(() => {
@@ -107,6 +113,14 @@ function App() {
           element = {
             <ProtectedRoute user={user}>
               <EditAccommodation />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/itineraries/:itineraryId/activities/:activityId"
+          element = {
+            <ProtectedRoute user={user}>
+              <EditActivity user={user} handleUpdateActivity={handleUpdateActivity}/>
             </ProtectedRoute>
           }
         />

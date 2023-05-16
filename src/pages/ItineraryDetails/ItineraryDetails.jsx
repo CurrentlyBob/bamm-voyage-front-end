@@ -108,7 +108,7 @@ const ItineraryDetails = (props) => {
       </section>
       <section className={styles.activitySection}>
         <h2 className={styles.activityTitle}>Activities</h2>
-        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
+        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}  />
       </section>
       {/* <section className={styles.activitySection}>
         <h2 className={styles.activityTitle}>Activities</h2>
