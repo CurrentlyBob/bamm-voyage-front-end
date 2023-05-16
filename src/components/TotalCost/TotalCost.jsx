@@ -29,7 +29,7 @@ const TotalCost = ({itinerary}) => {
       accumulator + curr.cost, 0
   )
 
-  let totalItinerary = totalFlightCost + totalAccommodationCost + totalActivityCost
+  let totalItinerary = (totalFlightCost + totalAccommodationCost + totalActivityCost).toLocaleString('en-US')
 
   return (
     <>
