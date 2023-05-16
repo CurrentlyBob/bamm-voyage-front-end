@@ -74,10 +74,10 @@ const NewAccommodation = (props) => {
               onChange={handleChange}
               className={styles.select}
               >
-              <option value="Hotel">Hotel</option>
-              <option value="Cruise">Cruise</option>
-              <option value="Airbnb">Airbnb</option>
-              <option value="Other">Other</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Cruise">Cruise</option>
+                <option value="Airbnb">Airbnb</option>
+                <option value="Other">Other</option>
             </select>
           </fieldset>
           {/* <label htmlFor="name">Name</label> */}
