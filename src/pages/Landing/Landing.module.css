@@ -1,5 +1,38 @@
+.loggedOutBackground {
+  background-image: url('../../../public/assets/images/loggedOutPic.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: bottom;
+  ;
+}
+
+/* .loggedInBackground {
+
+} */
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.loggedOutContainer {
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.loggedOutButtonContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.landingButton {
+  width: 50%;
+  align-self: center;
 }
