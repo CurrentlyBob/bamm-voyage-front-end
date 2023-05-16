@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import moment from "moment";
 
 // css
 import styles from "./NewActivity.module.css";
@@ -14,10 +15,12 @@ const NewActivity = (props) => {
     showForm ? setShowForm(false) : setShowForm(true);
   };
 
+  const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
+
   const [formData, setFormData] = useState({
     category: "Activity",
     name: "",
-    activityDate: "",
+    activityDate: defaultDate,
     activityWebsite: "",
     notes: "",
     cost: "",
@@ -33,7 +36,7 @@ const NewActivity = (props) => {
     setFormData({
       category: "Activity",
       name: "",
-      activityDate: "",
+      activityDate: defaultDate,
       activityWebsite: "",
       notes: "",
       cost: "",
