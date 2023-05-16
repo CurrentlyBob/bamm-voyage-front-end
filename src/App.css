@@ -38,3 +38,18 @@ nav > ul {
 /* #root{
   display: flex;
 } */
+
+.css-18rm664-MuiButtonBase-root-MuiIconButton-root {
+  padding: 0 10px !important;
+  /* background-color: white !important; */
+  /* border: 1px solid black !important; */
+  border-radius: 7px !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 5px !important;
+}
+
+.css-18rm664-MuiButtonBase-root-MuiIconButton-root:hover {
+  box-shadow: 1px 1px 15px #E3D6B2 !important;
+}
+
