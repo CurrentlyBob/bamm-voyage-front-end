@@ -64,7 +64,7 @@ const EditFlight = () => {
             type="datetime-local" 
             name="departureDate"
             // id="departureDate-input"
-            value={formData.departureDate}
+            value={moment(formData.departureDate).format('yyyy-MM-DD HH:mm')}
             onChange={handleChange}
             className={styles.input}
           />
@@ -89,7 +89,7 @@ const EditFlight = () => {
             type="datetime-local" 
             name="arrivalDate"
             // id="arrivalDate-input"
-            value={formData.arrivalDate}
+            value={moment(formData.arrivalDate).format('yyyy-MM-DD HH:mm')}
             onChange={handleChange}
             className={styles.input}
           />
