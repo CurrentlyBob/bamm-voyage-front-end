@@ -3,12 +3,15 @@
 *::after {
   box-sizing: inherit;
 }
-
+html, body, .root{
+  min-height: 100%;
+  margin: 0;
+}
 body {
   box-sizing: border-box;
 
   margin-top: 40px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 

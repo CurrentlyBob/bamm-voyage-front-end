@@ -10,11 +10,14 @@
   background-image: url('../../../public/assets/images/loggedInBackgroundPic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 102%;
-  margin-left: -10px;
-  margin-bottom: -10px;
-  height: 120vh;
+  width: 100%;
+  height: 200vh;
   overflow: hidden;
+  background-attachment: fixed;
+  z-index: -1;
+}
+.landingContainer{
+  position: absolute;
 }
 .bammContainer{
   display: flex;
@@ -23,11 +26,6 @@
   height: 300px;
   align-items: center;
   background-color:rgba(255, 255, 255, 0.6);
-  /* position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100%; */
 }
 .planningPic{
   height: 300px;
