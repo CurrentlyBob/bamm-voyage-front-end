@@ -11,7 +11,7 @@ import MenuItem from "@mui/joy/MenuItem";
 //css
 import styles from "./NavBar.module.css";
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, handleChangePassword }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -63,20 +63,12 @@ const NavBar = ({ user, handleLogout }) => {
               aria-labelledby="button"
               placement="bottom-end"
             >
-              <MenuItem onClick={handleClose}>
-                <NavLink to="/auth/change-password" className={styles.loggedIn}>
-                  Change Password
-                </NavLink>
-              </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <NavLink
-                  to=""
-                  onClick={handleLogout}
-                  className={styles.loggedIn}
-                >
-                  Log Out
-                </NavLink>
-              </MenuItem>
+              <NavLink to="" onClick={handleChangePassword} className={styles.loggedIn}>
+                <MenuItem onClick={handleClose}>Change Password</MenuItem>
+              </NavLink>
+              <NavLink to="" onClick={handleLogout} className={styles.loggedIn}>
+                <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              </NavLink>
             </Menu>
           </div>
         </nav>
