@@ -4,7 +4,6 @@
   background-size: contain;
   background-position-x: right;
   background-position-y: bottom;
-  ;
 }
 
 .loggedInBackground {
@@ -18,24 +17,50 @@
   overflow: hidden;
 }
 .bamm{
-  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  background-color:rgba(255, 255, 255, 0.6);
+  align-items: center;
+  margin-top: 50px;
+}
+.logo{
+  height:100px;
+  width: fit-content;
 }
 .aboutUs{
   display: flex;
   flex-direction: column;
   padding: 0 25px;
   background-color: rgba(255, 255, 255, 0.6);
-  margin-top: 500px;
   width: 50%;
 }
 .bammPics{
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-left: 50%;
-  padding: 0 25px;
+  padding: 15px 25px;
   background-color: rgba(255, 255, 255, 0.6);
   width: 50%;
+}
+.bammPicsTop, .bammPicsBottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.bammPicsTop{
+  padding-bottom: 15px;
+}
+.bammTravel, .bammTravelMelvin, .bammTravelBobby{
+  width: 40%;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.bammTravelMelvin{
+  object-position: right;
+}
+.bammTravelBobby{
+  object-position: 25% 25%;
 }
 .container {
   display: flex;
