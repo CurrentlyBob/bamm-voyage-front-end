@@ -10,7 +10,7 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight }) => {
       <div className={styles.flightContainer}>
         <div className={styles.flightTitle}>
           <h2>
-            {flight.airline.charAt(0).toUpperCase()+ flight.airline.slice(1)}
+            {flight.airline.charAt(0).toUpperCase()+ flight.airline.slice(1)}:
           </h2>
           <h2>
             {flight.recordLocator}
