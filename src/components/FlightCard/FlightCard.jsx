@@ -11,14 +11,14 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) 
           <div className={styles.flightTitle}>
             <h2>{flight.airline.charAt(0).toUpperCase() + flight.airline.slice(1)}:</h2>
             <h2>{flight.recordLocator}</h2>
-            <h2 className={styles.flightCost}>${flight.cost.toLocaleString('en-US')}</h2>
-            <div>
-              <FlightKebabMenu 
-                flight={flight}
-                itineraryId={itineraryId}
-                handleDeleteFlight={handleDeleteFlight}
-              />
-            </div>
+          </div>
+          <h2 className={styles.flightCost}>${flight.cost.toLocaleString('en-US')}</h2>
+          <div>
+            <FlightKebabMenu 
+              flight={flight}
+              itineraryId={itineraryId}
+              handleDeleteFlight={handleDeleteFlight}
+            />
           </div>
         </div>
       )}
