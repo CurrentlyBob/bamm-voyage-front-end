@@ -8,6 +8,9 @@ import * as itineraryService from "../../services/itineraryService";
 
 // css
 import styles from './ItineraryDetails.module.css'
+import FlightIcon from '@mui/icons-material/Flight';
+import HotelIcon from '@mui/icons-material/Hotel';
+import NightlifeIcon from '@mui/icons-material/Nightlife';
 
 // components
 import NewFlight from "../../components/NewFlight/NewFlight";
@@ -79,7 +82,7 @@ const ItineraryDetails = (props) => {
         }
       </div>
       <div className={styles.cost}>
-        <h3>Budget: ${itinerary.budget}</h3>
+        <h3>Budget: ${itinerary.budget.toLocaleString('en-US')}</h3>
         <TotalCost itinerary={itinerary}/>
       </div>
       <table className={styles.table}>
@@ -99,16 +102,25 @@ const ItineraryDetails = (props) => {
         </tbody>
       </table>
       <section className={styles.flightSection}>
-        <h2 className={styles.flightTitle}>Flights</h2>
+        <h2 className={styles.flightTitle}>
+          Flights
+          <FlightIcon />
+        </h2>
         <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
       </section>
       <section className={styles.accommodationSection}>
-        <h2 className={styles.accommodationtTitle}>Accommodations</h2>
+        <h2 className={styles.accommodationtTitle}>
+          Accommodations
+          <HotelIcon />
+        </h2>
         <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
       </section>
       <section className={styles.activitySection}>
-        <h2 className={styles.activityTitle}>Activities</h2>
-        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}  />
+        <h2 className={styles.activityTitle}>
+          Activities
+          <NightlifeIcon />
+        </h2>
+        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
       </section>
       {/* <section className={styles.activitySection}>
         <h2 className={styles.activityTitle}>Activities</h2>
