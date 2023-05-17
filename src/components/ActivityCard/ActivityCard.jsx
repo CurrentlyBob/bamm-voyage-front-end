@@ -31,7 +31,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
               )}
             </td>
             <td className={styles.td}>{activity.notes}</td>
-            <td className={styles.td}><a className={styles.activityUrl}  href={`http://${activity.activityWebsite}`} target="_blank" rel="noreferrer"> {activity.activityWebsite}</a>
+            <td className={styles.td}><a className={styles.activityUrl}  href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer"> {activity.name}'s website</a>
             </td>
           </tr>
         </tbody>
