@@ -138,7 +138,7 @@ const NewAccommodation = (props) => {
               type="text"
               name="website"
               id="website-input"
-              value={formData.website}
+              value={formData.website.substring(formData.website.indexOf("/", formData.website.indexOf("/") + 1) + 1)}
               autoComplete="off"
               onChange={handleChange}
               className={styles.input}

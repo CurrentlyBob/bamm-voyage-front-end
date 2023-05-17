@@ -21,9 +21,9 @@ const AccommodationCard = ({
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
         <p id="url">
-        <a className={styles.accomodationUrl} href={`http://${accommodation.website}`} target="_blank" rel="noreferrer">
-    {accommodation.website}
-    </a>
+        <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
+        {accommodation.name}'s website
+        </a>
         </p>
       </div>
       <table className={styles.table}>
