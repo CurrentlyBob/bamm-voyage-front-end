@@ -88,7 +88,8 @@ const Landing = ({ user }) => {
             <div className={styles.intro}>
               <div className={styles.content}>
                 <h3 className={styles.description}>Plan your next trip with</h3>
-                <h1>BAMM VOYAGE</h1>
+                <h1>BAMM Voyage</h1>
+                <img src={logo} alt="logo" className={styles.logo} />
               </div>
               <div className={styles.box}>
                 <div className={styles.one}>

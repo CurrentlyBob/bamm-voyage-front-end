@@ -15,10 +15,8 @@ const AccommodationCard = ({
           <h2>{accommodation.name}</h2>
           <h2>{accommodation.type}</h2>
         </div>
-          <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
-          <div>
-            <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
-          </div>
+        <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
+        <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
       </div>
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>

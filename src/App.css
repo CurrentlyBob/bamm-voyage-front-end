@@ -53,6 +53,11 @@ nav > ul {
   box-shadow: 1px 1px 15px #E3D6B2 !important;
 }
 
+.css-1o22tn8-JoyIconButton-root {
+  margin-left: 20px !important;
+  height: 20px !important;
+}
+
 #file-upload-button{
   background-color: #474962 !important;
 }
