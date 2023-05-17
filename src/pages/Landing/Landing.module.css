@@ -1,11 +1,3 @@
-.loggedOutBackground {
-  background-image: url('../../../public/assets/images/loggedOutPic.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: right;
-  background-position-y: bottom;
-}
-
 .loggedInBackground {
   background-image: url('../../../public/assets/images/loggedInBackgroundPic.jpg');
   background-repeat: no-repeat;
@@ -89,25 +81,94 @@
   margin-bottom: 0;
 }
 
-.loggedOutContainer {
-  width: 300px;
+.loggedOutBackground {
+  background-image: url('../../../public/assets/images/loggedOutBackgroundPic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* margin: 0 50px; */
   height: 100vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: -50px;
+  /* background-position-x: right;
+  background-position-y: bottom; */
+}
+
+.loggedOutContainer {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 255, 0.187); */
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 10px;
+  padding: 10px;
+  max-width: 500px;
+  background-color: rgba(213, 213, 213, 0.72);
+  box-shadow: 0 14px 28px rgba(96, 96, 96, 0.25), 0 10px 10px rgba(96, 96, 96, 0.15);  
 }
 
 .loggedOutButtonContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
 }
 
 .landingButton {
-  width: 50%;
   align-self: center;
 }
+
+.box {
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  padding: 20px;
+  gap: 40px;
+}
+
+.header {
+  margin: 0 0 15px 0;
+}
+
+.box > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+} */
 
 @media only screen and (max-width: 1300px) {
   .bammPics{
