@@ -56,3 +56,13 @@ nav > ul {
 #file-upload-button{
   background-color: #567189 !important;
 }
+::-webkit-scrollbar {
+  width:10px;
+  /* background-color: #7b8fa1; */
+  background-color: #567189;
+}
+::-webkit-scrollbar-thumb {
+  /* background-color: #7b8fa1; */
+  background-color: #E3D6B2;
+  border-radius: 10px;
+}
