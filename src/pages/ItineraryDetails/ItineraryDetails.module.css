@@ -56,9 +56,19 @@
 }
 
 .flightTitle{
-  background-color: #7b8fa1;
+  /* background-color: #8e3200; */
+  /* background-color: #7b8fa1;
   color: rgb(255, 255, 255);
-  border: 3px solid #567189;
+  border: 3px solid #567189; */
+  /* background-color: #578fa2;
+  color: rgb(255, 255, 255);
+  border: 3px solid #567189; */
+  /* background-color: #626047;
+  color: rgb(255, 255, 255);
+  border: 3px solid #303a1b; */
+  background-color: #b95632;
+  color: white;
+  border: 3px solid #913300a5;
   padding: 5px 20px;
   font-size: 20px;
   display: flex;
@@ -69,9 +79,15 @@
   margin-top: 20px;
 }
 .accommodationtTitle{
-  background-color: #7b8fa1;
+  /* background-color: #578fa2;
   color: rgb(255, 255, 255);
-  border: 3px solid #567189;
+  border: 3px solid #567189; */
+  background-color: #626047;
+  color: rgb(255, 255, 255);
+  border: 3px solid #303a1b;
+  background-color: #624757;
+  color: rgb(255, 255, 255);
+  border: 3px solid #351941;
   padding: 5px 20px;
   font-size: 20px;
   display: flex;
@@ -79,9 +95,12 @@
 }
 
 .activityTitle{
-  background-color: #7b8fa1;
+  background-color: #476253;
+  color: white;
+  border: 3px solid #2a4734;
+  /* background-color: #65647c;
   color: rgb(255, 255, 255);
-  border: 3px solid #567189;
+  border: 3px solid #390772; */
   padding: 5px 20px;
   font-size: 20px;
   display: flex;
