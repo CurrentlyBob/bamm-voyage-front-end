@@ -30,8 +30,8 @@ const Landing = ({ user }) => {
               <h3>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
                 atque voluptatem, quas cupiditate suscipit tempora rerum, eius
-                minima, accusantium reprehenderit eos laborum aspernatur excepturi
-                officiis. Possimus perferendis velit reiciendis sunt.
+                minima, accusantium reprehenderit eos laborum aspernatur
+                excepturi officiis. Possimus perferendis velit reiciendis sunt.
               </h3>
             </div>
             <div className={styles.bammPics}>
@@ -65,20 +65,45 @@ const Landing = ({ user }) => {
       ) : (
         <main className={styles.loggedOutBackground}>
           <div className={styles.loggedOutContainer}>
-            <h1>BAMM Voyage</h1>
-            <h3 className={styles.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur recusandae voluptas magnam deleniti eligendi voluptates
-              maxime, nobis ea, quis eveniet totam laboriosam, ullam cum quia
-              est soluta harum corporis libero!
-            </h3>
-            <div className={styles.loggedOutButtonContainer}>
-              <NavLink to="/auth/login">
-                <button className={styles.landingButton}>Log In</button>
-              </NavLink>
-              <NavLink to="/auth/signup">
-                <button className={styles.landingButton}>Sign Up</button>
-              </NavLink>
+            <div className={styles.intro}>
+              <div className={styles.content}>
+                <h3 className={styles.description}>Plan your next trip with</h3>
+                <h1>BAMM VOYAGE</h1>
+              </div>
+              <div className={styles.box}>
+                <div className={styles.one}>
+                  <h4 className={styles.header}>Organize</h4>
+                  <img
+                    src="../../../public/assets/images/checklist.png"
+                    alt="checklist"
+                    width="64"
+                  />
+                </div>
+                <div className={styles.two}>
+                  <h4 className={styles.header}>Countdown</h4>
+                  <img
+                    src="../../../public/assets/images/calendar.png"
+                    alt="countdown"
+                    width="64"
+                  />
+                </div>
+                <div className={styles.three}>
+                  <h4 className={styles.header}>Budget Tracker</h4>
+                  <img
+                    src="../../../public/assets/images/budget.png"
+                    alt="budget tracker"
+                    width="64"
+                  />
+                </div>
+              </div>
+              <div className={styles.loggedOutButtonContainer}>
+                <NavLink to="/auth/login">
+                  <button className={styles.landingButton}>Log In</button>
+                </NavLink>
+                <NavLink to="/auth/signup">
+                  <button className={styles.landingButton}>Sign Up</button>
+                </NavLink>
+              </div>
             </div>
           </div>
         </main>
