@@ -1,7 +1,7 @@
 .navContainer{
   display: flex;
   flex-direction: row;
-  background-color: #567189;
+  background-color: #474962;
   overflow: hidden;
   position: fixed;
   z-index: 100;
@@ -26,7 +26,7 @@
 }
 .li > a, .li> a:visited{
   text-decoration: none;
-  color: #E3D6B2;
+  color: #C9BB8D;
 }
 li{
   margin-left: 10px;
