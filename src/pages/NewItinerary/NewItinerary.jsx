@@ -25,7 +25,7 @@ const NewItinerary = (props) => {
   }
   
   return (
-    <main>
+    <main className={styles.main}>
       <form onSubmit={handleSubmit} className={styles.containerNew}>
       <h1 className={styles.title}>Where to Next?</h1>
         {/* <label htmlFor="title-input">Itinerary Name</label> */}
