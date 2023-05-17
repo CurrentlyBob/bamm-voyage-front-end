@@ -158,7 +158,8 @@
   text-align: center;
   padding: 10px;
   max-width: 500px;
-  background-color: rgba(213, 213, 213, 0.72);
+  background-color: rgba(71, 73, 98, 0.72);
+  color: rgb(227, 202, 152);
   box-shadow: 0 14px 28px rgba(96, 96, 96, 0.25), 0 10px 10px rgba(96, 96, 96, 0.15);  
 }
 
