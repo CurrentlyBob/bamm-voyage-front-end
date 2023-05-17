@@ -70,14 +70,14 @@ const LoginPage = ({ handleAuthEvt }) => {
             />
             </fieldset>
           <div className={styles.link}>
+            <button className={styles.button} disabled={isFormInvalid()}>
+              Log In
+            </button>
             <Link to="/">
               <button>
                 Cancel
               </button>
             </Link>
-            <button className={styles.button} disabled={isFormInvalid()}>
-              Log In
-            </button>
           </div>
         </form>
       </div>
