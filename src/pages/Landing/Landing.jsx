@@ -29,7 +29,7 @@ const Landing = ({ user }) => {
              </div>
              <div className={styles.adventureContainer}>
                <div className={styles.adventurePicContainer}> 
-                 <img src="../../../public/assets/images/planning.jpg" alt="adventure picture" className={styles.adventurePic}/>
+                 <img src="../../../public/assets/images/travelPic.jpg" alt="adventure picture" className={styles.adventurePic}/>
                </div>
                <div className={styles.adventureDescription}>
                  <h2>Your next adventure starts today</h2>
@@ -38,7 +38,7 @@ const Landing = ({ user }) => {
              <div className={styles.aboutUs}>
                <h1 className={styles.heading}>About Us</h1>
                <p>
-                 BAMM Voyage was built by a group of coders with a passion for travelling. Althogether they have visited over 50 countries! They saw the struglle in finding a good travel planning app, thus BAMM Voyage was born.
+               BAMM Voyage was built by a group of coders with a passion for traveling. Altogether they have visited over 50 countries! They saw the struggle in finding a good travel planning app, thus BAMM Voyage was born.
                </p>
              </div>
              <div className={styles.bammPics}>
