@@ -12,9 +12,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
         <h2>{activity.category}</h2>
         <h2>{activity.name}</h2>
         <h2>${activity.cost}</h2>
-        <div>
         <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
-      </div>
       </div>
       <div className={styles.subtitle}></div>
       <table className={styles.table}>

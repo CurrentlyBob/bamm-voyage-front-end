@@ -1,7 +1,8 @@
 .accommodationContainer{
   display: flex;
   justify-content: space-evenly;
-  border-bottom: 1px solid #567189;
+  border-bottom: 1px solid #474962;
+  align-items: end;
 }
 
 .title{
