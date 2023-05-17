@@ -1,7 +1,7 @@
 // npm module
 import { Link } from 'react-router-dom';
 import moment from "moment"
-
+import defaultpic from '../../assets/images/defaultpic.jpg'
 // css
 import styles from './ItineraryCard.module.css'
 
@@ -25,7 +25,7 @@ const ItineraryCard = (props) => {
               </>
               :
               <>
-                <img src='src/assets/images/defaultpic.jpg' alt="travel pic" className={styles.pic}/>
+                <img src={defaultpic} alt="travel pic" className={styles.pic}/>
                 <div className={styles.overlayText}>
                   <h3 className={styles.title}>{ props.itinerary.title.charAt(0).toUpperCase()+ props.itinerary.title.slice(1) }</h3>
                   <h4 className={styles.title}>{ moment(props.itinerary.startDate).format("MMM YYYY") }</h4>
