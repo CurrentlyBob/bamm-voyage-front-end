@@ -45,7 +45,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <fieldset>
-          Current Password
+          <legend>Current Password</legend>
           <input
             type="password"
             value={password}
@@ -55,7 +55,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
           />
         </fieldset>
         <fieldset>
-          New Password
+          <legend>New Password</legend>
           <input
             type="password"
             value={newPassword}
@@ -65,7 +65,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
           />
         </fieldset>
         <fieldset>
-          Confirm New Password
+          <legend>Confirm New Password</legend>
           <input
             type="password"
             value={newPasswordConf}
@@ -74,7 +74,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
             className={styles.input}
           />
         </fieldset>
-        <div>
+        <div className={styles.links}>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password
