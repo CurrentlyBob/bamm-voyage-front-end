@@ -13,7 +13,7 @@ const Landing = ({ user }) => {
                <div className={styles.bamm}>
                  <h1 className={styles.heading}>BAMM Voyage</h1>
                  <img
-                   src="../../../src/assets/images/logo.png"
+                   src="src/assets/images/logo.png"
                    alt="logo"
                    className={styles.logo}
                  />
@@ -21,7 +21,7 @@ const Landing = ({ user }) => {
                </div>
                <div className={styles.planningPicContainer}>
                  <img
-                   src="../../../public/assets/images/planning.jpg"
+                   src="src/assets/images/planning.jpg"
                    alt="planning"
                    className={styles.planningPic}
                  />
@@ -29,7 +29,7 @@ const Landing = ({ user }) => {
              </div>
              <div className={styles.adventureContainer}>
                <div className={styles.adventurePicContainer}> 
-                 <img src="../../../public/assets/images/travelPic.jpg" alt="adventure picture" className={styles.adventurePic}/>
+                 <img src="src/assets/images/travelPic.jpg" alt="adventure picture" className={styles.adventurePic}/>
                </div>
                <div className={styles.adventureDescription}>
                  <h2>Your next adventure starts today</h2>
@@ -44,24 +44,24 @@ const Landing = ({ user }) => {
              <div className={styles.bammPics}>
                <div className={styles.bammPicsTop}>
                  <img
-                   src="../../../public/assets/images/melvinTravel.jpg"
+                   src="src/assets/images/melvinTravel.jpg"
                    alt="travel-pic"
                    className={styles.bammTravelMelvin}
                  />
                  <img
-                   src="../../../public/assets/images/monicaTravel.jpg"
+                   src="src/assets/images/monicaTravel.jpg"
                    alt="travel-pic"
                    className={styles.bammTravel}
                  />
                </div>
                <div className={styles.bammPicsBottom}>
                  <img
-                   src="../../../public/assets/images/andreaTravel.jpeg"
+                   src="src/assets/images/andreaTravel.jpeg"
                    alt="travel-pic"
                    className={styles.bammTravel}
                  />
                  <img
-                   src="../../../public/assets/images/bobbyTravel.jpg"
+                   src="src/assets/images/bobbyTravel.jpg"
                    alt="travel-pic"
                    className={styles.bammTravelBobby}
                  />
