@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 // css
 import styles from "./Landing.module.css";
+import logo from '../../assets/images/logo.png'
 
 const Landing = ({ user }) => {
   return (
@@ -13,7 +14,7 @@ const Landing = ({ user }) => {
                <div className={styles.bamm}>
                  <h1 className={styles.heading}>BAMM Voyage</h1>
                  <img
-                   src="src/assets/images/logo.png"
+                   src={logo}
                    alt="logo"
                    className={styles.logo}
                  />
