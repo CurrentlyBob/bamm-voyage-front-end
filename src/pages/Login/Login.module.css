@@ -1,47 +1,56 @@
-input {
-  margin-left: 16px;
-  padding: 4px 8px;
-  font-size: 16px;
-  width: 300px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding-top: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 500px;
 }
 
-input[type="file"] {
-  padding: 0;
+.title {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.input{
+  margin: 0;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
+}
+
+.input:focus{
+  outline: none;
 }
 
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-
-.message {
-  margin-top: 0;
-  height: 22px;
-  color: #dd1b16;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding-top: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 500px;
 }
 
-.label {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-bottom: 8px;
+.title {
+  text-align: center;
+  margin-top: 90px;
 }
 
-.button {
-  margin-left: 16px;
+.input{
+  margin: 0;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
 }
 
-.form > label:last-of-type {
-  margin-bottom: 16px;
+.input:focus{
+  outline: none;
 }
+

@@ -44,33 +44,36 @@ const ChangePassword = ({ handleAuthEvt }) => {
       <h1>Change Password</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
+        <fieldset>
           Current Password
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
-        <label className={styles.label}>
+        </fieldset>
+        <fieldset>
           New Password
           <input
             type="password"
             value={newPassword}
             name="newPassword"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
-        <label className={styles.label}>
+        </fieldset>
+        <fieldset>
           Confirm New Password
           <input
             type="password"
             value={newPasswordConf}
             name="newPasswordConf"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
+        </fieldset>
         <div>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
