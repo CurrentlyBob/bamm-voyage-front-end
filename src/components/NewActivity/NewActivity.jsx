@@ -109,7 +109,7 @@ const NewActivity = (props) => {
                 type="text"
                 name="activityWebsite"
                 // id="activityWebsite-input"
-                value={formData.activityWebsite}
+                value={formData.activityWebsite.substring(formData.activityWebsite.indexOf("/", formData.activityWebsite.indexOf("/") + 1) + 1)}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
