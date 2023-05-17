@@ -5,7 +5,10 @@
   margin-top: 60px;
   overflow-x: hidden;
 }
-
+.title{
+  display: flex;
+  align-items: center;
+}
 .cost{
   display: flex;
   width: 500px;

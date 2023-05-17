@@ -18,11 +18,10 @@ h2{
   margin-bottom: 0;
 }
 .table{
-  
   table-layout: fixed;
   border-collapse:collapse;
   text-align: left;
-  width: 100%;
+  width: 95%;
 }
 .th, .td{
   border: 1px solid rgb(189, 189, 189);
@@ -37,6 +36,22 @@ h2{
 .tbody{
   display: flex;
 }
-.tr:nth-child(5n){
-  background-color: red;
+
+/* .td:nth-child(5){
+  width: 90px !important;
+} */
+.row{
+  display: flex;
+}
+.th:last-child{
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  width: 50px;
+}
+.td:last-child{
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  width: 50px;
 }
