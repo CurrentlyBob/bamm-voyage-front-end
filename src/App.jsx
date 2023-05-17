@@ -24,6 +24,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as itineraryService from './services/itineraryService'
 
+
 // styles
 import './App.css'
 
@@ -35,7 +36,8 @@ function App() {
   const [itineraries, setItineraries] = useState([])
   // const [itinerary, setItinerary] = useState(null)
   const navigate = useNavigate()
-
+  // const prevItineraries= itineraries
+  // console.log("Previous Itin", prevItineraries)
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -52,19 +54,25 @@ function App() {
 
   const handleAddItinerary = async (itineraryFormData) => {
     const newItinerary = await itineraryService.create(itineraryFormData)
-    setItineraries([newItinerary, ...itineraries])
+    const newItineraries= [newItinerary, ...itineraries]
+    console.log("new itin", newItineraries)
+    console.log("new itin sorted", newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
+    // setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
+    setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
     navigate('/itineraries')
   }
   const handleUpdateItinerary = async (itineraryFormData) => {
     const updatedItinerary = await itineraryService.update(itineraryFormData)
-    setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
+    const updatedItineraries= itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b)
+    const sortedItineraries= updatedItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
+    setItineraries(sortedItineraries)
+    // setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
     navigate('/itineraries')
   }
   
   const handleDeleteItinerary = async (itineraryId) => {
     const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
     setItineraries(itineraries.filter(itin => itin._id !== deletedItinerary._id))
-
     navigate('/itineraries')
   }
 

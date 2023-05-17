@@ -71,7 +71,7 @@ const EditItinerary = (props) => {
             type="date" 
             name="startDate"
             // id="startDate-input"
-            value={formData.startDate}
+            value={moment(formData.startDate).format('yyyy-MM-DD')}
             onChange={handleChange}
             className={styles.input}
           />
@@ -83,7 +83,7 @@ const EditItinerary = (props) => {
             type="date" 
             name="endDate"
             // id="endDate-input"
-            value={formData.endDate}
+            value={moment(formData.endDate).format('yyyy-MM-DD')}
             onChange={handleChange}
             className={styles.input}
           />
