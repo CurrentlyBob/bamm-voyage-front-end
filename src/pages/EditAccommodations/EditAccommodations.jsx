@@ -29,8 +29,8 @@ const EditAccommodation = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Edit Accommodation</h1>
       <form className={styles.container} onSubmit={handleSubmit}>
+        <h1 className={styles.title}>Edit Accommodation</h1>
         {/* <label htmlFor="type-input">Type</label> */}
         <fieldset>
           <legend>Type</legend>

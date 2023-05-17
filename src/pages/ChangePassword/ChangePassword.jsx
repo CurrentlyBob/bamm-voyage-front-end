@@ -41,7 +41,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1>Change Password</h1>
+      <h1 className={styles.title}>Change Password</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <fieldset>
@@ -52,6 +52,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="password"
             onChange={handleChange}
             className={styles.input}
+            autoComplete='off'
           />
         </fieldset>
         <fieldset>
@@ -62,6 +63,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="newPassword"
             onChange={handleChange}
             className={styles.input}
+            autoComplete='off'
           />
         </fieldset>
         <fieldset>
@@ -72,10 +74,15 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="newPasswordConf"
             onChange={handleChange}
             className={styles.input}
+            autoComplete='off'
           />
         </fieldset>
         <div className={styles.links}>
-          <Link to="/">Cancel</Link>
+          <Link to="/">
+            <button>
+              Cancel
+            </button>
+          </Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password
           </button>

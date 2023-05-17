@@ -22,8 +22,8 @@ const EditItinerary = (props) => {
 
   return (
     <main> 
-      <h1 className={styles.title}>Edit Your Itinerary</h1> 
       <form onSubmit={handleSubmit} className={styles.container}>
+        <h1 className={styles.title}>Edit Itinerary</h1> 
         {/* <label htmlFor="title-input">Itinerary Name</label> */}
         <fieldset>
           <legend>Itinerary Name</legend>
@@ -71,7 +71,7 @@ const EditItinerary = (props) => {
             type="date" 
             name="startDate"
             // id="startDate-input"
-            value={moment(formData.startDate).format('yyyy-MM-DD')}
+            value={moment.utc(formData.startDate).format('yyyy-MM-DD')}
             onChange={handleChange}
             className={styles.input}
           />
@@ -83,7 +83,7 @@ const EditItinerary = (props) => {
             type="date" 
             name="endDate"
             // id="endDate-input"
-            value={moment(formData.endDate).format('yyyy-MM-DD')}
+            value={moment.utc(formData.endDate).format('yyyy-MM-DD')}
             onChange={handleChange}
             className={styles.input}
           />

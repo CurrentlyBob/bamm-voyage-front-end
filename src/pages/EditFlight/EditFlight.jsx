@@ -26,8 +26,8 @@ const EditFlight = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Edit Flight</h1>
       <form className={styles.container} onSubmit={handleSubmit}>
+        <h1 className={styles.title}>Edit Flight</h1>
         {/* <label htmlFor="airline-input">Airline</label> */}
         <fieldset>
           <legend>Airline</legend>
