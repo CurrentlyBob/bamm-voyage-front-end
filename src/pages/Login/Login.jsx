@@ -45,40 +45,42 @@ const LoginPage = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1>Log In</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-          <fieldset>
-          <legend>Email</legend>
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-            className={styles.input}
-          />
-          </fieldset>
-          <fieldset>
-          <legend>Password</legend>
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-            className={styles.input}
-          />
-          </fieldset>
-        <div className={styles.link}>
-          <Link to="/">
-            <button>
-              Cancel
+      <div className={styles.content}>
+        <h1>Log In</h1>
+        <p className={styles.message}>{message}</p>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+            <fieldset>
+            <legend>Email</legend>
+            <input
+              type="text"
+              value={email}
+              name="email"
+              onChange={handleChange}
+              className={styles.input}
+            />
+            </fieldset>
+            <fieldset>
+            <legend>Password</legend>
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+              className={styles.input}
+            />
+            </fieldset>
+          <div className={styles.link}>
+            <Link to="/">
+              <button>
+                Cancel
+              </button>
+            </Link>
+            <button className={styles.button} disabled={isFormInvalid()}>
+              Log In
             </button>
-          </Link>
-          <button className={styles.button} disabled={isFormInvalid()}>
-            Log In
-          </button>
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </main>
   )
 }

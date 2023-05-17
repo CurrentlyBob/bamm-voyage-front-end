@@ -82,37 +82,37 @@ const Signup = ({ handleAuthEvt }) => {
         <h1>Sign Up</h1>
         <p className={styles.message}>{message}</p>
         <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-          <label className={styles.label}>
-            Name
+          <fieldset>
+            <legend>Name</legend>
             <input type="text" value={name} name="name" onChange={handleChange} />
-          </label>
-          <label className={styles.label}>
-            Email
+          </fieldset>
+          <fieldset>
+            <legend>Email</legend>
             <input
               type="text"
               value={email}
               name="email"
               onChange={handleChange}
             />
-          </label>
-          <label className={styles.label}>
-            Password
+          </fieldset>
+          <fieldset>
+            <legend>Password</legend>
             <input
               type="password"
               value={password}
               name="password"
               onChange={handleChange}
             />
-          </label>
-          <label className={styles.label}>
-            Confirm Password
+          </fieldset>
+          <fieldset>
+            <legend>Confirm Password</legend>
             <input
               type="password"
               value={passwordConf}
               name="passwordConf"
               onChange={handleChange}
             />
-          </label>
+          </fieldset>
           <label className={styles.label}>
             Upload Photo
             <input 
@@ -123,7 +123,11 @@ const Signup = ({ handleAuthEvt }) => {
             />
           </label>
           <div>
-            <Link to="/" className={styles.link}>Cancel</Link>
+            <Link to="/" className={styles.link}>
+              <button>
+                Cancel
+              </button>
+            </Link>
             <button
               className={styles.button}
               disabled={ isFormInvalid() || isSubmitted }
