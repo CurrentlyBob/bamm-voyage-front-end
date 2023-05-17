@@ -13,7 +13,7 @@ const Landing = ({ user }) => {
                <div className={styles.bamm}>
                  <h1 className={styles.heading}>BAMM Voyage</h1>
                  <img
-                   src="../../../public/assets/images/logo.png"
+                   src="../../../src/assets/images/logo.png"
                    alt="logo"
                    className={styles.logo}
                  />
@@ -81,7 +81,7 @@ const Landing = ({ user }) => {
                 <div className={styles.one}>
                   <h4 className={styles.header}>Organize</h4>
                   <img
-                    src="../../../public/assets/images/checklist.png"
+                    src="src/assets/images/checklist.png"
                     alt="checklist"
                     width="64"
                   />
@@ -89,7 +89,7 @@ const Landing = ({ user }) => {
                 <div className={styles.two}>
                   <h4 className={styles.header}>Countdown</h4>
                   <img
-                    src="../../../public/assets/images/calendar.png"
+                    src="src/assets/images/calendar.png"
                     alt="countdown"
                     width="64"
                   />
@@ -97,7 +97,7 @@ const Landing = ({ user }) => {
                 <div className={styles.three}>
                   <h4 className={styles.header}>Budget Tracker</h4>
                   <img
-                    src="../../../public/assets/images/budget.png"
+                    src="src/assets/images/budget.png"
                     alt="budget tracker"
                     width="64"
                   />
