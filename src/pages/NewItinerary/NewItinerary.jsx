@@ -59,7 +59,8 @@ const NewItinerary = (props) => {
         <fieldset>
           <legend>Budget</legend>
           <input 
-            type="text" 
+            required
+            type="text"
             name="budget"
             // id="budget-input"
             value={formData.budget}
