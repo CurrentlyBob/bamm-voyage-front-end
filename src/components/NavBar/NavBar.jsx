@@ -7,7 +7,7 @@ import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/joy/Menu";
 import MenuItem from "@mui/joy/MenuItem";
-
+import logo from "../../assets/images/logo.png"
 //css
 import styles from "./NavBar.module.css";
 
@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
           <Link to="/">
             <img
               className={styles.logo}
-              src="src/assets/images/logo.png"
+              src={logo}
               alt="logo"
             />
           </Link>
