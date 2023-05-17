@@ -1,6 +1,6 @@
 .loggedInBackground {
-  background-image: url('../../../public/assets/images/loggedInBackgroundPic.jpg');
-  /* background-repeat: no-repeat; */
+  background-image: url('src/assets/images/loggedInBackgroundPic.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   /* height: 100%; */
@@ -124,7 +124,7 @@
   margin-bottom: 0;
 }
 .loggedOutBackground {
-  background-image: url('../../../public/assets/images/loggedOutBackgroundPic.jpg');
+  background-image: url('src/assets/images/loggedOutBackgroundPic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

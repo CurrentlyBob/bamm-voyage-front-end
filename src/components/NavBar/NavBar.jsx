@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
           <Link to="/">
             <img
               className={styles.logo}
-              src="../../../public/assets/images/logo.png"
+              src="src/assets/images/logo.png"
               alt="logo"
             />
           </Link>
