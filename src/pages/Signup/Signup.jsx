@@ -81,46 +81,51 @@ const Signup = ({ handleAuthEvt }) => {
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
+
+        <fieldset>
+          <legend>Name</legend>
+          <input type="text" value={name} name="name" onChange={handleChange} className={styles.input} />
+          </fieldset>
+        <fieldset>
+          <legend>Email</legend>
           <input
             type="text"
             value={email}
             name="email"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
-        <label className={styles.label}>
-          Password
+        </fieldset>
+        <fieldset>
+          <legend>Password</legend>
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
+        </fieldset>
+        <fieldset>
+          <legend>Confirm Password</legend>
           <input
             type="password"
             value={passwordConf}
             name="passwordConf"
             onChange={handleChange}
+            className={styles.input}
           />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
+        </fieldset>
+        <fieldset>
+          <legend>Upload Photo</legend>
           <input 
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
+            className={styles.input}
           />
-        </label>
+        </fieldset>
         <div>
           <Link to="/">Cancel</Link>
           <button

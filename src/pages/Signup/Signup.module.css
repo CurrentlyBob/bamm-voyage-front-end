@@ -45,3 +45,19 @@ input[type="file"] {
 .form > label:last-of-type {
   margin-bottom: 16px;
 }
+
+.title {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.input{
+  margin: 0;
+  margin-left: 7px;
+  border: none;
+  padding: 5px;
+}
+
+.input:focus{
+  outline: none;
+}
