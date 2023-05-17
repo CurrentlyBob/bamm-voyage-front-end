@@ -22,7 +22,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
           <tr>
             <th className={styles.th}>Activity Date</th>
             <th className={styles.th}>Notes</th>
-            <th className={styles.th}></th>
+            <th className={styles.th}>Website</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
               )}
             </td>
             <td className={styles.td}>{activity.notes}</td>
-            <td className={styles.td}>
+            <td className={styles.td}><a className={styles.activityUrl}  href={`http://${activity.activityWebsite}`} target="_blank" rel="noreferrer"> {activity.activityWebsite}</a>
             </td>
           </tr>
         </tbody>
