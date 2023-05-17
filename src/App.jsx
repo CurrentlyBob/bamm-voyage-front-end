@@ -42,6 +42,10 @@ function App() {
     navigate('/')
   }
 
+  const handleChangePassword= () => {
+    navigate('/auth/change-password')
+  }
+
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
@@ -81,7 +85,7 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} handleChangePassword={handleChangePassword}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route

@@ -22,6 +22,7 @@
 .profile{
   display: flex;
   text-align: right;
+  align-items: center;
 }
 .li > a, .li> a:visited{
   text-decoration: none;
