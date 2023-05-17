@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 
 import styles from "./ActivityCard.module.css";
+import ActivityKebabMenu from "../KebabMenus/ActivityKebabMenu";
 
 const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
   console.log(activity)
@@ -11,6 +12,9 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
         <h2>{activity.category}</h2>
         <h2>{activity.name}</h2>
         <h2>${activity.cost}</h2>
+        <div>
+        <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
+      </div>
       </div>
       <div className={styles.subtitle}></div>
       <table className={styles.table}>
@@ -30,22 +34,6 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
             </td>
             <td className={styles.td}>{activity.notes}</td>
             <td className={styles.td}>
-              <>
-                <Link
-                  to={`/itineraries/${itineraryId}/activities/${activity._id}`}
-                  state={activity}
-                >
-                  <button className={styles.button}>Edit</button>
-                </Link>
-                <button
-                  className={styles.button}
-                  onClick={() =>
-                    handleDeleteActivity(itineraryId, activity._id)
-                  }
-                >
-                  Delete
-                </button>
-              </>
             </td>
           </tr>
         </tbody>
