@@ -15,7 +15,7 @@ body {
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color: #567189;
+  color: #474962;
   background-color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,12 +54,12 @@ nav > ul {
 }
 
 #file-upload-button{
-  background-color: #567189 !important;
+  background-color: #474962 !important;
 }
 ::-webkit-scrollbar {
   width:10px;
   /* background-color: #7b8fa1; */
-  background-color: #567189;
+  background-color: #474962;
 }
 ::-webkit-scrollbar-thumb {
   /* background-color: #7b8fa1; */
