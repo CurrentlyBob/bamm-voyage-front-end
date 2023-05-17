@@ -71,15 +71,15 @@ const ItineraryDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
-      <div>
-        {itinerary.owner._id === props.user.profile._id &&
-            <ItineraryKebabMenu
-              itinerary={itinerary}
-              itineraryId={itineraryId}
-              handleDeleteItinerary={props.handleDeleteItinerary}
-            />
-        }
+      <div className={styles.title}>
+        <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
+          {itinerary.owner._id === props.user.profile._id &&
+              <ItineraryKebabMenu
+                itinerary={itinerary}
+                itineraryId={itineraryId}
+                handleDeleteItinerary={props.handleDeleteItinerary}
+              />
+          }
       </div>
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget.toLocaleString('en-US')}</h3>
