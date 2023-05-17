@@ -25,10 +25,10 @@ body {
   overflow-x: hidden;
 }
 
-/* a,
+a,
 a:visited {
-  color: #f8f4ea;
-} */
+  text-decoration: none;
+}
 
 nav > ul {
   margin: 0;
@@ -53,3 +53,6 @@ nav > ul {
   box-shadow: 1px 1px 15px #E3D6B2 !important;
 }
 
+#file-upload-button{
+  background-color: #567189 !important;
+}
