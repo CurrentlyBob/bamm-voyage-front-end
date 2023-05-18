@@ -21,7 +21,7 @@ input:focus{
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: -50px;
+  margin-top: -40px;
   display: flex; 
   align-items: center;
   justify-content: center;
