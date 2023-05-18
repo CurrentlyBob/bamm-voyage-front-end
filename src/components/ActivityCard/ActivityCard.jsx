@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 import styles from './ActivityCard.module.css'
@@ -23,7 +22,6 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
         </div>
         <p className={styles.activityWebsite}>
           <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
-            {' '}
             {activity.name}'s website
           </a>
         </p>

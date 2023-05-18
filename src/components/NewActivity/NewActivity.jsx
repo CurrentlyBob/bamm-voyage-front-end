@@ -57,12 +57,10 @@ const NewActivity = (props) => {
         {showForm ? (
           <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
             <h2>Activity</h2>
-            {/* <label htmlFor="type-input">Category</label> */}
             <fieldset>
               <legend>Type</legend>
               <select
                 name="category"
-                // id="type-input"
                 value={formData.category}
                 onChange={handleChange}
                 className={styles.select}
@@ -73,39 +71,33 @@ const NewActivity = (props) => {
                 <option value="Nightlife">Nightlife</option>
               </select>
             </fieldset>
-            {/* <label htmlFor="name">Activity</label> */}
             <fieldset>
               <legend>Name</legend>
               <input
                 type="text"
                 name="name"
-                // id="name-input"
                 value={formData.name}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="activityDate">Activity Date</label> */}
             <fieldset>
               <legend>Activity Date</legend>
               <input
                 required
                 type="datetime-local"
                 name="activityDate"
-                // id="activityDate-input"
                 value={formData.activityDate}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="activityWebsite">Activity Website</label> */}
             <fieldset>
               <legend>Website</legend>
               <input
                 type="text"
                 name="activityWebsite"
-                // id="activityWebsite-input"
                 value={formData.activityWebsite.substring(
                   formData.activityWebsite.indexOf('/', formData.activityWebsite.indexOf('/') + 1) + 1,
                 )}
@@ -114,7 +106,6 @@ const NewActivity = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="notes">Notes</label> */}
             <fieldset>
               <legend>Notes</legend>
               <textarea
@@ -127,23 +118,12 @@ const NewActivity = (props) => {
                 onChange={handleChange}
                 className={styles.textarea}
               ></textarea>
-              {/* <input
-                type="text"
-                name="notes"
-                // id="notes-input"
-                value={formData.notes}
-                autoComplete="off"
-                onChange={handleChange}
-                className={styles.input}
-              /> */}
             </fieldset>
-            {/* <label htmlFor="cost">Cost</label> */}
             <fieldset>
               <legend>Cost</legend>
               <input
                 type="text"
                 name="cost"
-                // id="cost-input"
                 value={formData.cost}
                 autoComplete="off"
                 onChange={handleChange}
