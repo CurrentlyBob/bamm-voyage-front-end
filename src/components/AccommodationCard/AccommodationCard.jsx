@@ -11,7 +11,7 @@ const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodati
           <h2>{accommodation.type}:</h2>
           <h2>{accommodation.name}</h2>
         </div>
-        <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
+        <h2 className={styles.accommodationCost}>${accommodation.cost.toLocaleString('en-US')}</h2>
         <AccommodationKebabMenu
           accommodation={accommodation}
           itineraryId={itineraryId}
