@@ -43,12 +43,6 @@ h2 {
   display: flex;
 }
 
-/* .td:nth-child(5){
-  width: 90px !important;
-} */
-/* .row{
-  display: flex;
-} */
 .th:last-child {
   border-top: none;
   border-right: none;
