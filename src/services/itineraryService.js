@@ -7,7 +7,6 @@ async function index() {
     const res = await fetch(BASE_URL, {
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     })
-    console.log(res)
     return res.json()
   } catch (error) {
     console.log(error)
@@ -51,7 +50,6 @@ async function show(itineraryId) {
     const res = await fetch(`${BASE_URL}/${itineraryId}`, {
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     })
-    console.log(res)
     return res.json()
   } catch (error) {
     console.log(error)
