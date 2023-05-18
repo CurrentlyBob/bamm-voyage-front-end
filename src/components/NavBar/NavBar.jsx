@@ -1,11 +1,11 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ClickAwayListener, IconButton, MenuList, Popper, Paper, MenuItem } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person'
 import logo from '../../assets/images/logo.png'
-import { useRef, useEffect } from 'react'
+
 
 //css
 import styles from './NavBar.module.css'
@@ -13,22 +13,16 @@ import styles from './NavBar.module.css'
 const NavBar = ({ user, handleLogout }) => {
   const [open, setOpen] = useState(false)
   const anchorRef = useRef(null)
-  console.log(open)
 
   const handleClick = () => {
     setOpen((prevOpen) => !prevOpen)
-    console.log('open inside', open)
   }
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return
     }
-
     setOpen(false)
   }
-  useEffect(() => {
-    console.log(open)
-  }, [open])
 
   return (
     <>
@@ -60,7 +54,13 @@ const NavBar = ({ user, handleLogout }) => {
             >
               <PersonIcon className={styles.personIcon} />
             </IconButton>
-            <Popper id="menu" anchorEl={anchorRef.current} open={open} aria-labelledby="button" placement="bottom-end">
+            <Popper 
+            id="menu" 
+            anchorEl={anchorRef.current} 
+            open={open} 
+            onClose={handleClose}
+            aria-labelledby="button" 
+            placement="bottom-end">
               <ClickAwayListener onClickAway={handleClose}>
                 <Paper>
                   <MenuList>
