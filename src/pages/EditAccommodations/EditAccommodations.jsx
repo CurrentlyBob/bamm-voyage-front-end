@@ -28,7 +28,6 @@ const EditAccommodation = () => {
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <h1 className={styles.title}>Edit Accommodation</h1>
-          {/* <label htmlFor="type-input">Type</label> */}
           <fieldset>
             <legend>Type</legend>
             <select name="type" id="type-input" value={formData.type} onChange={handleChange} className={styles.select}>
@@ -38,7 +37,6 @@ const EditAccommodation = () => {
               <option value="Other">Other</option>
             </select>
           </fieldset>
-          {/* <label htmlFor="name">Name</label> */}
           <fieldset>
             <legend>Name</legend>
             <input
@@ -51,20 +49,17 @@ const EditAccommodation = () => {
               className={styles.input}
             />
           </fieldset>
-          {/* <label htmlFor="checkInDate">CheckIn Date</label> */}
           <fieldset>
             <legend>CheckIn Date</legend>
             <input
               required
               type="datetime-local"
               name="checkInDate"
-              // id="checkInDate-input"
               value={moment(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
           </fieldset>
-          {/* <label htmlFor="checkOutDate">CheckOut Date</label> */}
           <fieldset>
             <legend>CheckOut Date</legend>
             <input
@@ -76,7 +71,6 @@ const EditAccommodation = () => {
               className={styles.input}
             />
           </fieldset>
-          {/* <label htmlFor="address">Address</label> */}
           <fieldset>
             <legend>Address</legend>
             <input
@@ -89,7 +83,6 @@ const EditAccommodation = () => {
               className={styles.input}
             />
           </fieldset>
-          {/* <label htmlFor="website">Website</label> */}
           <fieldset>
             <legend>Website</legend>
             <input
@@ -102,7 +95,6 @@ const EditAccommodation = () => {
               className={styles.input}
             />
           </fieldset>
-          {/* <label htmlFor="cost">Cost</label> */}
           <fieldset>
             <legend>Cost</legend>
             <input

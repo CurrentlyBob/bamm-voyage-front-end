@@ -29,10 +29,8 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [itineraries, setItineraries] = useState([])
-  // const [itinerary, setItinerary] = useState(null)
   const navigate = useNavigate()
-  // const prevItineraries= itineraries
-  // console.log("Previous Itin", prevItineraries)
+
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -50,12 +48,6 @@ function App() {
   const handleAddItinerary = async (itineraryFormData) => {
     const newItinerary = await itineraryService.create(itineraryFormData)
     const newItineraries = [newItinerary, ...itineraries]
-    console.log('new itin', newItineraries)
-    console.log(
-      'new itin sorted',
-      newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)),
-    )
-    // setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
     setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
     navigate('/itineraries')
   }
@@ -64,7 +56,6 @@ function App() {
     const updatedItineraries = itineraries.map((b) => (itineraryFormData._id === b._id ? updatedItinerary : b))
     const sortedItineraries = updatedItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
     setItineraries(sortedItineraries)
-    // setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
     navigate('/itineraries')
   }
 
