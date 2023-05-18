@@ -1,8 +1,4 @@
 .itineraryCards {
-  /* background-image: url('src/assets/images/itinerariesBack.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; */
-  /* min-height: 100vh; */
   width: 100%;
   display: flex;
   justify-content: space-around;
