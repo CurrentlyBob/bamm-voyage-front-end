@@ -88,7 +88,7 @@ const NewFlight = (props) => {
               <input
                 type="datetime-local"
                 name="departureDate"
-                value={formData.departureDate}
+                value={formData.Date}
                 onChange={handleChange}
                 className={styles.input}
               />
@@ -109,7 +109,7 @@ const NewFlight = (props) => {
               <input
                 type="datetime-local"
                 name="arrivalDate"
-                value={formData.arrivalDate}
+                value={formData.Date}
                 onChange={handleChange}
                 className={styles.input}
               />
