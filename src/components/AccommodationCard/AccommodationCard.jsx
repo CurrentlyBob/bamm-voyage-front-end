@@ -30,8 +30,8 @@ const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodati
         <table className={styles.table}>
           <thead>
             <tr>
-              <th className={styles.th}>CheckIn Date</th>
-              <th className={styles.th}>CheckOut Date</th>
+              <th className={styles.th}>Check In Date</th>
+              <th className={styles.th}>Check Out Date</th>
             </tr>
           </thead>
           <tbody>
