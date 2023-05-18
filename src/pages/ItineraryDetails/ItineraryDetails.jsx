@@ -57,8 +57,7 @@ const ItineraryDetails = (props) => {
   const handleAddActivity = async (activityFormData) => {
     const newActivity = await itineraryService.createActivity(itineraryId, activityFormData)
     setItinerary({ ...itinerary, activities: [...itinerary.activities, newActivity] })
-    console.log('NewActivity', newActivity)
-    console.log('Itinerary', itinerary)
+
   }
 
   const handleDeleteActivity = async (itineraryId, activityId) => {
@@ -139,7 +138,7 @@ const ItineraryDetails = (props) => {
         />
       </section>
       <div className={styles.formData}>
-        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate} />
+        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate} itineraryEnd={itinerary.endDate}/>
         <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate} />
         <NewActivity handleAddActivity={handleAddActivity} itineraryStart={itinerary.startDate} />
       </div>

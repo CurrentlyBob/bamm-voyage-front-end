@@ -15,14 +15,15 @@ const NewFlight = (props) => {
     showForm ? setShowForm(false) : setShowForm(true)
   }
 
-  const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
+  const startDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
+  const endDate = moment.utc(props.itineraryEnd).format('yyyy-MM-DD HH:mm')
 
   const [formData, setFormData] = useState({
     airline: '',
     departureAirport: '',
-    departureDate: defaultDate,
+    departureDate: startDate,
     arrivalAirport: '',
-    arrivalDate: defaultDate,
+    arrivalDate: endDate,
     recordLocator: '',
     cost: '',
   })
@@ -37,9 +38,9 @@ const NewFlight = (props) => {
     setFormData({
       airline: '',
       departureAirport: '',
-      departureDate: defaultDate,
+      departureDate: startDate,
       arrivalAirport: '',
-      arrivalDate: defaultDate,
+      arrivalDate: endDate,
       recordLocator: '',
       cost: '',
     })
@@ -88,7 +89,7 @@ const NewFlight = (props) => {
               <input
                 type="datetime-local"
                 name="departureDate"
-                value={formData.Date}
+                value={moment.utc(formData.departureDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />
@@ -109,7 +110,7 @@ const NewFlight = (props) => {
               <input
                 type="datetime-local"
                 name="arrivalDate"
-                value={formData.Date}
+                value={moment.utc(formData.arrivalDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />
