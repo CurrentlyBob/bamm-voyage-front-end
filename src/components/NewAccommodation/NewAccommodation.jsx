@@ -93,7 +93,7 @@ const NewAccommodation = (props) => {
                 type="datetime-local"
                 name="checkInDate"
                 id="checkInDate-input"
-                value={formData.checkInDate}
+                value={formData.Date}
                 onChange={handleChange}
                 className={styles.input}
               />
@@ -104,7 +104,7 @@ const NewAccommodation = (props) => {
                 type="datetime-local"
                 name="checkOutDate"
                 id="checkOutDate-input"
-                value={formData.checkOutDate}
+                value={formData.Date}
                 onChange={handleChange}
                 className={styles.input}
               />
