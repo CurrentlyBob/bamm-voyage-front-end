@@ -37,7 +37,9 @@ const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodati
           <tbody>
             <tr>
               <td className={styles.td}>{moment.utc(accommodation.checkInDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
-              <td className={styles.td}>{moment.utc(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+              <td className={styles.td}>
+                {moment.utc(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}
+              </td>
             </tr>
           </tbody>
         </table>

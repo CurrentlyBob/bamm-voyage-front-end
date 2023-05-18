@@ -20,7 +20,6 @@ const ItineraryKebabMenu = ({ itinerary, itineraryId, handleDeleteItinerary }) =
     setOpen(false)
   }
 
-
   return (
     <>
       <IconButton
@@ -33,7 +32,7 @@ const ItineraryKebabMenu = ({ itinerary, itineraryId, handleDeleteItinerary }) =
         color="neutral"
         onClick={handleClick}
       >
-        <MoreVert style={{ color: '#474962'}}/>
+        <MoreVert style={{ color: '#474962' }} />
       </IconButton>
       <Popper
         id="menu"

@@ -2,7 +2,6 @@
 
 ![picture alt](src/assets/images/LandingPageSC.png)
 
-
 ## Overview
 
 Welcome to the BAMM Voyage Front-End repository! This repository contains the front-end code for the BAMM Voyage application.
@@ -10,6 +9,7 @@ Welcome to the BAMM Voyage Front-End repository! This repository contains the fr
 At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and understand the challenges that come with planning trips. We have experienced firsthand how travel planning can become complicated and messy without the right tools. Therefore, we decided to create this app to help solve that issue and provide users with a streamlined and efficient way to plan their journeys.
 
 ![picture alt](src/assets/images/ItineraryIndexPageSC.png)
+
 # Links 🔗
 
 - [PitchDeck](https://docs.google.com/presentation/d/1Nrj_1rN6D0FwDB-EJoClxOx6Qps2g5nUOta-EUGs45g/edit#slide=id.g241b0af04a2_0_8)

@@ -32,7 +32,7 @@ const AccommodationKebabMenu = ({ accommodation, itineraryId, handleDeleteAccomm
         color="neutral"
         onClick={handleClick}
       >
-        <MoreVert style={{ color: '#474962'}}/>
+        <MoreVert style={{ color: '#474962' }} />
       </IconButton>
       <Popper
         id="menu"
@@ -40,22 +40,22 @@ const AccommodationKebabMenu = ({ accommodation, itineraryId, handleDeleteAccomm
         open={open}
         onClose={handleClose}
         aria-labelledby="button"
-        placement="bottom-end">
-          <ClickAwayListener onClickAway={handleClose}>
-            <Paper>
-              <MenuList>
-                <MenuItem>
-                  <Link to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`} state={accommodation}>
-                    <EditIcon style={{ color: '#474962' }} />
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => handleDeleteAccommodation(itineraryId, accommodation._id)} >
-                  <DeleteForeverIcon style={{ color: '#474962' }}/>
-                </MenuItem>
-              </MenuList>
-            </Paper>
-          </ClickAwayListener>
+        placement="bottom-end"
+      >
+        <ClickAwayListener onClickAway={handleClose}>
+          <Paper>
+            <MenuList>
+              <MenuItem>
+                <Link to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`} state={accommodation}>
+                  <EditIcon style={{ color: '#474962' }} />
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={() => handleDeleteAccommodation(itineraryId, accommodation._id)}>
+                <DeleteForeverIcon style={{ color: '#474962' }} />
+              </MenuItem>
+            </MenuList>
+          </Paper>
+        </ClickAwayListener>
       </Popper>
     </>
   )

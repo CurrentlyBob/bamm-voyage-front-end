@@ -27,12 +27,7 @@ const EditActivity = () => {
           <h1 className={styles.title}>Edit Activity</h1>
           <fieldset>
             <legend>Type</legend>
-            <select
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-              className={styles.select}
-            >
+            <select name="category" value={formData.category} onChange={handleChange} className={styles.select}>
               <option value="Activity">Activity</option>
               <option value="Restaurant">Restaurant</option>
               <option value="Landmark">Landmark</option>
