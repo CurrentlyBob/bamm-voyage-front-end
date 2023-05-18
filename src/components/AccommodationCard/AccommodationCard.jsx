@@ -12,8 +12,8 @@ const AccommodationCard = ({
     <>
       <div className={styles.accommodationContainer}>
         <div className={styles.title}>
+          <h2>{accommodation.type}:</h2>
           <h2>{accommodation.name}</h2>
-          <h2>{accommodation.type}</h2>
         </div>
         <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
         <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
@@ -26,20 +26,23 @@ const AccommodationCard = ({
         </a>
         </p>
       </div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th className={styles.th}>CheckIn Date</th>
-            <th className={styles.th}>CheckOut Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className={styles.td}>{moment(accommodation.checkInDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
-            <td className={styles.td}>{moment(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th className={styles.th}>CheckIn Date</th>
+              <th className={styles.th}>CheckOut Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className={styles.td}>{moment(accommodation.checkInDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+              <td className={styles.td}>{moment(accommodation.checkOutDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
     </>
   );
 };

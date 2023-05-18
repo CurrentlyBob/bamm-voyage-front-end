@@ -17,6 +17,11 @@
 h2{
   margin-bottom: 0;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+}
 .table{
   table-layout: fixed;
   border-collapse:collapse;
@@ -54,9 +59,4 @@ h2{
   border-right: none;
   border-bottom: none;
   width: 60px;
-}
-.container{
-  display: flex;
-  justify-content: center;
-  /* background-color: red; */
 }
