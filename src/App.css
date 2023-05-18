@@ -37,19 +37,25 @@ nav > ul {
 
 .css-18rm664-MuiButtonBase-root-MuiIconButton-root, .MuiButtonBase-root-MuiIconButton-root {
   padding: 0 10px !important;
-  border-radius: 50% !important;
+  border-radius: 7px !important;
   width: 40px !important;
   height: 40px !important;
   margin: 0 5px !important;
+  border: 1px solid rgba(71, 73, 98, 0.2)  !important;
 }
 .css-h4y409-MuiList-root, .MuiList-root {
-  margin-top: 10px !important;
+  margin-top: 8px !important;
   box-shadow: 1px 1px 20px #474962 !important;
-  /* padding: 10px !important; */
+  border-radius: 7px;
+ 
 }
 .css-18rm664-MuiButtonBase-root-MuiIconButton-root:hover, .MuiButtonBase-root-MuiIconButton-root:hover {
   box-shadow: 1px 1px 15px #e3d6b2 !important;
 }
+
+/* .css-i4bv87-MuiSvgIcon-root {
+  color: red;
+} */
 
 .JoyIconButton-root {
   margin-left: 20px !important;

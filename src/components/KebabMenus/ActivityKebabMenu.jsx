@@ -1,55 +1,61 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-import IconButton from '@mui/joy/IconButton'
-import Menu from '@mui/joy/Menu'
-import MenuItem from '@mui/joy/MenuItem'
+import { ClickAwayListener, IconButton, MenuList, Popper, Paper, MenuItem } from '@mui/material'
 import MoreVert from '@mui/icons-material/MoreVert'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
 const ActivityKebabMenu = ({ activity, itineraryId, handleDeleteActivity }) => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
+  const [open, setOpen] = useState(false)
+  const anchorRef = useRef(null)
 
-  const handleClick = async (evt) => {
-    setAnchorEl(evt.currentTarget)
+  const handleClick = () => {
+    setOpen((prevOpen) => !prevOpen)
   }
-
-  const handleClose = () => {
-    setAnchorEl(null)
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return
+    }
+    setOpen(false)
   }
 
   return (
     <>
       <IconButton
+        ref={anchorRef}
         id="button"
         aria-controls={open ? 'menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         variant="outlined"
         color="neutral"
-        onClick={open ? handleClose : handleClick}
+        onClick={handleClick}
       >
-        <MoreVert />
+        <MoreVert style={{ color: '#474962'}}/>
       </IconButton>
-      <Menu
+      <Popper
         id="menu"
-        anchorEl={anchorEl}
+        anchorEl={anchorRef.current}
         open={open}
         onClose={handleClose}
         aria-labelledby="button"
-        placement="bottom-end"
-      >
-        <MenuItem>
-          <Link to={`/itineraries/${itineraryId}/activities/${activity._id}`} state={activity}>
-            <EditIcon style={{ color: '#474962' }} />
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} style={{ color: '#474962' }}>
-          <DeleteForeverIcon />
-        </MenuItem>
-      </Menu>
+        placement="bottom-end">
+          <ClickAwayListener onClickAway={handleClose}>
+            <Paper>
+              <MenuList>
+                <MenuItem>
+                  <Link to={`/itineraries/${itineraryId}/activities/${activity._id}`} state={activity}>
+                    <EditIcon style={{ color: '#474962' }} />
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} >
+                  <DeleteForeverIcon style={{ color: '#474962' }}/>
+                </MenuItem>
+              </MenuList>
+            </Paper>
+          </ClickAwayListener>
+      </Popper>
     </>
   )
 }
