@@ -51,7 +51,7 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
               aria-expanded={open ? "true" : undefined}
               variant="outlined"
               color="neutral"
-              onClick={handleClick}
+              onClick={open ? handleClose : handleClick}
             >
               <MenuIcon className={styles.menuIcon} />
             </IconButton>

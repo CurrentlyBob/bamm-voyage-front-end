@@ -33,7 +33,7 @@ const AccommodationKebabMenu = ({
         aria-expanded={open ? "true" : undefined}
         variant="outlined"
         color="neutral"
-        onClick={handleClick}
+        onClick={open ? handleClose : handleClick}
       >
         <MoreVert />
       </IconButton>
