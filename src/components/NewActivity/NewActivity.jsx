@@ -89,7 +89,7 @@ const NewActivity = (props) => {
                 required
                 type="datetime-local"
                 name="activityDate"
-                value={formData.activityDate}
+                value={formData.Date}
                 onChange={handleChange}
                 className={styles.input}
               />
