@@ -7,7 +7,6 @@ import defaultpic from '../../assets/images/defaultpic.jpg'
 import styles from './ItineraryCard.module.css'
 
 const ItineraryCard = (props) => {
-  console.log(props)
   return (
     <div className={styles.container}>
       <Link to={`/itineraries/${props.itinerary._id}`} className={styles.link}>

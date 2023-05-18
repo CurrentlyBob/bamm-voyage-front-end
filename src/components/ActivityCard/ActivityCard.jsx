@@ -4,7 +4,6 @@ import styles from './ActivityCard.module.css'
 import ActivityKebabMenu from '../KebabMenus/ActivityKebabMenu'
 
 const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
-  console.log(activity)
   return (
     <>
       <div className={styles.activityTitleContainer}>

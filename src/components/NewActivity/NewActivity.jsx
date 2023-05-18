@@ -89,7 +89,7 @@ const NewActivity = (props) => {
                 required
                 type="datetime-local"
                 name="activityDate"
-                value={formData.Date}
+                value={moment.utc(formData.activityDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />

@@ -55,7 +55,7 @@ const EditAccommodation = () => {
               required
               type="datetime-local"
               name="checkInDate"
-              value={moment(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
+              value={moment.utc(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
@@ -66,7 +66,7 @@ const EditAccommodation = () => {
               type="datetime-local"
               name="checkOutDate"
               id="checkOutDate-input"
-              value={moment(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
+              value={moment.utc(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />

@@ -87,24 +87,24 @@ const NewAccommodation = (props) => {
               />
             </fieldset>
             <fieldset>
-              <legend>CheckIn Date</legend>
+              <legend>Check In Date</legend>
               <input
                 required
                 type="datetime-local"
                 name="checkInDate"
                 id="checkInDate-input"
-                value={formData.Date}
+                value={moment.utc(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
             <fieldset>
-              <legend>CheckOut Date</legend>
+              <legend>Check Out Date</legend>
               <input
                 type="datetime-local"
                 name="checkOutDate"
                 id="checkOutDate-input"
-                value={formData.Date}
+                value={moment.utc(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />

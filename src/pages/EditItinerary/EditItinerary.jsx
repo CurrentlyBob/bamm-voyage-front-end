@@ -9,7 +9,7 @@ const EditItinerary = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
 
-  console.log(state)
+  
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
