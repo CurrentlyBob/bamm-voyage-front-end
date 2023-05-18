@@ -48,10 +48,10 @@ const FlightKebabMenu = ({
             to={`/itineraries/${itineraryId}/flights/${flight._id}`}
             state={flight}
           >
-            <EditIcon style={{ color: '#567189'}}/>
+            <EditIcon style={{ color: '#474962'}}/>
           </Link>
         </MenuItem>
-        <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)} style={{ color: '#567189'}}>
+        <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)} style={{ color: '#474962'}}>
           <DeleteForeverIcon />
         </MenuItem> 
       </Menu>
