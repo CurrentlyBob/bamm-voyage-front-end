@@ -2,24 +2,33 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { IconButton } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import Menu from '@mui/joy/Menu'
-import MenuItem from '@mui/joy/MenuItem'
+import { ClickAwayListener, IconButton, MenuList, Popper, Paper, MenuItem } from '@mui/material'
+import PersonIcon from '@mui/icons-material/Person'
 import logo from '../../assets/images/logo.png'
+import { useRef, useEffect } from 'react'
+
 //css
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout, handleChangePassword }) => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
+const NavBar = ({ user, handleLogout }) => {
+  const [open, setOpen] = useState(false)
+  const anchorRef = useRef(null)
+  console.log(open)
 
-  const handleClick = (evt) => {
-    setAnchorEl(evt.currentTarget)
+  const handleClick = () => {
+    setOpen((prevOpen) => !prevOpen)
+    console.log('open inside', open)
   }
-  const handleClose = () => {
-    setAnchorEl(null)
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return
+    }
+
+    setOpen(false)
   }
+  useEffect(() => {
+    console.log(open)
+  }, [open])
 
   return (
     <>
@@ -40,31 +49,31 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
           </ul>
           <div className={styles.profile}>
             <IconButton
+              ref={anchorRef}
               id="button"
               aria-controls={open ? 'menu' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               variant="outlined"
               color="neutral"
-              onClick={open ? handleClose : handleClick}
+              onClick={handleClick}
             >
-              <MenuIcon className={styles.menuIcon} />
+              <PersonIcon className={styles.personIcon} />
             </IconButton>
-            <Menu
-              id="menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="button"
-              placement="bottom-end"
-            >
-              <NavLink to="" onClick={handleChangePassword} className={styles.loggedIn}>
-                <MenuItem onClick={handleClose}>Change Password</MenuItem>
-              </NavLink>
-              <NavLink to="" onClick={handleLogout} className={styles.loggedIn}>
-                <MenuItem onClick={handleClose}>Log Out</MenuItem>
-              </NavLink>
-            </Menu>
+            <Popper id="menu" anchorEl={anchorRef.current} open={open} aria-labelledby="button" placement="bottom-end">
+              <ClickAwayListener onClickAway={handleClose}>
+                <Paper>
+                  <MenuList>
+                    <NavLink to="/auth/change-password" className={styles.loggedIn}>
+                      <MenuItem onClick={handleClose}>Change Password</MenuItem>
+                    </NavLink>
+                    <NavLink to="" onClick={handleLogout} className={styles.loggedIn}>
+                      <MenuItem onClick={handleClose}>Log Out</MenuItem>
+                    </NavLink>
+                  </MenuList>
+                </Paper>
+              </ClickAwayListener>
+            </Popper>
           </div>
         </nav>
       ) : (
