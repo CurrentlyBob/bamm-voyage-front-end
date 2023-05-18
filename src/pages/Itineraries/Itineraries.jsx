@@ -14,11 +14,9 @@ const Itineraries = (props) => {
     )
   return (
     <main className={styles.itineraryCards}>
-      <div className={styles.overlay}>
-        {props.itineraries.map((itinerary) => (
-          <ItineraryCard key={itinerary._id} itinerary={itinerary} />
-        ))}
-      </div>
+      {props.itineraries.map((itinerary) => (
+        <ItineraryCard key={itinerary._id} itinerary={itinerary} />
+      ))}
     </main>
   )
 }
