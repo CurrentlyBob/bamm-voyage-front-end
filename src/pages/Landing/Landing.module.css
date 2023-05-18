@@ -133,7 +133,6 @@
 
 .loggedOutContainer {
   height: 100vh;
-  width: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +146,6 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
-  max-width: 500px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.89);
   box-shadow: 0 14px 28px rgba(96, 96, 96, 0.25), 0 10px 10px rgba(96, 96, 96, 0.15);
@@ -203,3 +201,4 @@
     object-fit: cover;
   }
 }
+
