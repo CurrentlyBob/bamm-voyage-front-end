@@ -110,3 +110,16 @@ th:nth-child(3) {
   padding-top: 30px;
   padding-left: 20px;
 }
+
+@media screen and (max-width: 780px) {
+  .table {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cost {
+    width: 100%;
+  }
+  
+}

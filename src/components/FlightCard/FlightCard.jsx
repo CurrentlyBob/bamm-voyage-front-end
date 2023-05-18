@@ -21,7 +21,7 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) 
           <thead>
             {isFirstFlight && (
               <tr>
-                <th className={styles.th}>Departure</th>
+                <th className={styles.th}>Departure Date</th>
                 <th className={styles.th}>Departure Airport</th>
                 <th className={styles.th}>Arrival Date</th>
                 <th className={styles.th}>Arrival Airport</th>

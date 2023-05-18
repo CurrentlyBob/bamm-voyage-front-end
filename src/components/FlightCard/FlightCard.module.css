@@ -55,3 +55,16 @@ h2 {
   border-bottom: none;
   width: 60px;
 }
+
+@media screen and (max-width: 500px) {
+  .flightContainer {
+    margin: 5px;
+  }
+
+  .th {
+    inline-size: auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 15px;
+  }
+}

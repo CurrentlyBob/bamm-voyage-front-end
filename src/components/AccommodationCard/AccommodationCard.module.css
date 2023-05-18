@@ -51,3 +51,15 @@
   text-decoration: none;
   color: #567189;
 }
+
+@media screen and (max-width: 500px) {
+  .accommodationContainer {
+    margin: 5px;
+  }
+
+  .subtitle {
+    padding: 0 10px;
+    margin: 5px;
+    gap: 10px;
+  }
+}
