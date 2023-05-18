@@ -118,7 +118,16 @@ const NewActivity = (props) => {
             {/* <label htmlFor="notes">Notes</label> */}
             <fieldset>
               <legend>Notes</legend>
-              <input
+              <textarea 
+                type="text"
+                name="notes" 
+                cols="34" 
+                rows="5" 
+                value={formData.notes}
+                autoComplete="off"
+                onChange={handleChange}
+                className={styles.textarea}></textarea>
+              {/* <input
                 type="text"
                 name="notes"
                 // id="notes-input"
@@ -126,7 +135,7 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
-              />
+              /> */}
             </fieldset>
             {/* <label htmlFor="cost">Cost</label> */}
             <fieldset>
