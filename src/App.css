@@ -57,7 +57,12 @@ nav > ul {
   margin-left: 20px !important;
   height: 20px !important;
 }
-
+.css-jsexje-MuiSwitch-thumb {
+  color:#4d5181;
+}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  background-color: #6166ae !important;
+}
 #file-upload-button{
   background-color: #474962 !important;
 }
