@@ -56,3 +56,15 @@
   color: #474962;
   text-decoration: none;
 }
+
+@media screen and (max-width: 500px) {
+  .activityTitleContainer {
+    margin: 5px;
+  }
+
+  .subtitle {
+    padding: 0 10px;
+    margin: 5px;
+    gap: 10px;
+  }
+}
