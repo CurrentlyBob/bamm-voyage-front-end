@@ -11,7 +11,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
           <h2>{activity.category}:</h2>
           <h2>{activity.name}</h2>
         </div>
-        <h2 className={styles.activityCost}>${activity.cost}</h2>
+        <h2 className={styles.activityCost}>${activity.cost.toLocaleString('en-US')}</h2>
         <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity} />
       </div>
       <div className={styles.subtitle}>
