@@ -18,7 +18,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
       <div className={styles.subtitle}>
         <div className={styles.activityDateContainer}>
           <p>Starting:</p>
-          <p className={styles.activityDate}>{moment(activity.activityDate).format('ddd MMMM Do, YYYY hh:mm a')}</p>
+          <p className={styles.activityDate}>{moment.utc(activity.activityDate).format('ddd MMMM Do, YYYY hh:mm a')}</p>
         </div>
         <p className={styles.activityWebsite}>
           <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
