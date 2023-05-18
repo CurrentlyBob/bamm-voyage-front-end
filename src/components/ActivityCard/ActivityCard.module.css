@@ -1,31 +1,57 @@
+.activityTitleContainer{
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #474962;
+  align-items: end;
+  margin: 0 30px 0 30px;
+}
 .title{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #567189;
-    /* padding: 0 20px; */
-    align-items: end;
-  }
-  .subtitle{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-  }
-  .table{
-    margin-top: 20px;
-    table-layout: auto;
-    border-collapse:collapse;
-    text-align: left;
-    width: 100%;
-  }
-  .th, .td{
-    border: 1px solid rgb(189, 189, 189);
-    padding: 15px 10px;
-  }
-  .button{
-    margin-top: 0;
-  }
-  
-  .activityUrl, .activityUrl:visited  {
-    color: #567189;
-    text-decoration: none;
-  }
+  display: flex;
+  width: 60%;
+}
+.title>h2{
+  margin-right: 10px;
+}
+.activityCost{
+  display: flex;
+  width: 40%;
+  justify-content:right;
+}
+.subtitle{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 0 30px 0 30px;
+}
+.activityDateContainer{
+  display: flex;
+  align-items: center;
+}
+.activityDateContainer>p{
+  margin-right: 5px;
+}
+.tableContainer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+.table{
+  margin-bottom: 20px;
+  table-layout: auto;
+  border-collapse:collapse;
+  text-align: left;
+  width: 95%;
+}
+.th, .td{
+  border: 1px solid rgb(189, 189, 189);
+  padding: 15px 10px;
+}
+.button{
+  margin-top: 0;
+}
+
+.activityUrl, .activityUrl:visited  {
+  color: #567189;
+  text-decoration: none;
+}
