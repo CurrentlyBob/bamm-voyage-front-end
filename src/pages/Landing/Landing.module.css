@@ -3,10 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  /* height: 100%; */
-  /* background-color: red; */
   min-height: 100vh;
-  /* overflow: hidden; */
   background-attachment: fixed;
   background-position: center;
   z-index: -1;
@@ -103,7 +100,6 @@
   padding-bottom: 15px;
 }
 .bammTravel, .bammTravelMelvin, .bammTravelBobby{
-  /* width: 250px; */
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -128,15 +124,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* margin: 0 50px; */
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  margin-top: -50px;
-  /* background-position-x: right;
-  background-position-y: bottom; */
+  margin-top: -40px;
 }
 
 .loggedOutContainer {
@@ -144,10 +133,8 @@
   width: 100vh;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(0, 0, 255, 0.187); */
 }
 
 .intro {
@@ -172,6 +159,7 @@
 
 .landingButton {
   align-self: center;
+  margin-bottom: 0px;
 }
 
 .box {
@@ -191,6 +179,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 
 
 @media (min-width: 900px) {

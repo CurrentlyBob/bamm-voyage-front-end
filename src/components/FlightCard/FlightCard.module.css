@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #567189;
-  margin-bottom: 20px;
+  margin: 0 30px 20px 30px;
 }
 .flightTitle{
   display: flex;
@@ -16,6 +16,11 @@
 }
 h2{
   margin-bottom: 0;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
 }
 .table{
   table-layout: fixed;
@@ -40,18 +45,18 @@ h2{
 /* .td:nth-child(5){
   width: 90px !important;
 } */
-.row{
+/* .row{
   display: flex;
-}
+} */
 .th:last-child{
   border-top: none;
   border-right: none;
   border-bottom: none;
-  width: 50px;
+  width: 60px;
 }
 .td:last-child{
   border-top: none;
   border-right: none;
   border-bottom: none;
-  width: 50px;
+  width: 60px;
 }

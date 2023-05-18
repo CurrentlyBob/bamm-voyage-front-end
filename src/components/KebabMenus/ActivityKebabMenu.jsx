@@ -50,10 +50,10 @@ const ActivityKebabMenu = ({
             to={`/itineraries/${itineraryId}/activities/${activity._id}`}
             state={activity}
           >
-            <EditIcon style={{ color: '#567189'}}/>
+            <EditIcon style={{ color: '#474962'}}/>
           </Link>
         </MenuItem>
-        <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} style={{ color: '#567189'}}>
+        <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} style={{ color: '#474962'}}>
           <DeleteForeverIcon />
         </MenuItem> 
       </Menu>
