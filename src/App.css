@@ -13,7 +13,6 @@ body {
   box-sizing: border-box;
 
   margin-top: 40px;
-  /* min-height: 100vh; */
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -36,14 +35,9 @@ nav > ul {
   margin: 0;
 }
 
-/* #root{
-  display: flex;
-} */
 
 .css-18rm664-MuiButtonBase-root-MuiIconButton-root {
   padding: 0 10px !important;
-  /* background-color: white !important; */
-  /* border: 1px solid black !important; */
   border-radius: 7px !important;
   width: 40px !important;
   height: 40px !important;
@@ -69,11 +63,9 @@ nav > ul {
 }
 ::-webkit-scrollbar {
   width: 10px;
-  /* background-color: #7b8fa1; */
   background-color: #474962;
 }
 ::-webkit-scrollbar-thumb {
-  /* background-color: #7b8fa1; */
   background-color: #e3d6b2;
   border-radius: 10px;
 }
