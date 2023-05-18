@@ -9,9 +9,12 @@ Welcome to the BAMM Voyage Front-End repository! This repository contains the fr
 
 At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and understand the challenges that come with planning trips. We have experienced firsthand how travel planning can become complicated and messy without the right tools. Therefore, we decided to create this app to help solve that issue and provide users with a streamlined and efficient way to plan their journeys.
 
+[Launch BAMM Voyage](https://bamm-voyage.netlify.app)
+
 ![picture alt](src/assets/images/ItineraryIndexPageSC.png)
 # Links 🔗
 
+- [BAMM Voyage](https://bamm-voyage.netlify.app)
 - [PitchDeck](https://docs.google.com/presentation/d/1Nrj_1rN6D0FwDB-EJoClxOx6Qps2g5nUOta-EUGs45g/edit#slide=id.g241b0af04a2_0_8)
 - [Trello](https://trello.com/b/9GNNPfib/bamm-voyage)
 - [Whimsical](https://whimsical.com/travel-itinerary-VwbMGamKd9otzoQ9L4HH7E)
@@ -38,12 +41,17 @@ At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and u
 
 - JavaScript
 - CSS
+- Git
 - GitHub
+- Mongoose
 - MongoDB
+- Postman
 - Express.js
 - React.js
 - Node.js
 - Passport.js
+- Fly.io
+- Prettier
 
 # IceBox 🧊
 
