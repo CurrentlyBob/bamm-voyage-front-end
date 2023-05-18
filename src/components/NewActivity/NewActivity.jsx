@@ -69,6 +69,7 @@ const NewActivity = (props) => {
                 <option value="Restaurant">Restaurant</option>
                 <option value="Landmark">Landmark</option>
                 <option value="Nightlife">Nightlife</option>
+                <option value="Other">Other</option>
               </select>
             </fieldset>
             <fieldset>
