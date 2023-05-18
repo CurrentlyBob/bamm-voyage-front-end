@@ -2,7 +2,6 @@
 
 ![picture alt](src/assets/images/LandingPageSC.png)
 
-
 ## Overview
 
 Welcome to the BAMM Voyage Front-End repository! This repository contains the front-end code for the BAMM Voyage application.
@@ -12,6 +11,7 @@ At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and u
 [Launch BAMM Voyage](https://bamm-voyage.netlify.app)
 
 ![picture alt](src/assets/images/ItineraryIndexPageSC.png)
+
 # Links 🔗
 
 - [BAMM Voyage](https://bamm-voyage.netlify.app)

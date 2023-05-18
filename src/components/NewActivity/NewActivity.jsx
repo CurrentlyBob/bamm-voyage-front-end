@@ -59,12 +59,7 @@ const NewActivity = (props) => {
             <h2>Activity</h2>
             <fieldset>
               <legend>Type</legend>
-              <select
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                className={styles.select}
-              >
+              <select name="category" value={formData.category} onChange={handleChange} className={styles.select}>
                 <option value="Activity">Activity</option>
                 <option value="Restaurant">Restaurant</option>
                 <option value="Landmark">Landmark</option>

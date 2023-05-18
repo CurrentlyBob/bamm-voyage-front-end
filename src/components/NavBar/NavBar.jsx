@@ -6,7 +6,6 @@ import { ClickAwayListener, IconButton, MenuList, Popper, Paper, MenuItem } from
 import PersonIcon from '@mui/icons-material/Person'
 import logo from '../../assets/images/logo.png'
 
-
 //css
 import styles from './NavBar.module.css'
 
@@ -54,13 +53,14 @@ const NavBar = ({ user, handleLogout }) => {
             >
               <PersonIcon className={styles.personIcon} />
             </IconButton>
-            <Popper 
-            id="menu" 
-            anchorEl={anchorRef.current} 
-            open={open} 
-            onClose={handleClose}
-            aria-labelledby="button" 
-            placement="bottom-end">
+            <Popper
+              id="menu"
+              anchorEl={anchorRef.current}
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="button"
+              placement="bottom-end"
+            >
               <ClickAwayListener onClickAway={handleClose}>
                 <Paper>
                   <MenuList>

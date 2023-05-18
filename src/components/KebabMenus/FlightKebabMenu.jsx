@@ -6,7 +6,6 @@ import MoreVert from '@mui/icons-material/MoreVert'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
-
 const FlightKebabMenu = ({ flight, itineraryId, handleDeleteFlight }) => {
   const [open, setOpen] = useState(false)
   const anchorRef = useRef(null)
@@ -21,7 +20,6 @@ const FlightKebabMenu = ({ flight, itineraryId, handleDeleteFlight }) => {
     setOpen(false)
   }
 
-
   return (
     <>
       <IconButton
@@ -34,7 +32,7 @@ const FlightKebabMenu = ({ flight, itineraryId, handleDeleteFlight }) => {
         color="neutral"
         onClick={handleClick}
       >
-        <MoreVert style={{ color: '#474962'}}/>
+        <MoreVert style={{ color: '#474962' }} />
       </IconButton>
       <Popper
         id="menu"
@@ -42,21 +40,22 @@ const FlightKebabMenu = ({ flight, itineraryId, handleDeleteFlight }) => {
         open={open}
         onClose={handleClose}
         aria-labelledby="button"
-        placement="bottom-end">
-          <ClickAwayListener onClickAway={handleClose}>
-            <Paper>
-              <MenuList>
-                <MenuItem>
-                  <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
-                    <EditIcon style={{ color: '#474962' }} />
-                  </Link>
-                </MenuItem>
-                <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)} >
-                  <DeleteForeverIcon style={{ color: '#474962' }}/>
-                </MenuItem>
-              </MenuList>
-            </Paper>
-          </ClickAwayListener>
+        placement="bottom-end"
+      >
+        <ClickAwayListener onClickAway={handleClose}>
+          <Paper>
+            <MenuList>
+              <MenuItem>
+                <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
+                  <EditIcon style={{ color: '#474962' }} />
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
+                <DeleteForeverIcon style={{ color: '#474962' }} />
+              </MenuItem>
+            </MenuList>
+          </Paper>
+        </ClickAwayListener>
       </Popper>
     </>
   )
