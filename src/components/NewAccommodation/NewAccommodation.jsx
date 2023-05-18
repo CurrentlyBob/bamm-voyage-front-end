@@ -59,7 +59,6 @@ const NewAccommodation = (props) => {
         {showForm ? (
           <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
             <h2>Accommodation</h2>
-            {/* <label htmlFor="type-input">Type</label> */}
             <fieldset>
               <legend>Type</legend>
               <select
@@ -75,7 +74,6 @@ const NewAccommodation = (props) => {
                 <option value="Other">Other</option>
               </select>
             </fieldset>
-            {/* <label htmlFor="name">Name</label> */}
             <fieldset>
               <legend>Name</legend>
               <input
@@ -88,7 +86,6 @@ const NewAccommodation = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="checkInDate">CheckIn Date</label> */}
             <fieldset>
               <legend>CheckIn Date</legend>
               <input
@@ -101,7 +98,6 @@ const NewAccommodation = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="checkOutDate">CheckOut Date</label> */}
             <fieldset>
               <legend>CheckOut Date</legend>
               <input
@@ -113,7 +109,6 @@ const NewAccommodation = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="address">Address</label> */}
             <fieldset>
               <legend>Address</legend>
               <input
@@ -126,7 +121,6 @@ const NewAccommodation = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="website">Website</label> */}
             <fieldset>
               <legend>Website</legend>
               <input
@@ -139,7 +133,6 @@ const NewAccommodation = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="cost">Cost</label> */}
             <fieldset>
               <legend>Cost</legend>
               <input
