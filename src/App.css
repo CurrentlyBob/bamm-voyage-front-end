@@ -35,17 +35,19 @@ nav > ul {
   margin: 0;
 }
 
-.css-18rm664-MuiButtonBase-root-MuiIconButton-root,.MuiButtonBase-root-MuiIconButton-root {
+.css-18rm664-MuiButtonBase-root-MuiIconButton-root, .MuiButtonBase-root-MuiIconButton-root {
   padding: 0 10px !important;
   border-radius: 50% !important;
   width: 40px !important;
   height: 40px !important;
   margin: 0 5px !important;
 }
-.css-h4y409-MuiList-root {
-  padding-top: 10px;
+.css-h4y409-MuiList-root, .MuiList-root {
+  margin-top: 10px !important;
+  box-shadow: 1px 1px 20px #474962 !important;
+  /* padding: 10px !important; */
 }
-.css-18rm664-MuiButtonBase-root-MuiIconButton-root:hover {
+.css-18rm664-MuiButtonBase-root-MuiIconButton-root:hover, .MuiButtonBase-root-MuiIconButton-root:hover {
   box-shadow: 1px 1px 15px #e3d6b2 !important;
 }
 
@@ -54,9 +56,9 @@ nav > ul {
   height: 20px !important;
 }
 .MuiSwitch-thumb {
-  color: #4d5181;
+  color: #4d5181 !important;
 }
-.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track, .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track  {
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track, .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
   background-color: #6166ae !important;
 }
 #file-upload-button {
