@@ -56,7 +56,7 @@ const EditActivity = () => {
               required
               type="datetime-local"
               name="activityDate"
-              value={moment(formData.Date).format('yyyy-MM-DD HH:mm')}
+              value={moment(formData.activityDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
