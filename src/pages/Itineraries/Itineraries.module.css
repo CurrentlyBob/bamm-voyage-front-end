@@ -1,10 +1,10 @@
-.itineraryCards{
+.itineraryCards {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.noItinerary{
+.noItinerary {
   text-align: center;
   justify-content: center;
   width: 500px;

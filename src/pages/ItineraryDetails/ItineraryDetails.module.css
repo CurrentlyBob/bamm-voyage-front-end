@@ -5,48 +5,47 @@
   margin-top: 60px;
   overflow-x: hidden;
 }
-.title{
+.title {
   display: flex;
   align-items: center;
 }
-.cost{
+.cost {
   display: flex;
   width: 500px;
   justify-content: space-between;
 }
 
-
 .container > ul {
   list-style: none;
-
 }
-.table{
+.table {
   margin-top: 20px;
   table-layout: auto;
-  border-collapse:collapse;
+  border-collapse: collapse;
   text-align: left;
   width: 800px;
 }
-.th{
+.th {
   border-right: 2px solid #7b8fa1;
   border-top: 2px solid #7b8fa1;
   padding-left: 10px;
 }
-.th:nth-child(1){
+.th:nth-child(1) {
   width: 50%;
 }
-.th:nth-child(2){
+.th:nth-child(2) {
   width: 25%;
 }
-.th:nth-child(3){
+.th:nth-child(3) {
   width: 25%;
 }
-.td{
+.td {
   border-right: 2px solid #7b8fa1;
   padding-left: 30px;
   padding-top: 10px;
 }
-.td:nth-child(3), th:nth-child(3){
+.td:nth-child(3),
+th:nth-child(3) {
   border-right: none;
 }
 .buttons {
@@ -54,11 +53,11 @@
   flex-direction: row;
   gap: 10px;
 }
-.flightSection{
+.flightSection {
   width: 95%;
 }
 
-.flightTitle{
+.flightTitle {
   background-color: #b95632;
   color: white;
   border: 3px solid #913300a5;
@@ -67,11 +66,11 @@
   display: flex;
   justify-content: space-between;
 }
-.accommodationSection{
+.accommodationSection {
   width: 95%;
   margin-top: 20px;
 }
-.accommodationtTitle{
+.accommodationtTitle {
   background-color: #624757;
   color: rgb(255, 255, 255);
   border: 3px solid #351941;
@@ -81,7 +80,7 @@
   justify-content: space-between;
 }
 
-.activityTitle{
+.activityTitle {
   background-color: #476253;
   color: white;
   border: 3px solid #2a4734;
@@ -91,7 +90,7 @@
   justify-content: space-between;
 }
 
-.activitySection{
+.activitySection {
   width: 95%;
   margin-top: 20px;
 }
@@ -99,15 +98,15 @@
 .formData {
   display: flex;
   flex-direction: row;
-  width:  100%;
+  width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 70px;
 }
-.over{
+.over {
   color: red;
 }
-.loading{
+.loading {
   padding-top: 30px;
   padding-left: 20px;
 }

@@ -1,31 +1,27 @@
-import { useState } from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
-import moment from "moment";
+import { useState } from 'react'
+import { useLocation, useParams, useNavigate } from 'react-router-dom'
+import moment from 'moment'
 
-import styles from "./EditAccommodations.module.css";
+import styles from './EditAccommodations.module.css'
 
 // Services
-import * as itineraryService from "../../services/itineraryService";
+import * as itineraryService from '../../services/itineraryService'
 
 const EditAccommodation = () => {
-  const navigate = useNavigate();
-  const { state } = useLocation();
-  const { itineraryId, accommodationId } = useParams();
-  const [formData, setFormData] = useState(state);
+  const navigate = useNavigate()
+  const { state } = useLocation()
+  const { itineraryId, accommodationId } = useParams()
+  const [formData, setFormData] = useState(state)
 
   const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
-  };
+    setFormData({ ...formData, [target.name]: target.value })
+  }
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    await itineraryService.updateAccommodations(
-      itineraryId,
-      accommodationId,
-      formData
-    );
-    navigate(`/itineraries/${itineraryId}`);
-  };
+    evt.preventDefault()
+    await itineraryService.updateAccommodations(itineraryId, accommodationId, formData)
+    navigate(`/itineraries/${itineraryId}`)
+  }
 
   return (
     <main className={styles.main}>
@@ -35,13 +31,7 @@ const EditAccommodation = () => {
           {/* <label htmlFor="type-input">Type</label> */}
           <fieldset>
             <legend>Type</legend>
-            <select
-              name="type"
-              id="type-input"
-              value={formData.type}
-              onChange={handleChange}
-              className={styles.select}
-            >
+            <select name="type" id="type-input" value={formData.type} onChange={handleChange} className={styles.select}>
               <option value="Hotel">Hotel</option>
               <option value="Cruise">Cruise</option>
               <option value="Airbnb">Airbnb</option>
@@ -69,7 +59,7 @@ const EditAccommodation = () => {
               type="datetime-local"
               name="checkInDate"
               // id="checkInDate-input"
-              value={moment(formData.checkInDate).format("yyyy-MM-DD HH:mm")}
+              value={moment(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
@@ -81,7 +71,7 @@ const EditAccommodation = () => {
               type="datetime-local"
               name="checkOutDate"
               id="checkOutDate-input"
-              value={moment(formData.checkOutDate).format("yyyy-MM-DD HH:mm")}
+              value={moment(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
@@ -129,7 +119,7 @@ const EditAccommodation = () => {
         </form>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default EditAccommodation;
+export default EditAccommodation

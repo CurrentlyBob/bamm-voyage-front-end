@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import moment from "moment";
+import { Link } from 'react-router-dom'
+import moment from 'moment'
 
-import styles from "./ActivityCard.module.css";
-import ActivityKebabMenu from "../KebabMenus/ActivityKebabMenu";
+import styles from './ActivityCard.module.css'
+import ActivityKebabMenu from '../KebabMenus/ActivityKebabMenu'
 
 const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
-  console.log(activity);
+  console.log(activity)
   return (
     <>
       <div className={styles.activityTitleContainer}>
@@ -14,27 +14,16 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
           <h2>{activity.name}</h2>
         </div>
         <h2 className={styles.activityCost}>${activity.cost}</h2>
-        <ActivityKebabMenu
-          activity={activity}
-          itineraryId={itineraryId}
-          handleDeleteActivity={handleDeleteActivity}
-        />
+        <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity} />
       </div>
       <div className={styles.subtitle}>
         <div className={styles.activityDateContainer}>
           <p>Starting:</p>
-          <p className={styles.activityDate}>
-            {moment(activity.date).format("ddd MMMM Do, YYYY hh:mm a")}
-          </p>
+          <p className={styles.activityDate}>{moment(activity.date).format('ddd MMMM Do, YYYY hh:mm a')}</p>
         </div>
         <p className={styles.activityWebsite}>
-          <a
-            className={styles.activityUrl}
-            href={`${activity.activityWebsite}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {" "}
+          <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
+            {' '}
             {activity.name}'s website
           </a>
         </p>
@@ -54,7 +43,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
         </table>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ActivityCard;
+export default ActivityCard

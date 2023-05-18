@@ -1,38 +1,38 @@
 // npm modules
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import moment from "moment"
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import moment from 'moment'
 
 // service
-import * as itineraryService from "../../services/itineraryService";
+import * as itineraryService from '../../services/itineraryService'
 
 // css
 import styles from './ItineraryDetails.module.css'
-import FlightIcon from '@mui/icons-material/Flight';
-import HotelIcon from '@mui/icons-material/Hotel';
-import NightlifeIcon from '@mui/icons-material/Nightlife';
+import FlightIcon from '@mui/icons-material/Flight'
+import HotelIcon from '@mui/icons-material/Hotel'
+import NightlifeIcon from '@mui/icons-material/Nightlife'
 
 // components
-import NewFlight from "../../components/NewFlight/NewFlight";
-import Flights from "../../components/Flights/Flights";
-import Accommodations from "../../components/Accommodations/Accommodations";
-import NewAccommodation from "../../components/NewAccommodation/NewAccommodation";
-import TotalCost from "../../components/TotalCost/TotalCost";
-import NewActivity from "../../components/NewActivity/NewActivity";
-import Activities from "../../components/Activities/Activities";
-import ItineraryKebabMenu from "../../components/KebabMenus/ItineraryKebabMenu";
+import NewFlight from '../../components/NewFlight/NewFlight'
+import Flights from '../../components/Flights/Flights'
+import Accommodations from '../../components/Accommodations/Accommodations'
+import NewAccommodation from '../../components/NewAccommodation/NewAccommodation'
+import TotalCost from '../../components/TotalCost/TotalCost'
+import NewActivity from '../../components/NewActivity/NewActivity'
+import Activities from '../../components/Activities/Activities'
+import ItineraryKebabMenu from '../../components/KebabMenus/ItineraryKebabMenu'
 
 const ItineraryDetails = (props) => {
-  const { itineraryId } = useParams();
-  const [itinerary, setItinerary] = useState(null);
+  const { itineraryId } = useParams()
+  const [itinerary, setItinerary] = useState(null)
 
   useEffect(() => {
     const fetchItinerary = async () => {
-      const data = await itineraryService.show(itineraryId);
-      setItinerary(data);
-    }; 
-    fetchItinerary();
-  }, [itineraryId]);
+      const data = await itineraryService.show(itineraryId)
+      setItinerary(data)
+    }
+    fetchItinerary()
+  }, [itineraryId])
 
   const handleAddFlight = async (flightFormData) => {
     const newFlight = await itineraryService.createFlight(itineraryId, flightFormData)
@@ -41,7 +41,7 @@ const ItineraryDetails = (props) => {
 
   const handleDeleteFlight = async (itineraryId, flightId) => {
     await itineraryService.deleteFlight(itineraryId, flightId)
-    setItinerary({...itinerary, flights: itinerary.flights.filter((f) => f._id !== flightId)})
+    setItinerary({ ...itinerary, flights: itinerary.flights.filter((f) => f._id !== flightId) })
   }
 
   const handleAddAccommodation = async (accommodationFormData) => {
@@ -51,39 +51,38 @@ const ItineraryDetails = (props) => {
 
   const handleDeleteAccommodation = async (itineraryId, accommodationId) => {
     await itineraryService.deleteAccommodations(itineraryId, accommodationId)
-    setItinerary({...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId)})
+    setItinerary({ ...itinerary, accommodations: itinerary.accommodations.filter((a) => a._id !== accommodationId) })
   }
 
   const handleAddActivity = async (activityFormData) => {
     const newActivity = await itineraryService.createActivity(itineraryId, activityFormData)
     setItinerary({ ...itinerary, activities: [...itinerary.activities, newActivity] })
-    console.log("NewActivity", newActivity)
-    console.log("Itinerary", itinerary)
+    console.log('NewActivity', newActivity)
+    console.log('Itinerary', itinerary)
   }
 
   const handleDeleteActivity = async (itineraryId, activityId) => {
     await itineraryService.deleteActivity(itineraryId, activityId)
-    setItinerary({...itinerary, activities: itinerary.activities.filter((a) => a._id !== activityId)})
+    setItinerary({ ...itinerary, activities: itinerary.activities.filter((a) => a._id !== activityId) })
   }
 
-
-  if (!itinerary) return <h1 className={styles.loading}>Loading itineraries...</h1>;
+  if (!itinerary) return <h1 className={styles.loading}>Loading itineraries...</h1>
 
   return (
     <main className={styles.container}>
       <div className={styles.title}>
         <h1>{itinerary.title.charAt(0).toUpperCase() + itinerary.title.slice(1)}</h1>
-          {itinerary.owner._id === props.user.profile._id &&
-              <ItineraryKebabMenu
-                itinerary={itinerary}
-                itineraryId={itineraryId}
-                handleDeleteItinerary={props.handleDeleteItinerary}
-              />
-          }
+        {itinerary.owner._id === props.user.profile._id && (
+          <ItineraryKebabMenu
+            itinerary={itinerary}
+            itineraryId={itineraryId}
+            handleDeleteItinerary={props.handleDeleteItinerary}
+          />
+        )}
       </div>
       <div className={styles.cost}>
         <h3>Budget: ${itinerary.budget.toLocaleString('en-US')}</h3>
-        <TotalCost itinerary={itinerary}/>
+        <TotalCost itinerary={itinerary} />
       </div>
       <table className={styles.table}>
         <thead>
@@ -95,7 +94,9 @@ const ItineraryDetails = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td className={styles.td}>{itinerary.city}, {itinerary.country}</td>
+            <td className={styles.td}>
+              {itinerary.city}, {itinerary.country}
+            </td>
             <td className={styles.td}>{moment.utc(itinerary.startDate).format('ddd MMMM Do, YYYY')}</td>
             <td className={styles.td}>{moment.utc(itinerary.endDate).format('ddd MMMM Do YYYY')}</td>
           </tr>
@@ -106,33 +107,48 @@ const ItineraryDetails = (props) => {
           Flights
           <FlightIcon />
         </h2>
-        <Flights flights={itinerary.flights} user={props.user} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight}/>
+        <Flights
+          flights={itinerary.flights}
+          user={props.user}
+          itineraryId={itineraryId}
+          handleDeleteFlight={handleDeleteFlight}
+        />
       </section>
       <section className={styles.accommodationSection}>
         <h2 className={styles.accommodationtTitle}>
           Accommodations
           <HotelIcon />
         </h2>
-        <Accommodations itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
+        <Accommodations
+          itinerary={itinerary}
+          user={props.user}
+          itineraryId={itineraryId}
+          handleDeleteAccommodation={handleDeleteAccommodation}
+        />
       </section>
       <section className={styles.activitySection}>
         <h2 className={styles.activityTitle}>
           Activities
           <NightlifeIcon />
         </h2>
-        <Activities itinerary={itinerary} user={props.user} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
+        <Activities
+          itinerary={itinerary}
+          user={props.user}
+          itineraryId={itineraryId}
+          handleDeleteActivity={handleDeleteActivity}
+        />
       </section>
       {/* <section className={styles.activitySection}>
         <h2 className={styles.activityTitle}>Activities</h2>
         <Activities itinerary={itinerary}/>
       </section> */}
       <div className={styles.formData}>
-        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate}/>
-        <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate}/>
-        <NewActivity handleAddActivity={handleAddActivity} itineraryStart={itinerary.startDate}/>
+        <NewFlight handleAddFlight={handleAddFlight} itineraryStart={itinerary.startDate} />
+        <NewAccommodation handleAddAccommodation={handleAddAccommodation} itineraryStart={itinerary.startDate} />
+        <NewActivity handleAddActivity={handleAddActivity} itineraryStart={itinerary.startDate} />
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default ItineraryDetails;
+export default ItineraryDetails

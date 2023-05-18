@@ -1,52 +1,53 @@
-.accommodationContainer{
+.accommodationContainer {
   display: flex;
   justify-content: space-evenly;
   border-bottom: 1px solid #474962;
   align-items: end;
   margin: 0 30px 0 30px;
 }
-.title{
+.title {
   display: flex;
   width: 60%;
 }
-.title>h2{
+.title > h2 {
   margin-right: 10px;
 }
 
-.accommodationCost{
+.accommodationCost {
   display: flex;
   width: 40%;
-  justify-content:right;
+  justify-content: right;
 }
 
-.subtitle{
+.subtitle {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
   margin: 0 30px 0 30px;
 }
-.tableContainer{
+.tableContainer {
   display: flex;
   width: 100%;
   justify-content: center;
 }
-.table{
+.table {
   margin-bottom: 20px;
   table-layout: auto;
-  border-collapse:collapse;
+  border-collapse: collapse;
   text-align: left;
   width: 95%;
 }
 
-.th, .td{
+.th,
+.td {
   border: 1px solid rgb(189, 189, 189);
   padding: 15px 10px;
 }
 
-.button{
+.button {
   margin-top: 0;
 }
-.accomodationUrl{
+.accomodationUrl {
   text-decoration: none;
   color: #567189;
 }
