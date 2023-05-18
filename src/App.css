@@ -3,7 +3,9 @@
 *::after {
   box-sizing: inherit;
 }
-html, body, .root{
+html,
+body,
+.root {
   min-height: 100%;
   margin: 0;
 }
@@ -32,7 +34,6 @@ a:visited {
 
 nav > ul {
   margin: 0;
-  
 }
 
 /* #root{
@@ -50,7 +51,7 @@ nav > ul {
 }
 
 .css-18rm664-MuiButtonBase-root-MuiIconButton-root:hover {
-  box-shadow: 1px 1px 15px #E3D6B2 !important;
+  box-shadow: 1px 1px 15px #e3d6b2 !important;
 }
 
 .css-1o22tn8-JoyIconButton-root {
@@ -58,21 +59,21 @@ nav > ul {
   height: 20px !important;
 }
 .css-jsexje-MuiSwitch-thumb {
-  color:#4d5181;
+  color: #4d5181;
 }
-.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
   background-color: #6166ae !important;
 }
-#file-upload-button{
+#file-upload-button {
   background-color: #474962 !important;
 }
 ::-webkit-scrollbar {
-  width:10px;
+  width: 10px;
   /* background-color: #7b8fa1; */
   background-color: #474962;
 }
 ::-webkit-scrollbar-thumb {
   /* background-color: #7b8fa1; */
-  background-color: #E3D6B2;
+  background-color: #e3d6b2;
   border-radius: 10px;
 }

@@ -60,7 +60,7 @@ async function changePassword(changePasswordFormData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${tokenService.getToken()}`,
+        Authorization: `Bearer ${tokenService.getToken()}`,
       },
       body: JSON.stringify(changePasswordFormData),
     })

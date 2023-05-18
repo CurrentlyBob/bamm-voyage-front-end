@@ -1,22 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import IconButton from '@mui/joy/IconButton';
-import Menu from '@mui/joy/Menu';
-import MenuItem from '@mui/joy/MenuItem';
-import MoreVert from '@mui/icons-material/MoreVert';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import IconButton from '@mui/joy/IconButton'
+import Menu from '@mui/joy/Menu'
+import MenuItem from '@mui/joy/MenuItem'
+import MoreVert from '@mui/icons-material/MoreVert'
+import EditIcon from '@mui/icons-material/Edit'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
-const AccommodationKebabMenu = ({
-  accommodation,
-  itineraryId,
-  handleDeleteAccommodation,
-}) => {
+const AccommodationKebabMenu = ({ accommodation, itineraryId, handleDeleteAccommodation }) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
-  
-  const handleClick  = async (evt) => {
+
+  const handleClick = async (evt) => {
     setAnchorEl(evt.currentTarget)
   }
 
@@ -27,10 +23,10 @@ const AccommodationKebabMenu = ({
   return (
     <>
       <IconButton
-        id='button'
+        id="button"
         aria-controls={open ? 'menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
+        aria-expanded={open ? 'true' : undefined}
         variant="outlined"
         color="neutral"
         onClick={open ? handleClose : handleClick}
@@ -46,16 +42,16 @@ const AccommodationKebabMenu = ({
         placement="bottom-end"
       >
         <MenuItem>
-          <Link
-            to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`}
-            state={accommodation}
-          >
-            <EditIcon style={{ color: '#474962'}}/>
+          <Link to={`/itineraries/${itineraryId}/accommodations/${accommodation._id}`} state={accommodation}>
+            <EditIcon style={{ color: '#474962' }} />
           </Link>
         </MenuItem>
-        <MenuItem onClick={() => handleDeleteAccommodation(itineraryId, accommodation._id)} style={{ color: '#474962'}}>
+        <MenuItem
+          onClick={() => handleDeleteAccommodation(itineraryId, accommodation._id)}
+          style={{ color: '#474962' }}
+        >
           <DeleteForeverIcon />
-        </MenuItem> 
+        </MenuItem>
       </Menu>
     </>
   )

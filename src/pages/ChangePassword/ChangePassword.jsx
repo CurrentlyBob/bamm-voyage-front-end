@@ -17,12 +17,12 @@ const ChangePassword = ({ handleAuthEvt }) => {
     newPasswordConf: '',
   })
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       await authService.changePassword(formData)
@@ -52,7 +52,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="password"
             onChange={handleChange}
             className={styles.input}
-            autoComplete='off'
+            autoComplete="off"
           />
         </fieldset>
         <fieldset>
@@ -63,7 +63,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="newPassword"
             onChange={handleChange}
             className={styles.input}
-            autoComplete='off'
+            autoComplete="off"
           />
         </fieldset>
         <fieldset>
@@ -74,14 +74,12 @@ const ChangePassword = ({ handleAuthEvt }) => {
             name="newPasswordConf"
             onChange={handleChange}
             className={styles.input}
-            autoComplete='off'
+            autoComplete="off"
           />
         </fieldset>
         <div className={styles.links}>
           <Link to="/">
-            <button>
-              Cancel
-            </button>
+            <button>Cancel</button>
           </Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password

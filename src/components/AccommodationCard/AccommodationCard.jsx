@@ -1,13 +1,9 @@
 import moment from 'moment'
 
-import AccommodationKebabMenu from "../KebabMenus/AccommodationKebabMenu";
+import AccommodationKebabMenu from '../KebabMenus/AccommodationKebabMenu'
 import styles from './AccommodationCard.module.css'
 
-const AccommodationCard = ({
-  accommodation,
-  itineraryId,
-  handleDeleteAccommodation,
-}) => {
+const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodation }) => {
   return (
     <>
       <div className={styles.accommodationContainer}>
@@ -16,14 +12,18 @@ const AccommodationCard = ({
           <h2>{accommodation.name}</h2>
         </div>
         <h2 className={styles.accommodationCost}>${accommodation.cost}</h2>
-        <AccommodationKebabMenu accommodation={accommodation} itineraryId={itineraryId} handleDeleteAccommodation={handleDeleteAccommodation}/>
+        <AccommodationKebabMenu
+          accommodation={accommodation}
+          itineraryId={itineraryId}
+          handleDeleteAccommodation={handleDeleteAccommodation}
+        />
       </div>
       <div className={styles.subtitle}>
         <p>{accommodation.address}</p>
         <p id="url">
-        <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
-        {accommodation.name}'s website
-        </a>
+          <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
+            {accommodation.name}'s website
+          </a>
         </p>
       </div>
       <div className={styles.tableContainer}>
@@ -41,10 +41,9 @@ const AccommodationCard = ({
             </tr>
           </tbody>
         </table>
-
       </div>
     </>
-  );
-};
+  )
+}
 
-export default AccommodationCard;
+export default AccommodationCard

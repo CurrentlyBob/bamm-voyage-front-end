@@ -1,17 +1,17 @@
-import moment from "moment";
-import styles from './FlightCard.module.css';
+import moment from 'moment'
+import styles from './FlightCard.module.css'
 
-import FlightKebabMenu from "../KebabMenus/FlightKebabMenu";
-
+import FlightKebabMenu from '../KebabMenus/FlightKebabMenu'
 
 const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) => {
-  
   return (
     <>
       {isFirstFlight && (
         <div className={styles.flightContainer}>
           <div className={styles.flightTitle}>
-            <h2>{flight.airline.charAt(0).toUpperCase() + flight.airline.slice(1)}: #{flight.recordLocator}</h2>
+            <h2>
+              {flight.airline.charAt(0).toUpperCase() + flight.airline.slice(1)}: #{flight.recordLocator}
+            </h2>
           </div>
           <h2 className={styles.flightCost}>${flight.cost.toLocaleString('en-US')}</h2>
         </div>
@@ -29,7 +29,7 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) 
               </tr>
             )}
           </thead>
-          
+
           <tbody>
             <tr className={styles.tr}>
               <td className={styles.td}>{moment(flight.departureDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
@@ -37,18 +37,14 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) 
               <td className={styles.td}>{moment(flight.arrivalDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
               <td className={styles.td}>{flight.arrivalAirport}</td>
               <td className={styles.td}>
-                <FlightKebabMenu 
-                  flight={flight}
-                  itineraryId={itineraryId}
-                  handleDeleteFlight={handleDeleteFlight}
-                />
+                <FlightKebabMenu flight={flight} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight} />
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FlightCard;
+export default FlightCard

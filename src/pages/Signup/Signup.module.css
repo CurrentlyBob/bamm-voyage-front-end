@@ -7,11 +7,11 @@ input {
   background-color: rgba(255, 255, 255, 0);
 }
 
-input[type="file"] {
+input[type='file'] {
   padding: 0;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
@@ -22,13 +22,13 @@ input:focus{
   background-position: center;
   height: 100vh;
   margin-top: -40px;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
 
-.content{
+.content {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -69,4 +69,3 @@ input:focus{
 .form > label:last-of-type {
   margin-bottom: 16px;
 }
-

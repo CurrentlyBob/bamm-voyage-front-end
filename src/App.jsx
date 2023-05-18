@@ -19,17 +19,12 @@ import EditActivity from './pages/EditActivity/EditActivity'
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
-
 // services
 import * as authService from './services/authService'
 import * as itineraryService from './services/itineraryService'
 
-
 // styles
 import './App.css'
-
-
-
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -44,7 +39,7 @@ function App() {
     navigate('/')
   }
 
-  const handleChangePassword= () => {
+  const handleChangePassword = () => {
     navigate('/auth/change-password')
   }
 
@@ -54,34 +49,36 @@ function App() {
 
   const handleAddItinerary = async (itineraryFormData) => {
     const newItinerary = await itineraryService.create(itineraryFormData)
-    const newItineraries= [newItinerary, ...itineraries]
-    console.log("new itin", newItineraries)
-    console.log("new itin sorted", newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
+    const newItineraries = [newItinerary, ...itineraries]
+    console.log('new itin', newItineraries)
+    console.log(
+      'new itin sorted',
+      newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)),
+    )
     // setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
     setItineraries(newItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate)))
     navigate('/itineraries')
   }
   const handleUpdateItinerary = async (itineraryFormData) => {
     const updatedItinerary = await itineraryService.update(itineraryFormData)
-    const updatedItineraries= itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b)
-    const sortedItineraries= updatedItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
+    const updatedItineraries = itineraries.map((b) => (itineraryFormData._id === b._id ? updatedItinerary : b))
+    const sortedItineraries = updatedItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
     setItineraries(sortedItineraries)
     // setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
     navigate('/itineraries')
   }
-  
+
   const handleDeleteItinerary = async (itineraryId) => {
     const deletedItinerary = await itineraryService.deleteItinerary(itineraryId)
-    setItineraries(itineraries.filter(itin => itin._id !== deletedItinerary._id))
+    setItineraries(itineraries.filter((itin) => itin._id !== deletedItinerary._id))
     navigate('/itineraries')
   }
 
   const handleUpdateActivity = async (itineraryFormData) => {
     const updatedItinerary = await itineraryService.update(itineraryFormData)
-    setItineraries(itineraries.map((b) => itineraryFormData._id === b._id ? updatedItinerary : b))
+    setItineraries(itineraries.map((b) => (itineraryFormData._id === b._id ? updatedItinerary : b)))
     navigate('/itineraries')
   }
-  
 
   useEffect(() => {
     const fetchItineraries = async () => {
@@ -93,28 +90,28 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} handleChangePassword={handleChangePassword}/>
+      <NavBar user={user} handleLogout={handleLogout} handleChangePassword={handleChangePassword} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/itineraries"
-          element = {
+          element={
             <ProtectedRoute user={user}>
-              <Itineraries itineraries={itineraries}/>
+              <Itineraries itineraries={itineraries} />
             </ProtectedRoute>
           }
         />
         <Route
           path="/itineraries/:itineraryId"
-          element = {
+          element={
             <ProtectedRoute user={user}>
-              <ItineraryDetails user={user} handleDeleteItinerary={handleDeleteItinerary}/>
+              <ItineraryDetails user={user} handleDeleteItinerary={handleDeleteItinerary} />
             </ProtectedRoute>
           }
         />
         <Route
           path="/itineraries/:itineraryId/flights/:flightId"
-          element = {
+          element={
             <ProtectedRoute user={user}>
               <EditFlight />
             </ProtectedRoute>
@@ -122,7 +119,7 @@ function App() {
         />
         <Route
           path="/itineraries/:itineraryId/accommodations/:accommodationId"
-          element = {
+          element={
             <ProtectedRoute user={user}>
               <EditAccommodation />
             </ProtectedRoute>
@@ -130,36 +127,30 @@ function App() {
         />
         <Route
           path="/itineraries/:itineraryId/activities/:activityId"
-          element = {
+          element={
             <ProtectedRoute user={user}>
-              <EditActivity user={user} handleUpdateActivity={handleUpdateActivity}/>
+              <EditActivity user={user} handleUpdateActivity={handleUpdateActivity} />
             </ProtectedRoute>
           }
         />
         <Route
           path="/itineraries/new"
-          element = {
+          element={
             <ProtectedRoute user={user}>
-              <NewItinerary handleAddItinerary={handleAddItinerary}/>
+              <NewItinerary handleAddItinerary={handleAddItinerary} />
             </ProtectedRoute>
           }
         />
-          <Route 
-          path="/itineraries/:itineraryId/edit" 
+        <Route
+          path="/itineraries/:itineraryId/edit"
           element={
             <ProtectedRoute user={user}>
               <EditItinerary handleUpdateItinerary={handleUpdateItinerary} />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route
-          path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
-        />
-        <Route
-          path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
-        />
+        <Route path="/auth/signup" element={<Signup handleAuthEvt={handleAuthEvt} />} />
+        <Route path="/auth/login" element={<Login handleAuthEvt={handleAuthEvt} />} />
         <Route
           path="/auth/change-password"
           element={

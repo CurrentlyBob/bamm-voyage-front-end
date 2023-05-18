@@ -1,47 +1,47 @@
 // npm imports
-import { useState } from "react";
-import Switch from "@mui/material/Switch";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import moment from "moment";
+import { useState } from 'react'
+import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import moment from 'moment'
 
 // css
-import styles from "./NewActivity.module.css";
+import styles from './NewActivity.module.css'
 
 const NewActivity = (props) => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false)
 
   const toggle = async () => {
-    showForm ? setShowForm(false) : setShowForm(true);
-  };
+    showForm ? setShowForm(false) : setShowForm(true)
+  }
 
   const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
 
   const [formData, setFormData] = useState({
-    category: "Activity",
-    name: "",
+    category: 'Activity',
+    name: '',
     activityDate: defaultDate,
-    activityWebsite: "",
-    notes: "",
-    cost: "",
-  });
+    activityWebsite: '',
+    notes: '',
+    cost: '',
+  })
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-  };
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    props.handleAddActivity(formData);
+    evt.preventDefault()
+    props.handleAddActivity(formData)
     setFormData({
-      category: "Activity",
-      name: "",
+      category: 'Activity',
+      name: '',
       activityDate: defaultDate,
-      activityWebsite: "",
-      notes: "",
-      cost: "",
-    });
-  };
+      activityWebsite: '',
+      notes: '',
+      cost: '',
+    })
+  }
 
   return (
     <>
@@ -49,16 +49,13 @@ const NewActivity = (props) => {
         <FormGroup className={styles.toggleFormContainer}>
           <FormControlLabel
             control={<Switch onChange={toggle} className={styles.toggle} />}
-            label={`${showForm ? "" : "Add Activity"}`}
+            label={`${showForm ? '' : 'Add Activity'}`}
             labelPlacement="top"
             className={styles.toggleContainer}
           />
         </FormGroup>
         {showForm ? (
-          <form
-            className={`${styles.container} ${!showForm && styles.hidden}`}
-            onSubmit={handleSubmit}
-          >
+          <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
             <h2>Activity</h2>
             {/* <label htmlFor="type-input">Category</label> */}
             <fieldset>
@@ -109,7 +106,9 @@ const NewActivity = (props) => {
                 type="text"
                 name="activityWebsite"
                 // id="activityWebsite-input"
-                value={formData.activityWebsite.substring(formData.activityWebsite.indexOf("/", formData.activityWebsite.indexOf("/") + 1) + 1)}
+                value={formData.activityWebsite.substring(
+                  formData.activityWebsite.indexOf('/', formData.activityWebsite.indexOf('/') + 1) + 1,
+                )}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
@@ -118,15 +117,16 @@ const NewActivity = (props) => {
             {/* <label htmlFor="notes">Notes</label> */}
             <fieldset>
               <legend>Notes</legend>
-              <textarea 
+              <textarea
                 type="text"
-                name="notes" 
-                cols="34" 
-                rows="5" 
+                name="notes"
+                cols="34"
+                rows="5"
                 value={formData.notes}
                 autoComplete="off"
                 onChange={handleChange}
-                className={styles.textarea}></textarea>
+                className={styles.textarea}
+              ></textarea>
               {/* <input
                 type="text"
                 name="notes"
@@ -157,7 +157,7 @@ const NewActivity = (props) => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default NewActivity;
+export default NewActivity

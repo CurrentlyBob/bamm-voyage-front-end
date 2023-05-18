@@ -22,28 +22,28 @@ const Signup = ({ handleAuthEvt }) => {
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleChangePhoto = evt => {
+  const handleChangePhoto = (evt) => {
     const file = evt.target.files[0]
     let isFileInvalid = false
-    let errMsg = ""
+    let errMsg = ''
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
     // cloudinary supports files up to 10.4MB each as of May 2023
     if (file.size >= 10485760) {
-      errMsg = "Image must be smaller than 10.4MB"
+      errMsg = 'Image must be smaller than 10.4MB'
       isFileInvalid = true
     }
     if (!validFormats.includes(photoFormat)) {
-      errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+      errMsg = 'Image must be in gif, jpeg/jpg, png, svg, or webp format'
       isFileInvalid = true
     }
-    
+
     if (isFileInvalid) {
       setMessage(errMsg)
       imgInputRef.current.value = null
@@ -53,7 +53,7 @@ const Signup = ({ handleAuthEvt }) => {
     setPhotoData({ photo: evt.target.files[0] })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       if (!import.meta.env.VITE_BACK_END_SERVER_URL) {
@@ -75,7 +75,7 @@ const Signup = ({ handleAuthEvt }) => {
   const isFormInvalid = () => {
     return !(name && email && password && password === passwordConf)
   }
-  
+
   return (
     <main className={styles.container}>
       <div className={styles.content}>
@@ -88,51 +88,26 @@ const Signup = ({ handleAuthEvt }) => {
           </fieldset>
           <fieldset>
             <legend>Email</legend>
-            <input
-              type="text"
-              value={email}
-              name="email"
-              onChange={handleChange}
-            />
+            <input type="text" value={email} name="email" onChange={handleChange} />
           </fieldset>
           <fieldset>
             <legend>Password</legend>
-            <input
-              type="password"
-              value={password}
-              name="password"
-              onChange={handleChange}
-            />
+            <input type="password" value={password} name="password" onChange={handleChange} />
           </fieldset>
           <fieldset>
             <legend>Confirm Password</legend>
-            <input
-              type="password"
-              value={passwordConf}
-              name="passwordConf"
-              onChange={handleChange}
-            />
+            <input type="password" value={passwordConf} name="passwordConf" onChange={handleChange} />
           </fieldset>
           <label className={styles.label}>
             Upload Photo
-            <input 
-              type="file" 
-              name="photo" 
-              onChange={handleChangePhoto}
-              ref={imgInputRef}
-            />
+            <input type="file" name="photo" onChange={handleChangePhoto} ref={imgInputRef} />
           </label>
           <div>
-            <button
-              className={styles.button}
-              disabled={ isFormInvalid() || isSubmitted }
-            >
+            <button className={styles.button} disabled={isFormInvalid() || isSubmitted}>
               {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
             </button>
             <Link to="/" className={styles.link}>
-              <button>
-                Cancel
-              </button>
+              <button>Cancel</button>
             </Link>
           </div>
         </form>

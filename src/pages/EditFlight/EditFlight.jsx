@@ -1,28 +1,26 @@
 //services
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import * as itineraryService from "../../services/itineraryService";
-import { useState } from "react";
-import moment from "moment";
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import * as itineraryService from '../../services/itineraryService'
+import { useState } from 'react'
+import moment from 'moment'
 
 import styles from './EditFlight.module.css'
 
-
-
 const EditFlight = () => {
-  const navigate = useNavigate();
-  const { state } = useLocation();
-  const { itineraryId, flightId } = useParams();
-  const [formData, setFormData] = useState(state);
+  const navigate = useNavigate()
+  const { state } = useLocation()
+  const { itineraryId, flightId } = useParams()
+  const [formData, setFormData] = useState(state)
 
   const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
-  };
+    setFormData({ ...formData, [target.name]: target.value })
+  }
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    await itineraryService.updateFlight(itineraryId, flightId, formData);
-    navigate(`/itineraries/${itineraryId}`);
-  };
+    evt.preventDefault()
+    await itineraryService.updateFlight(itineraryId, flightId, formData)
+    navigate(`/itineraries/${itineraryId}`)
+  }
 
   return (
     <main className={styles.main}>
@@ -32,12 +30,12 @@ const EditFlight = () => {
           {/* <label htmlFor="airline-input">Airline</label> */}
           <fieldset>
             <legend>Airline</legend>
-            <input 
+            <input
               required
-              type="text" 
+              type="text"
               name="airline"
               // id="airline-input"
-              autoComplete='off'
+              autoComplete="off"
               value={formData.airline}
               // placeholder="Airline Name"
               onChange={handleChange}
@@ -47,12 +45,12 @@ const EditFlight = () => {
           {/* <label htmlFor="departureAirport">Departure Airport</label> */}
           <fieldset>
             <legend>Departure Airport</legend>
-            <input 
+            <input
               required
-              type="text" 
+              type="text"
               name="departureAirport"
               // id="departureAirport-input"
-              autoComplete='off'
+              autoComplete="off"
               value={formData.departureAirport}
               onChange={handleChange}
               className={styles.input}
@@ -61,8 +59,8 @@ const EditFlight = () => {
           {/* <label htmlFor="departureDate">Departure Date</label> */}
           <fieldset>
             <legend>Departure Date</legend>
-            <input 
-              type="datetime-local" 
+            <input
+              type="datetime-local"
               name="departureDate"
               // id="departureDate-input"
               value={moment(formData.departureDate).format('yyyy-MM-DD HH:mm')}
@@ -73,11 +71,11 @@ const EditFlight = () => {
           {/* <label htmlFor="arrivalAirport">Arrival Airport</label> */}
           <fieldset>
             <legend>Arrival Airport</legend>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="arrivalAirport"
               // id="arrivalAirport-input"
-              autoComplete='off'
+              autoComplete="off"
               value={formData.arrivalAirport}
               onChange={handleChange}
               className={styles.input}
@@ -86,8 +84,8 @@ const EditFlight = () => {
           {/* <label htmlFor="arrivalDate">Arrival Date</label> */}
           <fieldset>
             <legend>Arrival Date</legend>
-            <input 
-              type="datetime-local" 
+            <input
+              type="datetime-local"
               name="arrivalDate"
               // id="arrivalDate-input"
               value={moment(formData.arrivalDate).format('yyyy-MM-DD HH:mm')}
@@ -98,11 +96,11 @@ const EditFlight = () => {
           {/* <label htmlFor="recordLocator">Record Locator</label> */}
           <fieldset>
             <legend>Record Locator</legend>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="recordLocator"
               id="recordLocator-input"
-              autoComplete='off'
+              autoComplete="off"
               value={formData.recordLocator}
               onChange={handleChange}
               className={styles.input}
@@ -111,11 +109,11 @@ const EditFlight = () => {
           {/* <label htmlFor="cost">Cost</label> */}
           <fieldset>
             <legend>Cost</legend>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="cost"
               id="cost-input"
-              autoComplete='off'
+              autoComplete="off"
               value={formData.cost}
               onChange={handleChange}
               className={styles.input}
@@ -125,7 +123,7 @@ const EditFlight = () => {
         </form>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default EditFlight;
+export default EditFlight

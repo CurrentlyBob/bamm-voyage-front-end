@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
-import styles from "./EditActivity.module.css";
-import moment from "moment";
+import { useState } from 'react'
+import { useLocation, useParams, useNavigate } from 'react-router-dom'
+import styles from './EditActivity.module.css'
+import moment from 'moment'
 
-import * as itineraryService from "../../services/itineraryService";
+import * as itineraryService from '../../services/itineraryService'
 
 const EditActivity = () => {
-  const navigate = useNavigate();
-  const { state } = useLocation();
-  const { itineraryId, activityId } = useParams();
-  const [formData, setFormData] = useState(state);
+  const navigate = useNavigate()
+  const { state } = useLocation()
+  const { itineraryId, activityId } = useParams()
+  const [formData, setFormData] = useState(state)
 
   const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
-  };
+    setFormData({ ...formData, [target.name]: target.value })
+  }
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    await itineraryService.updateActivity(itineraryId, activityId, formData);
-    navigate(`/itineraries/${itineraryId}`);
-  };
+    evt.preventDefault()
+    await itineraryService.updateActivity(itineraryId, activityId, formData)
+    navigate(`/itineraries/${itineraryId}`)
+  }
 
   return (
     <main className={styles.main}>
@@ -62,7 +62,7 @@ const EditActivity = () => {
               type="datetime-local"
               name="activityDate"
               // id="activityDate-input"
-              value={moment(formData.Date).format("yyyy-MM-DD HH:mm")}
+              value={moment(formData.Date).format('yyyy-MM-DD HH:mm')}
               onChange={handleChange}
               className={styles.input}
             />
@@ -110,7 +110,7 @@ const EditActivity = () => {
         </form>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default EditActivity;
+export default EditActivity

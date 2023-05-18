@@ -1,37 +1,33 @@
 // npm modules
-import { NavLink } from "react-router-dom";
-import * as React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/joy/Menu";
-import MenuItem from "@mui/joy/MenuItem";
-import logo from "../../assets/images/logo.png"
+import { NavLink } from 'react-router-dom'
+import * as React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { IconButton } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import Menu from '@mui/joy/Menu'
+import MenuItem from '@mui/joy/MenuItem'
+import logo from '../../assets/images/logo.png'
 //css
-import styles from "./NavBar.module.css";
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout, handleChangePassword }) => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
 
   const handleClick = (evt) => {
-    setAnchorEl(evt.currentTarget);
-  };
+    setAnchorEl(evt.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <>
       {user ? (
         <nav className={styles.navContainer}>
           <Link to="/">
-            <img
-              className={styles.logo}
-              src={logo}
-              alt="logo"
-            />
+            <img className={styles.logo} src={logo} alt="logo" />
           </Link>
           <ul className={styles.linkContainer}>
             <div className={styles.links}>
@@ -46,9 +42,9 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
           <div className={styles.profile}>
             <IconButton
               id="button"
-              aria-controls={open ? "menu" : undefined}
+              aria-controls={open ? 'menu' : undefined}
               aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              aria-expanded={open ? 'true' : undefined}
               variant="outlined"
               color="neutral"
               onClick={open ? handleClose : handleClick}
@@ -73,10 +69,10 @@ const NavBar = ({ user, handleLogout, handleChangePassword }) => {
           </div>
         </nav>
       ) : (
-        ""
+        ''
       )}
     </>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
