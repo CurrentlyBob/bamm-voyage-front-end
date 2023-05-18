@@ -49,8 +49,8 @@ const ActivityKebabMenu = ({ activity, itineraryId, handleDeleteActivity }) => {
                     <EditIcon style={{ color: '#474962' }} />
                   </Link>
                 </MenuItem>
-                <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} style={{ color: '#474962' }}>
-                  <DeleteForeverIcon />
+                <MenuItem onClick={() => handleDeleteActivity(itineraryId, activity._id)} >
+                  <DeleteForeverIcon style={{ color: '#474962' }}/>
                 </MenuItem>
               </MenuList>
             </Paper>
