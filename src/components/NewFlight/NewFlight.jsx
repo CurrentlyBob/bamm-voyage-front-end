@@ -59,73 +59,61 @@ const NewFlight = (props) => {
         {showForm ? (
           <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
             <h2>Flight</h2>
-            {/* <label htmlFor="airline-input">Airline</label> */}
             <fieldset>
               <legend>Airline</legend>
               <input
                 required
                 type="text"
                 name="airline"
-                // id="airline-input"
                 autoComplete="off"
                 value={formData.airline}
-                // placeholder="Airline Name"
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="departureAirport">Departure Airport</label> */}
             <fieldset>
               <legend>Departure Airport</legend>
               <input
                 required
                 type="text"
                 name="departureAirport"
-                // id="departureAirport-input"
                 autoComplete="off"
                 value={formData.departureAirport}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="departureDate">Departure Date</label> */}
             <fieldset>
               <legend>Departure Date</legend>
               <input
                 type="datetime-local"
                 name="departureDate"
-                // id="departureDate-input"
                 value={formData.departureDate}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="arrivalAirport">Arrival Airport</label> */}
             <fieldset>
               <legend>Arrival Airport</legend>
               <input
                 type="text"
                 name="arrivalAirport"
-                // id="arrivalAirport-input"
                 autoComplete="off"
                 value={formData.arrivalAirport}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="arrivalDate">Arrival Date</label> */}
             <fieldset>
               <legend>Arrival Date</legend>
               <input
                 type="datetime-local"
                 name="arrivalDate"
-                // id="arrivalDate-input"
                 value={formData.arrivalDate}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="recordLocator">Record Locator</label> */}
             <fieldset>
               <legend>Record Locator</legend>
               <input
@@ -138,7 +126,6 @@ const NewFlight = (props) => {
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="cost">Cost</label> */}
             <fieldset>
               <legend>Cost</legend>
               <input
