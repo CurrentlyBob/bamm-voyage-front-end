@@ -52,7 +52,7 @@ function App() {
     const updatedItineraries = itineraries.map((b) => (itineraryFormData._id === b._id ? updatedItinerary : b))
     const sortedItineraries = updatedItineraries.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
     setItineraries(sortedItineraries)
-    navigate('/itineraries')
+    navigate(`/itineraries/${itineraryFormData._id}`)
   }
 
   const handleDeleteItinerary = async (itineraryId) => {
