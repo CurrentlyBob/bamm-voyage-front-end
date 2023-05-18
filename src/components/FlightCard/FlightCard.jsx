@@ -32,9 +32,9 @@ const FlightCard = ({ flight, itineraryId, handleDeleteFlight, isFirstFlight }) 
 
           <tbody>
             <tr className={styles.tr}>
-              <td className={styles.td}>{moment(flight.departureDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+              <td className={styles.td}>{moment.utc(flight.departureDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
               <td className={styles.td}>{flight.departureAirport}</td>
-              <td className={styles.td}>{moment(flight.arrivalDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
+              <td className={styles.td}>{moment.utc(flight.arrivalDate).format('ddd MMMM Do, YYYY hh:mm a')}</td>
               <td className={styles.td}>{flight.arrivalAirport}</td>
               <td className={styles.td}>
                 <FlightKebabMenu flight={flight} itineraryId={itineraryId} handleDeleteFlight={handleDeleteFlight} />
