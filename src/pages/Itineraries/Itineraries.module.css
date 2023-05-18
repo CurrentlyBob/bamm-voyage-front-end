@@ -2,18 +2,14 @@
   /* background-image: url('src/assets/images/itinerariesBack.jpg');
   background-repeat: no-repeat;
   background-size: cover; */
-  min-height: 100vh;
-  background-position: center;
+  /* min-height: 100vh; */
   width: 100%;
-}
-.overlay{
-  background-color: rgba(71, 73, 98, 0.3);
-  width: 100%;
-  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
+
 .noItineraryContainer {
   background-image: url('src/assets/images/itinerariesBack.jpg');
   background-repeat: no-repeat;
