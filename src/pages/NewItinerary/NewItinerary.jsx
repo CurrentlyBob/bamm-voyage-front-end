@@ -72,6 +72,7 @@ const NewItinerary = (props) => {
               value={formData.startDate}
               onChange={handleChange}
               className={styles.input}
+              required
             />
           </fieldset>
           <fieldset>
@@ -82,6 +83,7 @@ const NewItinerary = (props) => {
               value={formData.endDate}
               onChange={handleChange}
               className={styles.input}
+              required
             />
           </fieldset>
           <fieldset>

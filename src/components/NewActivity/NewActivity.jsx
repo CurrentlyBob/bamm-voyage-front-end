@@ -81,6 +81,7 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -105,6 +106,7 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -129,6 +131,7 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <button type="submit">SUBMIT</button>
