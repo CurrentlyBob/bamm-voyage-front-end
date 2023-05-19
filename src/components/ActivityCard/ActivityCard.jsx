@@ -9,7 +9,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
       <div className={styles.activityTitleContainer}>
         <div className={styles.title}>
           <h2>{activity.category}:</h2>
-          <h2>{activity.name}</h2>
+          <h2>{activity.name.charAt(0).toUpperCase() + activity.name.slice(1)}</h2>
         </div>
         <h2 className={styles.activityCost}>${activity.cost.toLocaleString('en-US')}</h2>
         <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity} />
@@ -22,7 +22,7 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
         <p className={styles.activityWebsite}>
           {activity.activityWebsite? 
             <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
-              {activity.name}'s website
+              {activity.name.charAt(0).toUpperCase() + activity.name.slice(1)}'s website
             </a> : ''}
         </p>
       </div>
