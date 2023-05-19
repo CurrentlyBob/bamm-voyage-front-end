@@ -93,7 +93,8 @@ const ItineraryDetails = (props) => {
         <tbody>
           <tr>
             <td className={styles.td}>
-              {itinerary.city.charAt(0).toUpperCase() + itinerary.city.slice(1)}, {itinerary.country.charAt(0).toUpperCase() + itinerary.country.slice(1)}
+              {itinerary.city.charAt(0).toUpperCase() + itinerary.city.slice(1)},{' '}
+              {itinerary.country.charAt(0).toUpperCase() + itinerary.country.slice(1)}
             </td>
             <td className={styles.td}>{moment.utc(itinerary.startDate).format('ddd MMMM Do, YYYY')}</td>
             <td className={styles.td}>{moment.utc(itinerary.endDate).format('ddd MMMM Do YYYY')}</td>

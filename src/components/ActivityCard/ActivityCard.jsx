@@ -20,14 +20,17 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
           <p className={styles.activityDate}>{moment.utc(activity.activityDate).format('ddd MMMM Do, YYYY hh:mm a')}</p>
         </div>
         <p className={styles.activityWebsite}>
-          {activity.activityWebsite? 
+          {activity.activityWebsite ? (
             <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
               {activity.name.charAt(0).toUpperCase() + activity.name.slice(1)}'s website
-            </a> : ''}
+            </a>
+          ) : (
+            ''
+          )}
         </p>
       </div>
       <div className={styles.tableContainer}>
-        {activity.notes? 
+        {activity.notes ? (
           <table className={styles.table}>
             <thead>
               <tr>
@@ -39,7 +42,10 @@ const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
                 <td className={styles.td}>{activity.notes}</td>
               </tr>
             </tbody>
-          </table> : ''}
+          </table>
+        ) : (
+          ''
+        )}
       </div>
     </>
   )
