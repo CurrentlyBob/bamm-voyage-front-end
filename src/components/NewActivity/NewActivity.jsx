@@ -106,7 +106,6 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
-                required
               />
             </fieldset>
             <fieldset>
