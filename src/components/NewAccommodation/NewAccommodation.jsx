@@ -91,6 +91,7 @@ const NewAccommodation = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -114,6 +115,7 @@ const NewAccommodation = (props) => {
                 value={moment.utc(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -143,13 +145,14 @@ const NewAccommodation = (props) => {
             <fieldset>
               <legend>Cost</legend>
               <input
-                type="text"
+                type="number"
                 name="cost"
                 id="cost-input"
                 value={formData.cost}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <button type="submit">SUBMIT</button>

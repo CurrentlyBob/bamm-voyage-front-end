@@ -63,7 +63,7 @@ const NewItinerary = (props) => {
             <legend>Budget</legend>
             <input
               required
-              type="text"
+              type="number"
               name="budget"
               value={formData.budget}
               onChange={handleChange}
@@ -79,6 +79,7 @@ const NewItinerary = (props) => {
               value={formData.startDate}
               onChange={handleChange}
               className={styles.input}
+              required
             />
           </fieldset>
           <fieldset>
@@ -89,6 +90,7 @@ const NewItinerary = (props) => {
               value={formData.endDate}
               onChange={handleChange}
               className={styles.input}
+              required
             />
           </fieldset>
           <fieldset>

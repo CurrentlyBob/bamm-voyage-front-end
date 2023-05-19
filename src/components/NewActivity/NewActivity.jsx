@@ -83,6 +83,7 @@ const NewActivity = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -125,12 +126,13 @@ const NewActivity = (props) => {
             <fieldset>
               <legend>Cost</legend>
               <input
-                type="text"
+                type="number"
                 name="cost"
                 value={formData.cost}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <button type="submit">SUBMIT</button>

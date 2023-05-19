@@ -99,6 +99,7 @@ const NewFlight = (props) => {
                 value={moment.utc(formData.departureDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -110,6 +111,7 @@ const NewFlight = (props) => {
                 value={formData.arrivalAirport}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -120,6 +122,7 @@ const NewFlight = (props) => {
                 value={moment.utc(formData.arrivalDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
@@ -132,18 +135,20 @@ const NewFlight = (props) => {
                 value={formData.recordLocator}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <fieldset>
               <legend>Cost</legend>
               <input
-                type="text"
+                type="number"
                 name="cost"
                 id="cost-input"
                 autoComplete="off"
                 value={formData.cost}
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <button type="submit">SUBMIT</button>
