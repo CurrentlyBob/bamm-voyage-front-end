@@ -22,7 +22,7 @@ const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodati
         <p>{accommodation.address? accommodation.address : ''}</p>
         <p id="url">
           {accommodation.website? <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
-            {accommodation.name}'s website
+            {accommodation.name.charAt(0).toUpperCase() + accommodation.name.slice(1)}'s website
           </a>: ''}
         </p>
       </div>
