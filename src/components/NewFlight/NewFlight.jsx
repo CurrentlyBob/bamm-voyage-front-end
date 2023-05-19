@@ -29,7 +29,14 @@ const NewFlight = (props) => {
   })
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    const { name, value } = evt.target;
+  
+    if (name === "budget") {
+      const costValue = value.replace(/^\$|,/g, ""); 
+      setFormData({ ...formData, [name]: costValue });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   }
 
   const handleSubmit = (evt) => {
