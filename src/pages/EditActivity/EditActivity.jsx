@@ -11,9 +11,23 @@ const EditActivity = () => {
   const { itineraryId, activityId } = useParams()
   const [formData, setFormData] = useState(state)
 
-  const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value })
+  const handleChange = (evt) => {
+    const { name, value } = evt.target
+
+    if (name === 'cost') {
+      const costValue = value.replace(/^\$|,/g, '')
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: costValue,
+      }))
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+      }))
+    }
   }
+
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     await itineraryService.updateActivity(itineraryId, activityId, formData)
