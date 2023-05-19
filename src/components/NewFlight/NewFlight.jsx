@@ -130,7 +130,7 @@ const NewFlight = (props) => {
             <fieldset>
               <legend>Cost</legend>
               <input
-                type="text"
+                type="number"
                 name="cost"
                 id="cost-input"
                 autoComplete="off"

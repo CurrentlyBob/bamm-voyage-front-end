@@ -56,7 +56,7 @@ const NewItinerary = (props) => {
             <legend>Budget</legend>
             <input
               required
-              type="text"
+              type="number"
               name="budget"
               value={formData.budget}
               onChange={handleChange}
