@@ -9,21 +9,8 @@ const EditItinerary = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
 
-  const handleChange = (evt) => {
-    const { name, value } = evt.target
-
-    if (name === 'budget') {
-      const costValue = value.replace(/^\$|,/g, '')
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: costValue,
-      }))
-    } else {
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: value,
-      }))
-    }
+  const handleChange = ({ target }) => {
+    setFormData({ ...formData, [target.name]: target.value })
   }
 
   const handleSubmit = (e) => {
