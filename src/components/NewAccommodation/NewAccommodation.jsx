@@ -121,7 +121,6 @@ const NewAccommodation = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
-                required
               />
             </fieldset>
             <fieldset>
@@ -134,7 +133,6 @@ const NewAccommodation = (props) => {
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
-                required
               />
             </fieldset>
             <fieldset>

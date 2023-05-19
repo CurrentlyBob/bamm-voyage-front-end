@@ -19,11 +19,11 @@ const AccommodationCard = ({ accommodation, itineraryId, handleDeleteAccommodati
         />
       </div>
       <div className={styles.subtitle}>
-        <p>{accommodation.address}</p>
+        <p>{accommodation.address? accommodation.address : ''}</p>
         <p id="url">
-          <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
+          {accommodation.website? <a className={styles.accomodationUrl} href={accommodation.website} target="_blank" rel="noreferrer">
             {accommodation.name}'s website
-          </a>
+          </a>: ''}
         </p>
       </div>
       <div className={styles.tableContainer}>
