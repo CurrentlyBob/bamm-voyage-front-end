@@ -27,14 +27,14 @@ const NewActivity = (props) => {
   })
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target;
+    const { name, value } = evt.target
 
-  if (name === "cost") {
-    const costValue = value.replace(/^\$|,/g, ""); 
-    setFormData({ ...formData, [name]: costValue });
-  } else {
-    setFormData({ ...formData, [name]: value });
-  }
+    if (name === 'cost') {
+      const costValue = value.replace(/^\$|,/g, '')
+      setFormData({ ...formData, [name]: costValue })
+    } else {
+      setFormData({ ...formData, [name]: value })
+    }
   }
 
   const handleSubmit = (evt) => {

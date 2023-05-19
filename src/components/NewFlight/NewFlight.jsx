@@ -29,13 +29,13 @@ const NewFlight = (props) => {
   })
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target;
-  
-    if (name === "budget") {
-      const costValue = value.replace(/^\$|,/g, ""); 
-      setFormData({ ...formData, [name]: costValue });
+    const { name, value } = evt.target
+
+    if (name === 'budget') {
+      const costValue = value.replace(/^\$|,/g, '')
+      setFormData({ ...formData, [name]: costValue })
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData({ ...formData, [name]: value })
     }
   }
 
