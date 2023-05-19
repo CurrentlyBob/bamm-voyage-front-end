@@ -83,7 +83,7 @@ const EditActivity = () => {
           <fieldset>
             <legend>Cost</legend>
             <input
-              type="text"
+              type="number"
               name="cost"
               value={formData.cost}
               autoComplete="off"

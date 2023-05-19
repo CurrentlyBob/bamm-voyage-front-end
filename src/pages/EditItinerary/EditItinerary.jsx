@@ -49,7 +49,7 @@ const EditItinerary = (props) => {
           <fieldset>
             <legend>Budget</legend>
             <input
-              type="text"
+              type="number"
               name="budget"
               value={formData.budget}
               onChange={handleChange}

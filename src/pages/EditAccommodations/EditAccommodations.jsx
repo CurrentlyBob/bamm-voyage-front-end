@@ -98,7 +98,7 @@ const EditAccommodation = () => {
           <fieldset>
             <legend>Cost</legend>
             <input
-              type="text"
+              type="number"
               name="cost"
               id="cost-input"
               value={formData.cost}
