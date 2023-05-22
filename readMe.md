@@ -34,7 +34,7 @@ At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and u
 - Express.js
 - React.js
 - Node.js
-- Passport.js
+
 
 # IceBox 🧊
 - [ ] Trip Recommendations
