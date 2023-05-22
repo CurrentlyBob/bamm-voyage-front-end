@@ -1,30 +1,70 @@
-.title{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #567189;
-    padding: 0 20px;
+.activityTitleContainer {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #474962;
+  align-items: end;
+  margin: 0 30px 0 30px;
+}
+.title {
+  display: flex;
+  width: 60%;
+}
+.title > h2 {
+  margin-right: 10px;
+}
+.activityCost {
+  display: flex;
+  width: 40%;
+  justify-content: right;
+}
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 0 30px 0 30px;
+}
+.activityDateContainer {
+  display: flex;
+  align-items: center;
+}
+.activityDateContainer > p {
+  margin-right: 5px;
+}
+.tableContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.table {
+  margin-bottom: 20px;
+  table-layout: auto;
+  border-collapse: collapse;
+  text-align: left;
+  width: 95%;
+}
+.th,
+.td {
+  border: 1px solid rgb(189, 189, 189);
+  padding: 15px 10px;
+}
+.button {
+  margin-top: 0;
+}
+
+.activityUrl,
+.activityUrl:visited {
+  color: #474962;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .activityTitleContainer {
+    margin: 5px;
   }
-  .subtitle{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
+
+  .subtitle {
+    padding: 0 10px;
+    margin: 5px;
+    gap: 10px;
   }
-  .table{
-    margin-top: 20px;
-    table-layout: auto;
-    border-collapse:collapse;
-    text-align: left;
-    width: 100%;
-  }
-  .th, .td{
-    border: 1px solid rgb(189, 189, 189);
-    padding: 15px 10px;
-  }
-  .button{
-    margin-top: 0;
-  }
-  
-  .accomodationUrl, .accomodationUrl:visited  {
-    color: #567189;
-    text-decoration: none;
-  }
+}

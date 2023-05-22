@@ -1,45 +1,47 @@
-.navContainer{
+.navContainer {
   display: flex;
   flex-direction: row;
-  background-color: #567189;
+  background-color: #474962;
   overflow: hidden;
   position: fixed;
-  z-index: 100;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
 }
-.linkContainer{
+.linkContainer {
   display: flex;
   list-style: none;
   width: 100%;
   justify-content: space-between;
   padding: 16px 16px 16px 0px;
 }
-.links{
+.links {
   display: flex;
 }
-.profile{
+.profile {
   display: flex;
   text-align: right;
   align-items: center;
 }
-.li > a, .li> a:visited{
+.li > a,
+.li > a:visited {
   text-decoration: none;
-  color: #E3D6B2;
+  color: #e3d6b2;
 }
-li{
+li {
   margin-left: 10px;
 }
-.logo{
+.logo {
   width: 50px;
   margin-left: 10px;
 }
 
-.menuIcon{
-  color: #E3D6B2;
+.personIcon {
+  color: #c5ba9b;
 }
-.loggedIn, .loggedIn:visited{
+.loggedIn,
+.loggedIn:visited {
   text-decoration: none;
-  color: #567189;
+  color: #474962;
 }

@@ -1,51 +1,49 @@
 // npm imports
-import { useState } from "react";
-import Switch from "@mui/material/Switch";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import moment from "moment";
-
+import { useState } from 'react'
+import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import moment from 'moment'
 
 // css
-import styles from "./NewAccommodation.module.css";
-
+import styles from './NewAccommodation.module.css'
 
 const NewAccommodation = (props) => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false)
 
   const toggle = async () => {
-    showForm ? setShowForm(false) : setShowForm(true);
-  };
+    showForm ? setShowForm(false) : setShowForm(true)
+  }
 
   const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
 
   const [formData, setFormData] = useState({
-    type: "Hotel",
-    name: "",
+    type: 'Hotel',
+    name: '',
     checkInDate: defaultDate,
     checkOutDate: defaultDate,
-    address: "",
-    website: "",
-    cost: "",
-  });
+    address: '',
+    website: '',
+    cost: '',
+  })
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-  };
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    props.handleAddAccommodation(formData);
+    evt.preventDefault()
+    props.handleAddAccommodation(formData)
     setFormData({
-      type: "Hotel",
-      name: "",
+      type: 'Hotel',
+      name: '',
       checkInDate: defaultDate,
       checkOutDate: defaultDate,
-      address: "",
-      website: "",
-      cost: "",
-    });
-  };
+      address: '',
+      website: '',
+      cost: '',
+    })
+  }
 
   return (
     <>
@@ -53,118 +51,111 @@ const NewAccommodation = (props) => {
         <FormGroup className={styles.toggleFormContainer}>
           <FormControlLabel
             control={<Switch onChange={toggle} className={styles.toggle} />}
-            label={`${showForm ? "" : "Add Accommodation"}`}
+            label={`${showForm ? '' : 'Add Accommodation'}`}
             labelPlacement="top"
             className={styles.toggleContainer}
           />
         </FormGroup>
-      {showForm ? (
-        <form
-        className={`${styles.container} ${!showForm && styles.hidden}`}
-        onSubmit={handleSubmit}
-        >
-          <h2>Accommodation</h2>
-          {/* <label htmlFor="type-input">Type</label> */}
-          <fieldset>
-            <legend>Type</legend>
-            <select
-              name="type"
-              id="type-input"
-              value={formData.type}
-              onChange={handleChange}
-              className={styles.select}
+        {showForm ? (
+          <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
+            <h2>Accommodation</h2>
+            <fieldset>
+              <legend>Type</legend>
+              <select
+                name="type"
+                id="type-input"
+                value={formData.type}
+                onChange={handleChange}
+                className={styles.select}
               >
                 <option value="Hotel">Hotel</option>
                 <option value="Cruise">Cruise</option>
                 <option value="Airbnb">Airbnb</option>
                 <option value="Other">Other</option>
-            </select>
-          </fieldset>
-          {/* <label htmlFor="name">Name</label> */}
-          <fieldset>
-            <legend>Name</legend>
-            <input
-              type="text"
-              name="name"
-              id="name-input"
-              value={formData.name}
-              autoComplete="off"
-              onChange={handleChange}
-              className={styles.input}
-            />
-          </fieldset>
-          {/* <label htmlFor="checkInDate">CheckIn Date</label> */}
-          <fieldset>
-            <legend>CheckIn Date</legend>
-            <input
-              required
-              type="datetime-local"
-              name="checkInDate"
-              id="checkInDate-input"
-              value={formData.checkInDate}
-              onChange={handleChange}
-              className={styles.input}
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>Name</legend>
+              <input
+                type="text"
+                name="name"
+                id="name-input"
+                value={formData.name}
+                autoComplete="off"
+                onChange={handleChange}
+                className={styles.input}
+                required
               />
             </fieldset>
-          {/* <label htmlFor="checkOutDate">CheckOut Date</label> */}
-          <fieldset>
-            <legend>CheckOut Date</legend>
-            <input
-              type="datetime-local"
-              name="checkOutDate"
-              id="checkOutDate-input"
-              value={formData.checkOutDate}
-              onChange={handleChange}
-              className={styles.input}
+            <fieldset>
+              <legend>Check In Date</legend>
+              <input
+                required
+                type="datetime-local"
+                name="checkInDate"
+                id="checkInDate-input"
+                value={moment.utc(formData.checkInDate).format('yyyy-MM-DD HH:mm')}
+                onChange={handleChange}
+                className={styles.input}
               />
             </fieldset>
-          {/* <label htmlFor="address">Address</label> */}
-          <fieldset>
-            <legend>Address</legend>
-            <input
-              type="text"
-              name="address"
-              id="address-input"
-              value={formData.address}
-              autoComplete="off"
-              onChange={handleChange}
-              className={styles.input}
+            <fieldset>
+              <legend>Check Out Date</legend>
+              <input
+                type="datetime-local"
+                name="checkOutDate"
+                id="checkOutDate-input"
+                value={moment.utc(formData.checkOutDate).format('yyyy-MM-DD HH:mm')}
+                onChange={handleChange}
+                className={styles.input}
+                required
               />
             </fieldset>
-          {/* <label htmlFor="website">Website</label> */}
-          <fieldset>
-            <legend>Website</legend>
-            <input
-              type="text"
-              name="website"
-              id="website-input"
-              value={formData.website}
-              autoComplete="off"
-              onChange={handleChange}
-              className={styles.input}
+            <fieldset>
+              <legend>Address</legend>
+              <input
+                type="text"
+                name="address"
+                id="address-input"
+                value={formData.address}
+                autoComplete="off"
+                onChange={handleChange}
+                className={styles.input}
               />
             </fieldset>
-          {/* <label htmlFor="cost">Cost</label> */}
-          <fieldset>
-            <legend>Cost</legend>
-            <input
-              type="text"
-              name="cost"
-              id="cost-input"
-              value={formData.cost}
-              autoComplete="off"
-              onChange={handleChange}
-              className={styles.input}
-            />
-          </fieldset>
-          <button type="submit">SUBMIT</button>
-        </form>
-      ) : (
-        <></>
+            <fieldset>
+              <legend>Website</legend>
+              <input
+                type="text"
+                name="website"
+                id="website-input"
+                value={formData.website.substring(formData.website.indexOf('/', formData.website.indexOf('/') + 1) + 1)}
+                autoComplete="off"
+                onChange={handleChange}
+                className={styles.input}
+              />
+            </fieldset>
+            <fieldset>
+              <legend>Cost</legend>
+              <input
+                type="number"
+                name="cost"
+                id="cost-input"
+                value={formData.cost}
+                autoComplete="off"
+                onChange={handleChange}
+                className={styles.input}
+                required
+              />
+            </fieldset>
+            <button type="submit">SUBMIT</button>
+          </form>
+        ) : (
+          <></>
         )}
-        </div>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default NewAccommodation;
+export default NewAccommodation

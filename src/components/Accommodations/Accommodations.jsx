@@ -1,12 +1,12 @@
-import AccommodationCard from "../AccommodationCard/AccommodationCard";
+import AccommodationCard from '../AccommodationCard/AccommodationCard'
 
 const Accommodations = (props) => {
   if (!props.itinerary.accommodations) return <h4>Add Accommodations</h4>
-  
+
   return (
     <>
-      {props.itinerary.accommodations.map(accommodation => (
-        <AccommodationCard 
+      {props.itinerary.accommodations.map((accommodation) => (
+        <AccommodationCard
           key={accommodation._id}
           accommodation={accommodation}
           user={props.user}
@@ -18,4 +18,4 @@ const Accommodations = (props) => {
   )
 }
 
-export default Accommodations;
+export default Accommodations

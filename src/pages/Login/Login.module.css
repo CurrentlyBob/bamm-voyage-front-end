@@ -1,13 +1,25 @@
 .container {
+  background-image: url('../../assets/images/loggedOutBackgroundPic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -40px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 60px;
-  padding-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.89);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  width: 500px;
 }
 
 .title {
@@ -15,42 +27,22 @@
   margin-top: 90px;
 }
 
-.input{
+.input {
   margin: 0;
   margin-left: 7px;
   border: none;
   padding: 5px;
 }
-
-.input:focus{
-  outline: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 60px;
-  padding-top: 20px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  width: 500px;
-}
-
-.title {
+.link {
   text-align: center;
-  margin-top: 90px;
 }
-
-.input{
-  margin: 0;
-  margin-left: 7px;
-  border: none;
-  padding: 5px;
+.link > a {
+  padding-left: 20px;
 }
-
-.input:focus{
+.link > a,
+.link > a:visited {
+  color: #567189;
+}
+.input:focus {
   outline: none;
 }
-

@@ -1,12 +1,28 @@
-.itineraryCards{
-  display: flex;
+.itineraryCards {
   width: 100%;
-  flex-wrap: wrap;
+  display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
-.noItinerary{
+
+.noItineraryContainer {
+  background-image: url('src/assets/images/itinerariesBack.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  background-position: center;
+  color: rgb(227, 202, 152);
+  margin-top: -40px;
+  display: flex;
   text-align: center;
   justify-content: center;
+  align-items: center;
+}
+.noItinerary {
   width: 500px;
-  padding-top: 80px;
+  background-color: rgba(71, 73, 98, 0.8);
+  padding: 60px;
+  border-radius: 7px;
 }

@@ -1,60 +1,62 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
-import IconButton from '@mui/joy/IconButton';
-import Menu from '@mui/joy/Menu';
-import MenuItem from '@mui/joy/MenuItem';
-import MoreVert from '@mui/icons-material/MoreVert';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { ClickAwayListener, IconButton, MenuList, Popper, Paper, MenuItem } from '@mui/material'
+import MoreVert from '@mui/icons-material/MoreVert'
+import EditIcon from '@mui/icons-material/Edit'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
-const FlightKebabMenu = ({
-  flight, itineraryId, handleDeleteFlight
-}) => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
-  
-  const handleClick  = async (evt) => {
-    setAnchorEl(evt.currentTarget)
+const FlightKebabMenu = ({ flight, itineraryId, handleDeleteFlight }) => {
+  const [open, setOpen] = useState(false)
+  const anchorRef = useRef(null)
+
+  const handleClick = () => {
+    setOpen((prevOpen) => !prevOpen)
   }
-
-  const handleClose = () => {
-    setAnchorEl(null)
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return
+    }
+    setOpen(false)
   }
 
   return (
     <>
       <IconButton
-        id='button'
+        ref={anchorRef}
+        id="button"
         aria-controls={open ? 'menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
+        aria-expanded={open ? 'true' : undefined}
         variant="outlined"
         color="neutral"
         onClick={handleClick}
       >
-        <MoreVert />
+        <MoreVert style={{ color: '#474962' }} />
       </IconButton>
-      <Menu
+      <Popper
         id="menu"
-        anchorEl={anchorEl}
+        anchorEl={anchorRef.current}
         open={open}
         onClose={handleClose}
         aria-labelledby="button"
         placement="bottom-end"
       >
-        <MenuItem>
-          <Link
-            to={`/itineraries/${itineraryId}/flights/${flight._id}`}
-            state={flight}
-          >
-            <EditIcon style={{ color: '#567189'}}/>
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)} style={{ color: '#567189'}}>
-          <DeleteForeverIcon />
-        </MenuItem> 
-      </Menu>
+        <ClickAwayListener onClickAway={handleClose}>
+          <Paper>
+            <MenuList>
+              <MenuItem>
+                <Link to={`/itineraries/${itineraryId}/flights/${flight._id}`} state={flight}>
+                  <EditIcon style={{ color: '#474962' }} />
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={() => handleDeleteFlight(itineraryId, flight._id)}>
+                <DeleteForeverIcon style={{ color: '#474962' }} />
+              </MenuItem>
+            </MenuList>
+          </Paper>
+        </ClickAwayListener>
+      </Popper>
     </>
   )
 }

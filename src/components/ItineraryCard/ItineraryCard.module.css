@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,40 +13,42 @@
   color: white;
   max-width: 300px;
 }
-.pic{
+.pic {
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 7px;
 }
 
-.overlayText{
+.overlayText {
   position: absolute;
   background-color: rgba(24, 40, 58, 0.5);
-  border-radius: 7px;;
+  border-radius: 7px;
   padding: 5px 15px;
   text-align: center;
   margin: 10%;
   overflow: hidden;
   transition: opacity 0.3s;
 }
-.pic:hover ~ .overlayText, .overlayText:hover{
-  opacity:0;
+.pic:hover ~ .overlayText,
+.overlayText:hover {
+  opacity: 0;
 }
-.overlayText:hover~ .overlayCountdown{
+.overlayText:hover ~ .overlayCountdown {
   opacity: 1;
 }
-.pic:hover ~ .overlayCountdown, .overlayCountdown:hover{
+.pic:hover ~ .overlayCountdown,
+.overlayCountdown:hover {
   opacity: 1;
 }
-.title{
+.title {
   margin: 5px;
 }
-.overlayCountdown{
+.overlayCountdown {
   position: absolute;
   background-color: rgba(24, 40, 58, 0.5);
   font-size: 30px;
-  border-radius: 7px;;
+  border-radius: 7px;
   padding: 5px 15px;
   text-align: center;
   margin-top: 120px;

@@ -1,45 +1,54 @@
-import { Link } from "react-router-dom";
-import moment from "moment";
+import moment from 'moment'
 
-import styles from "./ActivityCard.module.css";
-import ActivityKebabMenu from "../KebabMenus/ActivityKebabMenu";
+import styles from './ActivityCard.module.css'
+import ActivityKebabMenu from '../KebabMenus/ActivityKebabMenu'
 
 const ActivityCard = ({ activity, itineraryId, handleDeleteActivity }) => {
-  console.log(activity)
   return (
     <>
-      <div className={styles.title}>
-        <h2>{activity.category}</h2>
-        <h2>{activity.name}</h2>
-        <h2>${activity.cost}</h2>
-        <div>
-        <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity}/>
+      <div className={styles.activityTitleContainer}>
+        <div className={styles.title}>
+          <h2>{activity.category}:</h2>
+          <h2>{activity.name.charAt(0).toUpperCase() + activity.name.slice(1)}</h2>
+        </div>
+        <h2 className={styles.activityCost}>${activity.cost.toLocaleString('en-US')}</h2>
+        <ActivityKebabMenu activity={activity} itineraryId={itineraryId} handleDeleteActivity={handleDeleteActivity} />
       </div>
+      <div className={styles.subtitle}>
+        <div className={styles.activityDateContainer}>
+          <p>Starting:</p>
+          <p className={styles.activityDate}>{moment.utc(activity.activityDate).format('ddd MMMM Do, YYYY hh:mm a')}</p>
+        </div>
+        <p className={styles.activityWebsite}>
+          {activity.activityWebsite ? (
+            <a className={styles.activityUrl} href={`${activity.activityWebsite}`} target="_blank" rel="noreferrer">
+              {activity.name.charAt(0).toUpperCase() + activity.name.slice(1)}'s website
+            </a>
+          ) : (
+            ''
+          )}
+        </p>
       </div>
-      <div className={styles.subtitle}></div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th className={styles.th}>Activity Date</th>
-            <th className={styles.th}>Notes</th>
-            <th className={styles.th}></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className={styles.td}>
-              {moment(activity.date).format(
-                "ddd MMMM Do, YYYY hh:mm a"
-              )}
-            </td>
-            <td className={styles.td}>{activity.notes}</td>
-            <td className={styles.td}>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={styles.tableContainer}>
+        {activity.notes ? (
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th className={styles.th}>Notes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className={styles.td}>{activity.notes}</td>
+              </tr>
+            </tbody>
+          </table>
+        ) : (
+          ''
+        )}
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default ActivityCard;
+export default ActivityCard

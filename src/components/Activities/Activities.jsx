@@ -1,13 +1,12 @@
-import ActivityCard from "../ActivityCard/ActivityCard";
+import ActivityCard from '../ActivityCard/ActivityCard'
 
 const Activities = (props) => {
   if (!props.itinerary.activities) return <h4>Add Activities</h4>
-  
-  console.log(props.itinerary.activities)
+
   return (
     <>
-      {props.itinerary.activities.map(activity => (
-        <ActivityCard 
+      {props.itinerary.activities.map((activity) => (
+        <ActivityCard
           key={activity._id}
           activity={activity}
           user={props.user}
@@ -19,4 +18,4 @@ const Activities = (props) => {
   )
 }
 
-export default Activities;
+export default Activities

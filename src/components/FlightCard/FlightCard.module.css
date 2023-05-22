@@ -1,34 +1,69 @@
-.flightContainer{
+.flightContainer {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #567189;
-  margin-bottom: 0;
+  margin: 0 30px 20px 30px;
 }
-.flightTitle{
+.flightTitle {
   display: flex;
   width: 70%;
   justify-content: space-between;
 }
-.flightCost{
+.flightCost {
   display: flex;
   width: 70%;
-  justify-content:right;
+  justify-content: right;
 }
-h2{
+h2 {
   margin-bottom: 0;
 }
-.table{
-  margin-top: 20px;
-  table-layout: fixed;
-  border-collapse:collapse;
-  text-align: left;
-  width: 100%;
+.container {
+  display: flex;
+  justify-content: center;
 }
-.th, .td{
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+  width: 95%;
+}
+.th,
+.td {
   border: 1px solid rgb(189, 189, 189);
   padding: 15px 10px;
+  width: fixed;
 }
 
-.button{
-  margin-top: 0;
+.button {
+  text-align: right;
+  padding: 0;
+}
+.tbody {
+  display: flex;
+}
+
+.th:last-child {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  width: 60px;
+}
+.td:last-child {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  width: 60px;
+}
+
+@media screen and (max-width: 500px) {
+  .flightContainer {
+    margin: 5px;
+  }
+
+  .th {
+    inline-size: auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 15px;
+  }
 }

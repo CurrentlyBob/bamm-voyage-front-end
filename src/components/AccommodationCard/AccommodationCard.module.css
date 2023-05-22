@@ -1,44 +1,65 @@
-.accommodationContainer{
+.accommodationContainer {
   display: flex;
   justify-content: space-evenly;
-  border-bottom: 1px solid #567189;
+  border-bottom: 1px solid #474962;
+  align-items: end;
+  margin: 0 30px 0 30px;
 }
-
-.title{
+.title {
   display: flex;
   width: 60%;
-  justify-content: space-between;
+}
+.title > h2 {
+  margin-right: 10px;
 }
 
-.accommodationCost{
+.accommodationCost {
   display: flex;
   width: 40%;
-  justify-content:right;
+  justify-content: right;
 }
 
-.subtitle{
+.subtitle {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 20px;
+  margin: 0 30px 0 30px;
 }
-
-.table{
-  margin-top: 20px;
-  table-layout: auto;
-  border-collapse:collapse;
-  text-align: left;
+.tableContainer {
+  display: flex;
   width: 100%;
+  justify-content: center;
+}
+.table {
+  margin-bottom: 20px;
+  table-layout: auto;
+  border-collapse: collapse;
+  text-align: left;
+  width: 95%;
 }
 
-.th, .td{
+.th,
+.td {
   border: 1px solid rgb(189, 189, 189);
   padding: 15px 10px;
 }
 
-.button{
+.button {
   margin-top: 0;
 }
-.accomodationUrl{
+.accomodationUrl {
   text-decoration: none;
   color: #567189;
+}
+
+@media screen and (max-width: 500px) {
+  .accommodationContainer {
+    margin: 5px;
+  }
+
+  .subtitle {
+    padding: 0 10px;
+    margin: 5px;
+    gap: 10px;
+  }
 }

@@ -1,47 +1,47 @@
 // npm imports
-import { useState } from "react";
-import Switch from "@mui/material/Switch";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import moment from "moment";
+import { useState } from 'react'
+import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import moment from 'moment'
 
 // css
-import styles from "./NewActivity.module.css";
+import styles from './NewActivity.module.css'
 
 const NewActivity = (props) => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false)
 
   const toggle = async () => {
-    showForm ? setShowForm(false) : setShowForm(true);
-  };
+    showForm ? setShowForm(false) : setShowForm(true)
+  }
 
   const defaultDate = moment.utc(props.itineraryStart).format('yyyy-MM-DD HH:mm')
 
   const [formData, setFormData] = useState({
-    category: "Activity",
-    name: "",
+    category: 'Activity',
+    name: '',
     activityDate: defaultDate,
-    activityWebsite: "",
-    notes: "",
-    cost: "",
-  });
+    activityWebsite: '',
+    notes: '',
+    cost: '',
+  })
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-  };
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    props.handleAddActivity(formData);
+    evt.preventDefault()
+    props.handleAddActivity(formData)
     setFormData({
-      category: "Activity",
-      name: "",
+      category: 'Activity',
+      name: '',
       activityDate: defaultDate,
-      activityWebsite: "",
-      notes: "",
-      cost: "",
-    });
-  };
+      activityWebsite: '',
+      notes: '',
+      cost: '',
+    })
+  }
 
   return (
     <>
@@ -49,96 +49,83 @@ const NewActivity = (props) => {
         <FormGroup className={styles.toggleFormContainer}>
           <FormControlLabel
             control={<Switch onChange={toggle} className={styles.toggle} />}
-            label={`${showForm ? "" : "Add Activity"}`}
+            label={`${showForm ? '' : 'Add Activity'}`}
             labelPlacement="top"
             className={styles.toggleContainer}
           />
         </FormGroup>
         {showForm ? (
-          <form
-            className={`${styles.container} ${!showForm && styles.hidden}`}
-            onSubmit={handleSubmit}
-          >
+          <form className={`${styles.container} ${!showForm && styles.hidden}`} onSubmit={handleSubmit}>
             <h2>Activity</h2>
-            {/* <label htmlFor="type-input">Category</label> */}
             <fieldset>
               <legend>Type</legend>
-              <select
-                name="category"
-                // id="type-input"
-                value={formData.category}
-                onChange={handleChange}
-                className={styles.select}
-              >
+              <select name="category" value={formData.category} onChange={handleChange} className={styles.select}>
                 <option value="Activity">Activity</option>
                 <option value="Restaurant">Restaurant</option>
                 <option value="Landmark">Landmark</option>
                 <option value="Nightlife">Nightlife</option>
+                <option value="Other">Other</option>
               </select>
             </fieldset>
-            {/* <label htmlFor="name">Activity</label> */}
             <fieldset>
               <legend>Name</legend>
               <input
                 type="text"
                 name="name"
-                // id="name-input"
                 value={formData.name}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
-            {/* <label htmlFor="activityDate">Activity Date</label> */}
             <fieldset>
               <legend>Activity Date</legend>
               <input
                 required
                 type="datetime-local"
                 name="activityDate"
-                // id="activityDate-input"
-                value={formData.activityDate}
+                value={moment.utc(formData.activityDate).format('yyyy-MM-DD HH:mm')}
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="activityWebsite">Activity Website</label> */}
             <fieldset>
               <legend>Website</legend>
               <input
                 type="text"
                 name="activityWebsite"
-                // id="activityWebsite-input"
-                value={formData.activityWebsite}
+                value={formData.activityWebsite.substring(
+                  formData.activityWebsite.indexOf('/', formData.activityWebsite.indexOf('/') + 1) + 1,
+                )}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
               />
             </fieldset>
-            {/* <label htmlFor="notes">Notes</label> */}
             <fieldset>
               <legend>Notes</legend>
-              <input
+              <textarea
                 type="text"
                 name="notes"
-                // id="notes-input"
+                cols="34"
+                rows="5"
                 value={formData.notes}
                 autoComplete="off"
                 onChange={handleChange}
-                className={styles.input}
-              />
+                className={styles.textarea}
+              ></textarea>
             </fieldset>
-            {/* <label htmlFor="cost">Cost</label> */}
             <fieldset>
               <legend>Cost</legend>
               <input
-                type="text"
+                type="number"
                 name="cost"
-                // id="cost-input"
                 value={formData.cost}
                 autoComplete="off"
                 onChange={handleChange}
                 className={styles.input}
+                required
               />
             </fieldset>
             <button type="submit">SUBMIT</button>
@@ -148,7 +135,7 @@ const NewActivity = (props) => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default NewActivity;
+export default NewActivity
